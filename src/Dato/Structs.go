@@ -36,6 +36,7 @@ type Nodo struct {
 	Siguiente *Nodo
 }
 type ListaDoble struct {
+	Indice       string
 	Nombre       string
 	Calificacion int
 	Inicio       *Nodo
@@ -70,6 +71,11 @@ func (this *ListaDoble) Insertar(dato Tienda) {
 func (this ListaDoble) To_String() {
 	var aux *Nodo
 	aux = this.Inicio
+	fmt.Println("__________________________________________________________________________________________________")
+	fmt.Println("-----------------------------------------------------------------------")
+	fmt.Println(this.Indice + "\n" + this.Nombre + "\n" + strconv.Itoa(this.Calificacion))
+	fmt.Println("-----------------------------------------------------------------------")
+
 	for {
 		if this.Vacio() {
 			break
@@ -88,4 +94,7 @@ func (this ListaDoble) To_String() {
 		}
 
 	}
+	fmt.Println("-----------------------------------------------------------------------")
+	fmt.Println("__________________________________________________________________________________________________")
+
 }
