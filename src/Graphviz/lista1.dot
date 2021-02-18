@@ -1,0 +1,16 @@
+digraph G{
+node[shape="box" shape="record"]
+graph[splines="ortho"]
+node0[label="A|Electrónicos para autos|1|pos:1"];
+node0->node1;
+node1[label="A|Electrónicos para autos|2|pos:2"];
+node0xc000050320[label="Alvarado y Piña|991.850.635"];
+node1->node0xc000050320;
+node1->node2;
+node2[label="A|Electrónicos para autos|3|pos:3"];
+node2->node3;
+node3[label="A|Electrónicos para autos|4|pos:4"];
+node3->node4;
+node4[label="A|Electrónicos para autos|5|pos:5"];
+{rank="same"; node0; node1; node2; node3; node4}
+}

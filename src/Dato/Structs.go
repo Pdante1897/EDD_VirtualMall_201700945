@@ -83,11 +83,13 @@ func (this ListaDoble) To_String() {
 		if aux == this.Inicio {
 			fmt.Println(aux.Tienda.ToString())
 			aux = aux.Siguiente
-		} else if aux.Siguiente != nil {
+		} else if aux != nil {
 			fmt.Println(aux.Tienda.ToString())
 			aux = aux.Siguiente
 		} else if aux == this.Fin {
 			fmt.Println(aux.Tienda.ToString())
+			break
+		} else if aux == this.Inicio {
 			break
 		} else {
 			break

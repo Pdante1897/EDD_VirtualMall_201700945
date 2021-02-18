@@ -1,0 +1,20 @@
+digraph G{
+node[shape="box" shape="record"]
+graph[splines="ortho"]
+node50[label="C|Podcast|1|pos:51"];
+node0xc000050910[label="Carreón Hermanos|938.458.084"];
+node50->node0xc000050910;
+node50->node51;
+node51[label="C|Podcast|2|pos:52"];
+node0xc000050960[label="Calderón e Hijos|915 327 452"];
+node51->node0xc000050960;
+node51->node52;
+node52[label="C|Podcast|3|pos:53"];
+node52->node53;
+node53[label="C|Podcast|4|pos:54"];
+node0xc0000509b0[label="Concepción y Valle|965553098"];
+node53->node0xc0000509b0;
+node53->node54;
+node54[label="C|Podcast|5|pos:55"];
+{rank="same"; node50; node51; node52; node53; node54}
+}

@@ -1,0 +1,19 @@
+digraph G{
+node[shape="box" shape="record"]
+graph[splines="ortho"]
+node25[label="B|Juegos para Android|1|pos:26"];
+node25->node26;
+node26[label="B|Juegos para Android|2|pos:27"];
+node0xc0000505f0[label="Bermúdez y Ceballos|942 004 668"];
+node26->node0xc0000505f0;
+node0xc000050640[label="Bermúdez Arreola S.A.|930830885"];
+node0xc0000505f0->node0xc000050640;
+node0xc000050640->node0xc0000505f0;
+node26->node27;
+node27[label="B|Juegos para Android|3|pos:28"];
+node27->node28;
+node28[label="B|Juegos para Android|4|pos:29"];
+node28->node29;
+node29[label="B|Juegos para Android|5|pos:30"];
+{rank="same"; node25; node26; node27; node28; node29}
+}

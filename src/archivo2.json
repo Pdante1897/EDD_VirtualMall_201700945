@@ -1,0 +1,223 @@
+{
+	"Datos": [
+		{
+			"Indice": "A",
+			"Departamentos": [
+				{
+					"Nombre": "Electrónicos para autos",
+					"Tiendas": [
+						{
+							"Nombre": "Alvarado y Piña",
+							"Descripcion": "Hic atque incidunt ea.",
+							"Contacto": "991.850.635",
+							"Calificacion": 2
+						}
+					]
+				},
+				{
+					"Nombre": "Juegos para Android",
+					"Tiendas": [
+						{
+							"Nombre": "Adorno y Camacho",
+							"Descripcion": "Natus magnam voluptatum quis.",
+							"Contacto": "985298151",
+							"Calificacion": 3
+						}
+					]
+				},
+				{
+					"Nombre": "Podcast",
+					"Tiendas": [
+						{
+							"Nombre": "Alcala Mora Hermanos",
+							"Descripcion": "Ad explicabo veritatis laborum porro quae nemo consequuntur animi.",
+							"Contacto": "980-827-817",
+							"Calificacion": 5
+						}
+					]
+				},
+				{
+					"Nombre": "Herramientas",
+					"Tiendas": [
+						{
+							"Nombre": "Anguiano Escalante e Hijos",
+							"Descripcion": "Quia voluptatum aut similique.",
+							"Contacto": "987-076-119",
+							"Calificacion": 3
+						},
+						{
+							"Nombre": "Almaraz Espinal S.L.",
+							"Descripcion": "Perferendis quae sed quis et officia repellendus ullam tempore.",
+							"Contacto": "943518867",
+							"Calificacion": 4
+						},
+						{
+							"Nombre": "Adame Delrío S.A.",
+							"Descripcion": "Nihil et atque.",
+							"Contacto": "909845637",
+							"Calificacion": 1
+						}
+					]
+				}
+			]
+		},
+		{
+			"Indice": "B",
+			"Departamentos": [
+				{
+					"Nombre": "Electrónicos para autos",
+					"Tiendas": [
+						{
+							"Nombre": "Badillo Ramírez e Hijos",
+							"Descripcion": "Dolore at aspernatur.",
+							"Contacto": "916-817-258",
+							"Calificacion": 5
+						},
+						{
+							"Nombre": "Balderas y Agosto",
+							"Descripcion": "Facilis voluptatibus facere est et.",
+							"Contacto": "979 824 130",
+							"Calificacion": 3
+						},
+						{
+							"Nombre": "Bueno Santacruz e Hijos",
+							"Descripcion": "Porro labore ducimus nesciunt minus dicta in minima dolores.",
+							"Contacto": "989-167-262",
+							"Calificacion": 5
+						}
+					]
+				},
+				{
+					"Nombre": "Juegos para Android",
+					"Tiendas": [
+						{
+							"Nombre": "Bermúdez y Ceballos",
+							"Descripcion": "Et eveniet in nihil consectetur maiores velit.",
+							"Contacto": "942 004 668",
+							"Calificacion": 2
+						},
+						{
+							"Nombre": "Bermúdez Arreola S.A.",
+							"Descripcion": "Veniam porro pariatur commodi sint architecto deleniti.",
+							"Contacto": "930830885",
+							"Calificacion": 2
+						}
+					]
+				},
+				{
+					"Nombre": "Podcast",
+					"Tiendas": [
+						{
+							"Nombre": "Bermúdez S.A.",
+							"Descripcion": "Dolores accusantium aut nihil non et ut quod soluta.",
+							"Contacto": "924 718 993",
+							"Calificacion": 3
+						},
+						{
+							"Nombre": "Benavídez y Pantoja",
+							"Descripcion": "Sapiente necessitatibus eveniet error quia iusto ipsum repudiandae consectetur.",
+							"Contacto": "985 363 456",
+							"Calificacion": 2
+						}
+					]
+				},
+				{
+					"Nombre": "Herramientas",
+					"Tiendas": [
+						{
+							"Nombre": "Barrera Hermanos",
+							"Descripcion": "Qui qui rerum repellendus.",
+							"Contacto": "963 404 333",
+							"Calificacion": 5
+						},
+						{
+							"Nombre": "Batista Vélez e Hijos",
+							"Descripcion": "In occaecati autem ipsum facilis.",
+							"Contacto": "984 736 539",
+							"Calificacion": 5
+						}
+					]
+				}
+			]
+		},
+		{
+			"Indice": "C",
+			"Departamentos": [
+				{
+					"Nombre": "Electrónicos para autos",
+					"Tiendas": [
+						{
+							"Nombre": "Coronado e Hijos",
+							"Descripcion": "Earum dolorum et quia voluptatem esse error ratione est incidunt.",
+							"Contacto": "995 562 913",
+							"Calificacion": 3
+						}
+					]
+				},
+				{
+					"Nombre": "Juegos para Android",
+					"Tiendas": [
+						{
+							"Nombre": "Cedillo Toro Hermanos",
+							"Descripcion": "Rerum aliquam consequatur aut ut ut optio.",
+							"Contacto": "961308585",
+							"Calificacion": 3
+						},
+						{
+							"Nombre": "Cuellar y Palomo",
+							"Descripcion": "Consequatur sit ipsam rerum repellendus fuga.",
+							"Contacto": "916.992.110",
+							"Calificacion": 5
+						},
+						{
+							"Nombre": "Cortés e Hijos",
+							"Descripcion": "Animi rerum sunt ratione aut quasi eveniet reiciendis ut.",
+							"Contacto": "949 915 891",
+							"Calificacion": 2
+						}
+					]
+				},
+				{
+					"Nombre": "Podcast",
+					"Tiendas": [
+						{
+							"Nombre": "Carreón Hermanos",
+							"Descripcion": "Doloribus eaque aut ut quasi sint et.",
+							"Contacto": "938.458.084",
+							"Calificacion": 1
+						},
+						{
+							"Nombre": "Concepción y Valle",
+							"Descripcion": "Recusandae non eum magni et praesentium qui rerum delectus.",
+							"Contacto": "965553098",
+							"Calificacion": 4
+						},
+						{
+							"Nombre": "Calderón e Hijos",
+							"Descripcion": "Cum qui dignissimos veritatis.",
+							"Contacto": "915 327 452",
+							"Calificacion": 2
+						}
+					]
+				},
+				{
+					"Nombre": "Herramientas",
+					"Tiendas": [
+						{
+							"Nombre": "Casárez Pacheco Hermanos",
+							"Descripcion": "Similique aut eos.",
+							"Contacto": "929-971-783",
+							"Calificacion": 2
+						},
+						{
+							"Nombre": "Carrasquillo S.A.",
+							"Descripcion": "Quia deleniti libero dolorem.",
+							"Contacto": "956.519.297",
+							"Calificacion": 2
+						}
+					]
+				}
+			]
+		}
+	]
+}
