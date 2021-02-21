@@ -4,8 +4,11 @@ graph[splines="ortho"]
 node55[label="C|Herramientas|1|pos: 56"];
 node55->node56;
 node56[label="C|Herramientas|2|pos: 57"];
-node0xc000228780[label="Carrasquillo S.A.|956.519.297"];
-node56->node0xc000228780;
+node0xc000094820[label="Casárez Pacheco Hermanos|929-971-783"];
+node56->node0xc000094820;
+node0xc000094870[label="Carrasquillo S.A.|956.519.297"];
+node0xc000094820->node0xc000094870;
+node0xc000094870->node0xc000094820;
 node56->node57;
 node57[label="C|Herramientas|3|pos: 58"];
 node57->node58;

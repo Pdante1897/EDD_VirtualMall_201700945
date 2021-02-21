@@ -211,3 +211,34 @@ func (this ListaDoble) To_String() {
 	fmt.Println("__________________________________________________________________________________________________")
 
 }
+
+func (this *ListaDoble) BusquedaId() []Tienda {
+	var aux *Nodo
+	aux = this.Inicio
+	var tiendas []Tienda
+	var i int = 0
+	for {
+		if this.Vacio() {
+			tiendas = nil
+			break
+		}
+		if aux == this.Inicio {
+			fmt.Println(aux.Tienda.ToString())
+			tiendas = append(tiendas, aux.Tienda)
+			aux = aux.Siguiente
+		} else if aux != nil {
+			fmt.Println(aux.Tienda.ToString())
+			tiendas = append(tiendas, aux.Tienda)
+			aux = aux.Siguiente
+		} else if aux == this.Fin {
+			tiendas = append(tiendas, aux.Tienda)
+			fmt.Println(aux.Tienda.ToString())
+			break
+		} else {
+			break
+		}
+		i++
+	}
+
+	return tiendas
+}

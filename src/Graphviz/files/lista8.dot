@@ -10,10 +10,10 @@ node37->node38;
 node38[label="B|Herramientas|4|pos: 39"];
 node38->node39;
 node39[label="B|Herramientas|5|pos: 40"];
-node0xc000228460[label="Barrera Hermanos|963 404 333"];
-node39->node0xc000228460;
-node0xc0002284b0[label="Batista Vélez e Hijos|984 736 539"];
-node0xc000228460->node0xc0002284b0;
-node0xc0002284b0->node0xc000228460;
+node0xc000094550[label="Barrera Hermanos|963 404 333"];
+node39->node0xc000094550;
+node0xc0000945a0[label="Batista Vélez e Hijos|984 736 539"];
+node0xc000094550->node0xc0000945a0;
+node0xc0000945a0->node0xc000094550;
 {rank="same"; node35; node36; node37; node38; node39}
 }

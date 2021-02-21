@@ -145,6 +145,7 @@ func main() {
 	router.HandleFunc("/getArreglo", generarImg).Methods("GET")
 	router.HandleFunc("/TiendaEspecifica", BuscarEsp).Methods("POST")
 	router.HandleFunc("/Eliminar", Eliminar).Methods("DELETE")
+	router.HandleFunc("/id/{numero}", BuscId).Methods("GET")
 
 	log.Fatal(http.ListenAndServe(":3000", router))
 }
@@ -160,6 +161,20 @@ func Eliminar(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "eliminado")
 }
 func BuscId(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	var ArchivoTiendas []byte
+	lista, err := strconv.Atoi(vars["numero"])
+	if err != nil {
+		fmt.Fprintf(w, "Id invalida")
+		return
+	}
+	ArchivoTiendas, err = json.Marshal(Listad[lista].BusquedaId())
+	if err != nil {
+		fmt.Fprintf(w, "Error ")
+		return
+	}
+
+	fmt.Fprintf(w, string(ArchivoTiendas))
 
 }
 func Guardar() {

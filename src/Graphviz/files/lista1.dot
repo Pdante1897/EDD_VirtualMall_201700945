@@ -2,14 +2,14 @@ digraph G{
 node[shape="box" shape="record"]
 graph[splines="ortho"]
 node0[label="A|Electrónicos para autos|1|pos: 1"];
-node0xc000228050[label="Anguiano Escalante e Hijos|987-076-119"];
-node0->node0xc000228050;
-node0xc0002280f0[label="Adorno y Camacho|985298151"];
-node0xc000228050->node0xc0002280f0;
-node0xc0002280f0->node0xc000228050;
-node0xc000228140[label="Alcala Mora Hermanos|980-827-817"];
-node0xc0002280f0->node0xc000228140;
-node0xc000228140->node0xc0002280f0;
+node0xc000094140[label="Anguiano Escalante e Hijos|987-076-119"];
+node0->node0xc000094140;
+node0xc0000941e0[label="Adorno y Camacho|985298151"];
+node0xc000094140->node0xc0000941e0;
+node0xc0000941e0->node0xc000094140;
+node0xc000094230[label="Alcala Mora Hermanos|980-827-817"];
+node0xc0000941e0->node0xc000094230;
+node0xc000094230->node0xc0000941e0;
 node0->node1;
 node1[label="A|Electrónicos para autos|2|pos: 2"];
 node1->node2;
