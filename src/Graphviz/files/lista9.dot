@@ -1,0 +1,16 @@
+digraph G{
+node[shape="box" shape="record"]
+graph[splines="ortho"]
+node40[label="C|Electrónicos para autos|1|pos: 41"];
+node40->node41;
+node41[label="C|Electrónicos para autos|2|pos: 42"];
+node41->node42;
+node42[label="C|Electrónicos para autos|3|pos: 43"];
+node0xc000228500[label="Coronado e Hijos|995 562 913"];
+node42->node0xc000228500;
+node42->node43;
+node43[label="C|Electrónicos para autos|4|pos: 44"];
+node43->node44;
+node44[label="C|Electrónicos para autos|5|pos: 45"];
+{rank="same"; node40; node41; node42; node43; node44}
+}

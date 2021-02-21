@@ -1,0 +1,16 @@
+digraph G{
+node[shape="box" shape="record"]
+graph[splines="ortho"]
+node55[label="C|Herramientas|1|pos: 56"];
+node55->node56;
+node56[label="C|Herramientas|2|pos: 57"];
+node0xc000228780[label="Carrasquillo S.A.|956.519.297"];
+node56->node0xc000228780;
+node56->node57;
+node57[label="C|Herramientas|3|pos: 58"];
+node57->node58;
+node58[label="C|Herramientas|4|pos: 59"];
+node58->node59;
+node59[label="C|Herramientas|5|pos: 60"];
+{rank="same"; node55; node56; node57; node58; node59}
+}

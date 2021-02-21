@@ -17,7 +17,7 @@ func Graficar(listad []Dato.ListaDoble, tamanio int) {
 	fmt.Fprintf(&cadena, "graph[splines=\"ortho\"]\n")
 	fmt.Fprintf(&rank, "{rank=\"same\"")
 	for i := tamanio * 5; i < (tamanio+1)*5; i++ {
-		fmt.Fprintf(&cadena, "node"+strconv.Itoa(i)+"[label=\"%v|%v|%v|pos:%v\"];\n", listad[i].Indice, listad[i].Nombre, listad[i].Calificacion, i+1)
+		fmt.Fprintf(&cadena, "node"+strconv.Itoa(i)+"[label=\"%v|%v|%v|pos: %v\"];\n", listad[i].Indice, listad[i].Nombre, listad[i].Calificacion, i+1)
 		archivo(listad[i].Inicio, &cadena, nil, strconv.Itoa(i))
 		if i+1 < (tamanio+1)*5 {
 			fmt.Fprintf(&cadena, "node"+strconv.Itoa(i)+"->node"+strconv.Itoa(i+1)+";\n")
@@ -45,7 +45,7 @@ func archivo(anterior *Dato.Nodo, s *strings.Builder, actual *Dato.Nodo, i strin
 	}
 }
 func guardarArchivo(cadena string, num string) {
-	fil, err := os.Create("./Graphviz/lista" + num + ".dot")
+	fil, err := os.Create("./Graphviz/files/lista" + num + ".dot")
 	if err != nil {
 		fmt.Println(err)
 		return
