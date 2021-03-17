@@ -1,21 +1,14 @@
 digraph G{
 node[shape="box" shape="record"]
 graph[splines="ortho"]
-node20[label="B|Electrónicos para autos|1|pos: 21"];
+node20[label="B|Comida|1|pos: 21"];
 node20->node21;
-node21[label="B|Electrónicos para autos|2|pos: 22"];
+node21[label="B|Comida|2|pos: 22"];
 node21->node22;
-node22[label="B|Electrónicos para autos|3|pos: 23"];
-node0xc000094320[label="Balderas y Agosto|979 824 130"];
-node22->node0xc000094320;
+node22[label="B|Comida|3|pos: 23"];
 node22->node23;
-node23[label="B|Electrónicos para autos|4|pos: 24"];
+node23[label="B|Comida|4|pos: 24"];
 node23->node24;
-node24[label="B|Electrónicos para autos|5|pos: 25"];
-node0xc000094370[label="Badillo Ramírez e Hijos|916-817-258"];
-node24->node0xc000094370;
-node0xc0000943c0[label="Bueno Santacruz e Hijos|989-167-262"];
-node0xc000094370->node0xc0000943c0;
-node0xc0000943c0->node0xc000094370;
+node24[label="B|Comida|5|pos: 25"];
 {rank="same"; node20; node21; node22; node23; node24}
 }

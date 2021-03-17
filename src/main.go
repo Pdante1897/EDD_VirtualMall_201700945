@@ -137,7 +137,14 @@ func generarImg(w http.ResponseWriter, r *http.Request) {
 	}
 }
 func main() {
-	//Listad[1].Ordenar("Hola mundo")
+	/*var arbol = Dato.NewArbol()
+	for i := 0; i < 50; i++ {
+		var lista Dato.ListaDPe
+		lista.Indice = i
+		arbol.Insert(lista)
+	}
+	fmt.Println(Dato.BusquedaArb(arbol.Raiz, 15).Valor.Indice)
+	*/
 	fmt.Println("un server papu")
 	router := mux.NewRouter()
 	router.HandleFunc("/", index).Methods("GET")
@@ -148,6 +155,7 @@ func main() {
 	router.HandleFunc("/id/{numero}", BuscId).Methods("GET")
 
 	log.Fatal(http.ListenAndServe(":3000", router))
+
 }
 func Eliminar(w http.ResponseWriter, r *http.Request) {
 	eliminar := new(Dato.Eliminar)

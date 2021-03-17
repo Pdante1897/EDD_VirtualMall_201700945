@@ -1,18 +1,14 @@
 digraph G{
 node[shape="box" shape="record"]
 graph[splines="ortho"]
-node15[label="A|Herramientas|1|pos: 16"];
-node0xc000094280[label="Adame Delrío S.A.|909845637"];
-node15->node0xc000094280;
+node15[label="B|Deportes|1|pos: 16"];
 node15->node16;
-node16[label="A|Herramientas|2|pos: 17"];
+node16[label="B|Deportes|2|pos: 17"];
 node16->node17;
-node17[label="A|Herramientas|3|pos: 18"];
+node17[label="B|Deportes|3|pos: 18"];
 node17->node18;
-node18[label="A|Herramientas|4|pos: 19"];
-node0xc0000942d0[label="Almaraz Espinal S.L.|943518867"];
-node18->node0xc0000942d0;
+node18[label="B|Deportes|4|pos: 19"];
 node18->node19;
-node19[label="A|Herramientas|5|pos: 20"];
+node19[label="B|Deportes|5|pos: 20"];
 {rank="same"; node15; node16; node17; node18; node19}
 }

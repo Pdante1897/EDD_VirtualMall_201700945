@@ -19,6 +19,7 @@ type Tienda struct {
 	Descripcion  string `json:"Descripcion"`
 	Contacto     string `json:"Contacto"`
 	Calificacion int    `json:"Calificacion"`
+	Logo         string `json:"Logo"`
 }
 
 func (this Tienda) ToString() string {
