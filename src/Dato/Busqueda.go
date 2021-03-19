@@ -1,10 +1,5 @@
 package Dato
 
-import (
-	"fmt"
-	"strconv"
-)
-
 type Busqueda struct {
 	Departamento string `json:"Departamento"`
 	Nombre       string `json:"Nombre"`
@@ -23,7 +18,6 @@ func RowMajor(indices int, departamentos int, posiciones [2]int, calificacion in
 	primero = posiciones[0]
 	segundo = (primero * departamentos) + posiciones[1]
 	tercero = (segundo * 5) + calificacion
-	fmt.Println(strconv.Itoa(indices) + " " + strconv.Itoa(departamentos) + " " + strconv.Itoa(posiciones[0]) + " " + strconv.Itoa(posiciones[1]) + " " + strconv.Itoa(tercero))
 	return tercero
 }
 func (this Eliminar) NumDep(lista []ListaDoble) [2]int {

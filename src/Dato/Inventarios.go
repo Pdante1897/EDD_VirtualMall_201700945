@@ -1,14 +1,16 @@
 package Dato
 
-type JsonInventario struct {
-	Invetarios []struct {
-		Tienda       string     `json:"Tienda"`
-		Departamento string     `json:"Departamento"`
-		Calificacion int        `json:"Calificacion"`
-		Productos    []Producto `json:"Productos"`
-	} `json:"Invetarios"`
-}
+import "strconv"
 
+type JsonInventario struct {
+	Inventarios []Inventario `json:"Inventarios"`
+}
+type Inventario struct {
+	Tienda       string     `json:"Tienda"`
+	Departamento string     `json:"Departamento"`
+	Calificacion int        `json:"Calificacion"`
+	Productos    []Producto `json:"Productos"`
+}
 type Producto struct {
 	Nombre      string  `json:"Nombre"`
 	Codigo      int     `json:"Codigo"`
@@ -163,6 +165,9 @@ func (this *ArbolIn) Insert(valor Producto) {
 }
 
 func BusquedaArbIn(nodo *NodoAI, Codigo int) *NodoAI {
+	if nodo == nil {
+		return nil
+	}
 	var aux *NodoAI
 	if Codigo > nodo.Valor.Codigo {
 		aux = BusquedaArbIn(nodo.Right, Codigo)
@@ -175,4 +180,23 @@ func BusquedaArbIn(nodo *NodoAI, Codigo int) *NodoAI {
 	}
 
 	return aux
+}
+
+func (this *NodoAI) GenerarGraphviz() string {
+	var cadena = ""
+
+	if this.Right == nil && this.Left == nil {
+
+		cadena = "nodo[label=\"|{  | " + this.Valor.Nombre + " " + strconv.Itoa(this.Valor.Cantidad) + " | }|\"];\n"
+	} else {
+		cadena = "nodo[label=\"|{ " + this.Valor.Nombre + " " + strconv.Itoa(this.Valor.Cantidad) + "}|\"];\n"
+	}
+	if this.Left != nil {
+		cadena += this.Left.GenerarGraphviz() + "nodo->nodo" + this.Left.Valor.Nombre + " " + strconv.Itoa(this.Valor.Cantidad) + ";\n"
+	}
+	if this.Right != nil {
+		cadena += this.Right.GenerarGraphviz() + "nodo->nodo" + this.Right.Valor.Nombre + " " + strconv.Itoa(this.Valor.Cantidad) + ";\n"
+	}
+
+	return cadena
 }

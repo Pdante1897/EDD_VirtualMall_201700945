@@ -20,6 +20,7 @@ type Tienda struct {
 	Contacto     string `json:"Contacto"`
 	Calificacion int    `json:"Calificacion"`
 	Logo         string `json:"Logo"`
+	Inventario   ArbolIn
 }
 
 func (this Tienda) ToString() string {
@@ -58,6 +59,7 @@ func (this *ListaDoble) Insertar(dato Tienda) {
 		Siguiente: nil,
 		Anterior:  nil,
 	}
+
 	if this.Vacio() {
 		this.Inicio = &aux
 		this.Fin = this.Inicio
@@ -134,13 +136,11 @@ func (this *ListaDoble) ordenar() {
 	}
 }
 
-func (this ListaDoble) Buscar(cadena string) *Nodo {
+func (this *ListaDoble) Buscar(cadena string) *Nodo {
 	var auxiliar *Nodo
 	auxiliar = this.Inicio
-	fmt.Println("_____________________")
 	for auxiliar != nil {
 		if auxiliar.Tienda.Nombre == cadena {
-			fmt.Println(auxiliar.Tienda.ToString())
 			return auxiliar
 		}
 		auxiliar = auxiliar.Siguiente

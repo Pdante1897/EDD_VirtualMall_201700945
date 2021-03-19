@@ -15,6 +15,7 @@ import (
 	"./Dato"
 	"./Graphviz"
 	"github.com/gorilla/mux"
+	"github.com/manucorporat/try"
 )
 
 func index(w http.ResponseWriter, r *http.Request) {
@@ -22,8 +23,139 @@ func index(w http.ResponseWriter, r *http.Request) {
 }
 
 var Listad []Dato.ListaDoble
+var ListaS Dato.ListaE
+
 var Ind int = 0
 var Dep int = 0
+
+func agregarPedidos(w http.ResponseWriter, r *http.Request) {
+	archivo := new(Dato.JsonPedidos)
+	reqBody, err := ioutil.ReadAll(r.Body)
+	if err != nil {
+		fmt.Fprintf(w, "Error al insertar mensaje")
+		return
+	}
+	json.Unmarshal(reqBody, &archivo)
+	for i := 0; i < len(archivo.Pedidos); i++ {
+		var buscar Dato.Busqueda
+		var listaDP Dato.ListaDPe
+		var matriz Dato.Matriz
+		fecha := strings.Split(archivo.Pedidos[i].Fecha, "-")
+		var dia, err1 = strconv.Atoi(fecha[0])
+		var mes, err2 = strconv.Atoi(fecha[1])
+		var anio, err3 = strconv.Atoi(fecha[2])
+		var mesL = meses(mes)
+		if err1 != nil || err2 != nil || err3 != nil {
+			fmt.Println("error")
+		}
+		var nodoAnio = ListaS.Buscar(anio)
+		if nodoAnio == nil {
+			listaDP.Indice = anio
+			ListaS.Insertar(listaDP)
+			listaDP = ListaS.Buscar(anio).Dato
+		} else {
+			listaDP = nodoAnio.Dato
+		}
+		var nodoMes = listaDP.Buscar(mesL)
+		if nodoMes == nil {
+			listaDP.Insertar(mesL)
+			matriz = listaDP.Buscar(mesL).MatrizD
+		} else {
+			matriz = listaDP.Buscar(mesL).MatrizD
+		}
+		buscar.Departamento = archivo.Pedidos[i].Departamento
+		buscar.Nombre = archivo.Pedidos[i].Tienda
+		buscar.Calificacion = archivo.Pedidos[i].Calificacion
+		nodo := Listad[Dato.RowMajor(Ind, Dep, buscar.NumDep(Listad), buscar.Calificacion-1)].Buscar(buscar.Nombre)
+		if nodo != nil {
+			for j := 0; j < len(archivo.Pedidos[i].Productos); j++ {
+				var nodoAI = Dato.BusquedaArbIn(nodo.Tienda.Inventario.Raiz, archivo.Pedidos[i].Productos[j].Codigo)
+				if nodoAI != nil {
+					var nuevo Dato.NodoPedido
+					nuevo.Norte = nil
+					nuevo.Sur = nil
+					nuevo.Este = nil
+					nuevo.Oeste = nil
+					nuevo.Cola = nodoAI.Valor
+					nuevo.Departamento = buscar.Departamento
+					nuevo.Dia = dia
+					matriz.Add(&nuevo)
+				} else {
+					continue
+				}
+			}
+			matriz.Imprimir()
+			matriz.Imprimir2()
+		} else {
+			continue
+		}
+
+	}
+
+}
+func meses(num int) string {
+	switch num {
+	case 1:
+		return "Enero"
+	case 2:
+		return "Febrero"
+	case 3:
+		return "Marzo"
+	case 4:
+		return "Abril"
+	case 5:
+		return "Mayo"
+	case 6:
+		return "Junio"
+	case 7:
+		return "Julio"
+	case 8:
+		return "Agosto"
+	case 9:
+		return "Septiembre"
+	case 10:
+		return "Octubre"
+	case 11:
+		return "Noviembre"
+	case 12:
+		return "Diciembre"
+	}
+	return ""
+}
+
+func agregarInv(w http.ResponseWriter, r *http.Request) {
+	archivo := new(Dato.JsonInventario)
+	reqBody, err := ioutil.ReadAll(r.Body)
+	if err != nil {
+		fmt.Fprintf(w, "Error al insertar mensaje")
+		return
+	}
+	json.Unmarshal(reqBody, &archivo)
+	for i := 0; i < len(archivo.Inventarios); i++ {
+		var buscar Dato.Busqueda
+		buscar.Departamento = archivo.Inventarios[i].Departamento
+		buscar.Nombre = archivo.Inventarios[i].Tienda
+		buscar.Calificacion = archivo.Inventarios[i].Calificacion
+		for j := 0; j < len(archivo.Inventarios[i].Productos); j++ {
+			try.This(func() {
+				var producto = archivo.Inventarios[i].Productos[j]
+				var nodo = new(Dato.Nodo)
+				nodo = Listad[Dato.RowMajor(Ind, Dep, buscar.NumDep(Listad), buscar.Calificacion-1)].Buscar(buscar.Nombre)
+				var proBus = Dato.BusquedaArbIn(nodo.Tienda.Inventario.Raiz, producto.Codigo)
+				if proBus != nil {
+					proBus.Valor.Cantidad += producto.Cantidad
+				} else {
+					Listad[Dato.RowMajor(Ind, Dep, buscar.NumDep(Listad), buscar.Calificacion-1)].Buscar(buscar.Nombre).Tienda.Inventario.Insert(producto)
+				}
+				fmt.Println(Listad[Dato.RowMajor(Ind, Dep, buscar.NumDep(Listad), buscar.Calificacion-1)].Buscar(buscar.Nombre).Tienda.Inventario.Raiz.GenerarGraphviz())
+			}).Catch(func(e try.E) {
+				fmt.Println(e)
+				fmt.Println("Tienda no encontrada")
+			})
+		}
+	}
+
+}
 
 func agregar(w http.ResponseWriter, r *http.Request) {
 	archivo := new(Dato.ArchivoJson)
@@ -74,12 +206,8 @@ func agregar(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 	}
-	/*for i := 0; i < tamanio; i++ {
-		Listad[i].To_String()
-
-	}*/
-
 }
+
 func BuscarEsp(w http.ResponseWriter, r *http.Request) {
 	buscar := new(Dato.Busqueda)
 	encontrado := new(Dato.Nodo)
@@ -150,9 +278,11 @@ func main() {
 	router.HandleFunc("/", index).Methods("GET")
 	router.HandleFunc("/cargartienda", agregar).Methods("POST")
 	router.HandleFunc("/getArreglo", generarImg).Methods("GET")
-	router.HandleFunc("/TiendaEspecifica", BuscarEsp).Methods("POST")
+	router.HandleFunc("/TiendaEspecifica", BuscarEsp).Methods("GET")
 	router.HandleFunc("/Eliminar", Eliminar).Methods("DELETE")
 	router.HandleFunc("/id/{numero}", BuscId).Methods("GET")
+	router.HandleFunc("/cargarinventario", agregarInv).Methods("POST")
+	router.HandleFunc("/cargarpedido", agregarPedidos).Methods("POST")
 
 	log.Fatal(http.ListenAndServe(":3000", router))
 
