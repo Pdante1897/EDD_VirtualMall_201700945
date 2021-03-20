@@ -63,3 +63,16 @@ func guardarArchivo(cadena string, num string) {
 		return
 	}
 }
+
+func GraficarMatriz(s *strings.Builder) {
+	var cadena strings.Builder
+	var rank strings.Builder
+	fmt.Fprintf(&cadena, "digraph G{\n")
+	fmt.Fprintf(&cadena, "node[shape=\"box\" shape=\"record\"]\n")
+	fmt.Fprintf(&cadena, "graph[splines=\"ortho\"]\n")
+	fmt.Fprintf(&cadena, rank.String())
+	fmt.Fprintf(&cadena, s.String())
+	fmt.Fprintf(&cadena, "}\n")
+	fmt.Fprintf(&cadena, "}\n")
+	guardarArchivo(cadena.String(), "Matriz")
+}

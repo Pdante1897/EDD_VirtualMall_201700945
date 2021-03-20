@@ -38,8 +38,8 @@ func agregarPedidos(w http.ResponseWriter, r *http.Request) {
 	json.Unmarshal(reqBody, &archivo)
 	for i := 0; i < len(archivo.Pedidos); i++ {
 		var buscar Dato.Busqueda
-		var listaDP Dato.ListaDPe
-		var matriz Dato.Matriz
+		var listaDP *Dato.ListaDPe
+		var matriz *Dato.Matriz
 		fecha := strings.Split(archivo.Pedidos[i].Fecha, "-")
 		var dia, err1 = strconv.Atoi(fecha[0])
 		var mes, err2 = strconv.Atoi(fecha[1])
@@ -50,18 +50,22 @@ func agregarPedidos(w http.ResponseWriter, r *http.Request) {
 		}
 		var nodoAnio = ListaS.Buscar(anio)
 		if nodoAnio == nil {
-			listaDP.Indice = anio
-			ListaS.Insertar(listaDP)
+			var temp = new(Dato.ListaDPe)
+			temp.Indice = anio
+			ListaS.Insertar(temp)
 			listaDP = ListaS.Buscar(anio).Dato
 		} else {
-			listaDP = nodoAnio.Dato
+			listaDP = ListaS.Buscar(anio).Dato
 		}
 		var nodoMes = listaDP.Buscar(mesL)
 		if nodoMes == nil {
 			listaDP.Insertar(mesL)
-			matriz = listaDP.Buscar(mesL).MatrizD
+			listaDP.Buscar(mesL).MatrizD = new(Dato.Matriz)
+			nodoMes = listaDP.Buscar(mesL)
+			matriz = nodoMes.MatrizD
 		} else {
-			matriz = listaDP.Buscar(mesL).MatrizD
+			nodoMes = listaDP.Buscar(mesL)
+			matriz = nodoMes.MatrizD
 		}
 		buscar.Departamento = archivo.Pedidos[i].Departamento
 		buscar.Nombre = archivo.Pedidos[i].Tienda
@@ -71,21 +75,20 @@ func agregarPedidos(w http.ResponseWriter, r *http.Request) {
 			for j := 0; j < len(archivo.Pedidos[i].Productos); j++ {
 				var nodoAI = Dato.BusquedaArbIn(nodo.Tienda.Inventario.Raiz, archivo.Pedidos[i].Productos[j].Codigo)
 				if nodoAI != nil {
-					var nuevo Dato.NodoPedido
-					nuevo.Norte = nil
-					nuevo.Sur = nil
-					nuevo.Este = nil
-					nuevo.Oeste = nil
+					var nuevo *Dato.NodoPedido
+					nuevo = new(Dato.NodoPedido)
 					nuevo.Cola = nodoAI.Valor
 					nuevo.Departamento = buscar.Departamento
 					nuevo.Dia = dia
-					matriz.Add(&nuevo)
+					matriz.Add(nuevo)
 				} else {
 					continue
 				}
 			}
 			matriz.Imprimir()
 			matriz.Imprimir2()
+			Graphviz.GraficarMatriz(matriz.Graphviz())
+
 		} else {
 			continue
 		}

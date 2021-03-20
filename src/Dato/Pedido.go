@@ -19,7 +19,7 @@ type Pedido struct {
 
 type NodoP struct {
 	Mes       string
-	MatrizD   Matriz
+	MatrizD   *Matriz
 	Anterior  *NodoP
 	Siguiente *NodoP
 }

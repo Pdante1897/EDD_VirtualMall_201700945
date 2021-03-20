@@ -3,7 +3,7 @@ package Dato
 import "fmt"
 
 type NodoL struct {
-	Dato      ListaDPe
+	Dato      *ListaDPe
 	Siguiente *NodoL
 }
 
@@ -12,7 +12,7 @@ type ListaE struct {
 	Fin    *NodoL
 }
 
-func (lista *ListaE) Insertar(dato ListaDPe) {
+func (lista *ListaE) Insertar(dato *ListaDPe) {
 	aux := NodoL{
 		Dato:      dato,
 		Siguiente: nil,
