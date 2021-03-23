@@ -1,0 +1,16 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo979[label="Artesanal Fresco Mesa"];
+nodo977[label="Elegante Hormigón Tocino"];
+nodo976[label="Hecho a mano Madera Ratón"];
+nodo977->nodo976;
+nodo978[label="Inteligente Soft Tocino"];
+nodo977->nodo978;
+nodo979->nodo977;
+nodo981[label="Elegante Acero Bike"];
+nodo980[label="Genérica Metal Camisa"];
+nodo981->nodo980;
+nodo982[label="Pequeño Frozen Bike"];
+nodo981->nodo982;
+nodo979->nodo981;
+}

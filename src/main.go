@@ -75,19 +75,31 @@ func agregarPedidos(w http.ResponseWriter, r *http.Request) {
 			for j := 0; j < len(archivo.Pedidos[i].Productos); j++ {
 				var nodoAI = Dato.BusquedaArbIn(nodo.Tienda.Inventario.Raiz, archivo.Pedidos[i].Productos[j].Codigo)
 				if nodoAI != nil {
-					var nuevo *Dato.NodoPedido
-					nuevo = new(Dato.NodoPedido)
-					nuevo.Cola = nodoAI.Valor
-					nuevo.Departamento = buscar.Departamento
-					nuevo.Dia = dia
-					matriz.Add(nuevo)
+					var cola *Dato.Cola
+					cola = matriz.Buscar(buscar.Departamento + strconv.Itoa(dia))
+					if cola != nil {
+
+						cola.Push(nodoAI.Valor)
+
+					} else {
+						var nuevo *Dato.NodoPedido
+						nuevo = new(Dato.NodoPedido)
+						var colaN *Dato.Cola
+						colaN = new(Dato.Cola)
+						colaN.Nombre = buscar.Departamento + strconv.Itoa(dia)
+						colaN.Push(nodoAI.Valor)
+						nuevo.Cola = colaN
+						nuevo.Departamento = buscar.Departamento
+						nuevo.Dia = dia
+						matriz.Add(nuevo)
+					}
+
 				} else {
 					continue
 				}
 			}
 			matriz.Imprimir()
 			matriz.Imprimir2()
-			Graphviz.GraficarMatriz(matriz.Graphviz())
 
 		} else {
 			continue
@@ -229,7 +241,7 @@ func BuscarEsp(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, string(archivo))
 }
 
-func dir(num string) {
+func Dir(num string) {
 	dir, err := filepath.Abs(filepath.Dir("./graphviz/graphviz.go"))
 	if err != nil {
 		log.Fatal(err)
@@ -264,7 +276,15 @@ func dir(num string) {
 func generarImg(w http.ResponseWriter, r *http.Request) {
 	for i := 0; i < len(Listad)/5; i++ {
 		Graphviz.Graficar(Listad, i)
-		dir(strconv.Itoa(i + 1))
+		Dir(strconv.Itoa(i + 1))
+	}
+}
+func generarImgM(w http.ResponseWriter, r *http.Request) {
+	ListaS.Recorrer()
+}
+func generarImgInv(w http.ResponseWriter, r *http.Request) {
+	for i := 0; i < len(Listad); i++ {
+		Listad[i].Recorrer()
 	}
 }
 func main() {
@@ -286,6 +306,8 @@ func main() {
 	router.HandleFunc("/id/{numero}", BuscId).Methods("GET")
 	router.HandleFunc("/cargarinventario", agregarInv).Methods("POST")
 	router.HandleFunc("/cargarpedido", agregarPedidos).Methods("POST")
+	router.HandleFunc("/getMatriz", generarImgM).Methods("GET")
+	router.HandleFunc("/getInv", generarImgInv).Methods("GET")
 
 	log.Fatal(http.ListenAndServe(":3000", router))
 

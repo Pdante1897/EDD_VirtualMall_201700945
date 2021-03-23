@@ -1,0 +1,70 @@
+<div id="wrapper">
+  <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0" >
+      <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
+              <div class="sidebar-brand-text mx-3"><span>VM</span></div>
+          </a>
+          <hr class="sidebar-divider my-0">
+          <ul class="navbar-nav text-light" id="accordionSidebar">
+              <!--<li class="nav-item"><a class="nav-link active" href="index.html"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a></li>
+              <li class="nav-item"><a class="nav-link" href="profile.html"><i class="fas fa-user"></i><span>Profile</span></a></li>
+              <li class="nav-item"><a class="nav-link" href="table.html"><i class="fas fa-table"></i><span>Table</span></a></li>-->
+              <li class="nav-item"><a class="nav-link" href="/"><i class="fas fa-home"></i><span>Inicio</span></a></li>
+              <li class="nav-item"><a class="nav-link" href="/crearEstudiante"><i class="fas fa-user-circle"></i><span>Tiendas</span></a></li>
+              <li class="nav-item"><a class="nav-link" href="/agregarCursos"><i class="fas fa-clipboard-check"></i><span>Carrito de Compras</span></a></li>
+              <li class="nav-item"><a class="nav-link" href="http://localhost:3000/arbolBinario" target="_blank"><i class="fas fa-sitemap"></i><span>Pedidos</span></a></li>
+          </ul>
+      </div>
+  </nav>
+  <div class="d-flex flex-column" id="content-wrapper">
+      <div id="content">
+          <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
+              <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
+                <div class="sidebar-brand-text mx-3"><span>Virtual Mall</span></div>
+                  <ul class="navbar-nav flex-nowrap ml-auto">
+                      <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
+                          <div class="dropdown-menu dropdown-menu-right p-3 animated--grow-in" aria-labelledby="searchDropdown">
+                              <form class="form-inline mr-auto navbar-search w-100">
+                                  <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
+                                      <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
+                                  </div>
+                              </form>
+                          </div>
+                      </li>
+                      <div class="d-none d-sm-block topbar-divider"></div>
+                  </ul>
+              </div>
+          </nav>
+          <div class="container-fluid">
+              <router-outlet></router-outlet>
+          </div>
+      </div>
+      <br>
+      <br>
+      <footer class="bg-white sticky-footer">
+        <div class="container">
+            <div class="row">
+                <div>
+                    <h5>Direccion</h5>
+                    <address>
+                        Ciudad Universitaria zona 12,
+                        Guatemala, Guatemala<br>
+                    </address>
+                </div>
+                <div class="col-12 col-sm-4 align-self-center">
+                    <div class="text-center">
+                        <a class="btn btn-social-icon btn-facebook" href="https://www.facebook.com/"><i
+                                class="fa fa-facebook fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i
+                                class="fa fa-twitter fa-lg"></i></a>
+                        <a class="btn btn-social-icon btn-google" href="http://youtube.com/"><i
+                                class="fa fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="container my-auto">
+              <div class="text-center my-auto copyright"><span>Copyright © Bryan Paez EDD 2021</span></div>
+          </div>
+        </div>
+    </footer>
+  </div>
+</div>

@@ -6,6 +6,7 @@ type NodoC struct {
 }
 
 type Cola struct {
+	Nombre string
 	inicio *NodoC
 	fin    *NodoC
 }
@@ -18,7 +19,7 @@ func (this Cola) vacia() bool {
 	}
 }
 
-func (this *Cola) push(dato Producto) {
+func (this *Cola) Push(dato Producto) {
 	auxiliar := new(NodoC)
 	auxiliar2 := new(NodoC)
 	auxiliar.Producto = dato
@@ -37,7 +38,7 @@ func (this *Cola) push(dato Producto) {
 	}
 }
 
-func (this *Cola) pop() Producto {
+func (this *Cola) Pop() Producto {
 	var dato Producto
 	if !this.vacia() {
 		auxiliar := new(NodoC)

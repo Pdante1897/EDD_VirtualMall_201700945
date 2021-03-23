@@ -12,7 +12,7 @@ type NodoPedido struct {
 	Sur          interface{}
 	Este         interface{}
 	Oeste        interface{}
-	Cola         Producto
+	Cola         *Cola
 	Departamento string
 	Dia          int
 }
@@ -387,4 +387,26 @@ func (this *Matriz) Graphviz() *strings.Builder {
 	//fmt.Fprintf(s, rank2.String()+"} \n")
 
 	return s
+}
+
+func (this *Matriz) Buscar(nombre string) *Cola {
+	if this.CabHor == nil {
+		return nil
+	}
+	var aux interface{} = this.CabHor
+	for aux != nil {
+		tmp := aux.(*NodoCabHor).Sur
+		for tmp != nil {
+			if reflect.TypeOf(tmp).String() == "*Dato.NodoPedido" {
+				if nombre == tmp.(*NodoPedido).Cola.Nombre {
+
+					return tmp.(*NodoPedido).Cola
+				}
+			}
+			tmp = tmp.(*NodoPedido).Sur
+
+		}
+		aux = aux.(*NodoCabHor).Este
+	}
+	return nil
 }

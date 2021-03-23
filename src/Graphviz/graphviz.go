@@ -28,7 +28,7 @@ func Graficar(listad []Dato.ListaDoble, tamanio int) {
 	fmt.Fprintf(&rank, "}\n")
 	fmt.Fprintf(&cadena, rank.String())
 	fmt.Fprintf(&cadena, "}\n")
-	guardarArchivo(cadena.String(), strconv.Itoa(tamanio+1))
+	guardarArchivo(cadena.String(), strconv.Itoa(tamanio+1), "lista")
 }
 func archivo(anterior *Dato.Nodo, s *strings.Builder, actual *Dato.Nodo, i string) {
 	if anterior != nil {
@@ -44,15 +44,17 @@ func archivo(anterior *Dato.Nodo, s *strings.Builder, actual *Dato.Nodo, i strin
 		archivo(anterior.Siguiente, s, anterior, "")
 	}
 }
-func guardarArchivo(cadena string, num string) {
-	fil, err := os.Create("./Graphviz/files/lista" + num + ".dot")
+func guardarArchivo(cadena string, num string, nom string) {
+	fil, err := os.Create("./Graphviz/files/" + nom + num + ".dot")
 	if err != nil {
 		fmt.Println(err)
+		fmt.Println("error")
 		return
 	}
 	bytes, err := fil.WriteString(cadena)
 	if err != nil {
 		fmt.Println(err)
+		fmt.Println("error")
 		fil.Close()
 		return
 	}
@@ -60,19 +62,17 @@ func guardarArchivo(cadena string, num string) {
 	err = fil.Close()
 	if err != nil {
 		fmt.Println(err)
+		fmt.Println("error")
 		return
 	}
 }
 
-func GraficarMatriz(s *strings.Builder) {
+func GraficarArbol(s string, num string) {
 	var cadena strings.Builder
-	var rank strings.Builder
 	fmt.Fprintf(&cadena, "digraph G{\n")
 	fmt.Fprintf(&cadena, "node[shape=\"box\" shape=\"record\"]\n")
 	fmt.Fprintf(&cadena, "graph[splines=\"ortho\"]\n")
-	fmt.Fprintf(&cadena, rank.String())
-	fmt.Fprintf(&cadena, s.String())
+	fmt.Fprintf(&cadena, s)
 	fmt.Fprintf(&cadena, "}\n")
-	fmt.Fprintf(&cadena, "}\n")
-	guardarArchivo(cadena.String(), "Matriz")
+	guardarArchivo(cadena.String(), num, "Arbol")
 }

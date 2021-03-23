@@ -1,6 +1,9 @@
 package Dato
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+)
 
 type NodoL struct {
 	Dato      *ListaDPe
@@ -80,5 +83,15 @@ func (l *ListaE) Eliminar(dato int) {
 		}
 		actual = actual.Siguiente
 
+	}
+}
+
+func (this ListaE) Recorrer() {
+	this.Mostrar()
+	aux := this.Inicio
+	for aux != nil {
+		aux.Dato.Recorrer(strconv.Itoa(aux.Dato.Indice))
+		fmt.Println(aux.Dato.Indice)
+		aux = aux.Siguiente
 	}
 }

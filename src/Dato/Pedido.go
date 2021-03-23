@@ -2,6 +2,11 @@ package Dato
 
 import (
 	"fmt"
+	"log"
+	"os"
+	"os/exec"
+	"path/filepath"
+	"strings"
 )
 
 type JsonPedidos struct {
@@ -135,4 +140,81 @@ func (this ListaDPe) To_String() {
 	fmt.Println("-----------------------------------------------------------------------")
 	fmt.Println("__________________________________________________________________________________________________")
 
+}
+func (this ListaDPe) Recorrer(anio string) {
+	aux := this.Inicio
+	for aux != nil {
+		GraficarMatriz(aux.MatrizD.Graphviz(), anio+aux.Mes)
+		Dir("Matriz" + anio + aux.Mes)
+		aux = aux.Siguiente
+	}
+}
+
+func Dir(num string) {
+	dir, err := filepath.Abs(filepath.Dir("./graphviz/graphviz.go"))
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(dir)
+	var cadena strings.Builder
+	fmt.Fprintf(&cadena, "cd c:\\program files\\graphviz\\bin\n  ")
+	fmt.Fprintf(&cadena, "dot -Tpdf \""+dir+"\\files\\"+num+".dot\" -o \""+dir+"\\files\\grafica"+num+".pdf\"\n  ")
+	fil, err := os.Create(dir + "\\files\\archivo.bat")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	bytes, err := fil.WriteString(cadena.String())
+	if err != nil {
+		fmt.Println(err)
+		fil.Close()
+		return
+	}
+	fmt.Println(bytes, "bytes escritos satisfactoriamente! :D")
+	err = fil.Close()
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	cmd := exec.Command(dir + "\\files\\archivo.bat")
+	err = cmd.Run()
+	if err != nil {
+		fmt.Println(err)
+	}
+}
+func GraficarMatriz(s *strings.Builder, num string) {
+	var cadena strings.Builder
+	var rank strings.Builder
+	fmt.Fprintf(&cadena, "digraph G{\n")
+	fmt.Fprintf(&cadena, "node[shape=\"box\" shape=\"record\"]\n")
+	fmt.Fprintf(&cadena, "graph[splines=\"ortho\"]\n")
+	fmt.Fprintf(&cadena, rank.String())
+	fmt.Fprintf(&cadena, s.String())
+	fmt.Fprintf(&cadena, "}\n")
+	fmt.Fprintf(&cadena, "}\n")
+	guardarArchivo(cadena.String(), num, "Matriz")
+}
+
+func guardarArchivo(cadena string, num string, nom string) {
+	fil, err := os.Create("./Graphviz/files/" + nom + num + ".dot")
+	if err != nil {
+		fmt.Println(err)
+		fmt.Println("error")
+		return
+	}
+	bytes, err := fil.WriteString(cadena)
+	if err != nil {
+
+		fmt.Println(err)
+		fmt.Println("error")
+		fil.Close()
+		return
+	}
+	fmt.Println(bytes, "bytes escritos satisfactoriamente! :D")
+	err = fil.Close()
+	if err != nil {
+		fmt.Println(err)
+		fmt.Println("error")
+		return
+	}
 }

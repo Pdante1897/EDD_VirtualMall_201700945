@@ -3,6 +3,7 @@ package Dato
 import (
 	"fmt"
 	"strconv"
+	"strings"
 )
 
 type ArchivoJson struct {
@@ -242,4 +243,25 @@ func (this *ListaDoble) BusquedaId() []Tienda {
 	}
 
 	return tiendas
+}
+
+func (this *ListaDoble) Recorrer() {
+	aux := this.Inicio
+
+	for aux != nil {
+		GraficarArbol(aux.Tienda.Inventario.Raiz.GenerarGraphviz(), aux.Tienda.Nombre+strconv.Itoa(aux.Tienda.Calificacion))
+		nombre := strings.Replace("Arbol"+aux.Tienda.Nombre+strconv.Itoa(aux.Tienda.Calificacion), " ", "", -1)
+		Dir(strings.Replace(nombre, ",", "", -1))
+		aux = aux.Siguiente
+	}
+}
+
+func GraficarArbol(s string, num string) {
+	var cadena strings.Builder
+	fmt.Fprintf(&cadena, "digraph G{\n")
+	fmt.Fprintf(&cadena, "node[shape=\"box\" shape=\"record\"]\n")
+	fmt.Fprintf(&cadena, s)
+	fmt.Fprintf(&cadena, "}\n")
+	nombre := strings.Replace(num, " ", "", -1)
+	guardarArchivo(cadena.String(), strings.Replace(nombre, ",", "", -1), "Arbol")
 }

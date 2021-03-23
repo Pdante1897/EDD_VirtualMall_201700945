@@ -1,0 +1,14 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo441[label="Inteligente Hormigón Ratón"];
+nodo439[label="Genérica Cotton Ensalada"];
+nodo438[label="Gorgeous Acero Pelota"];
+nodo439->nodo438;
+nodo440[label="Hecho a mano Acero Computadora"];
+nodo439->nodo440;
+nodo441->nodo439;
+nodo442[label="Sin marca Caucho Toallas"];
+nodo443[label="Increíble Frozen Toallas"];
+nodo442->nodo443;
+nodo441->nodo442;
+}
