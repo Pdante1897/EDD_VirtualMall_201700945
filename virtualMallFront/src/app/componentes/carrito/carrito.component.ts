@@ -19,5 +19,9 @@ export class CarritoComponent implements OnInit {
     }
   }
 
+  btnComprar(){
+    localStorage.removeItem('carrito') 
+    this.productos = JSON.parse(localStorage.getItem('carrito')||"")
+  }
 
 }
