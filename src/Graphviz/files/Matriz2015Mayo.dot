@@ -1,0 +1,17 @@
+digraph G{
+node[shape="box" shape="record"]
+graph[splines="ortho"]
+nodeMatriz[label="Matriz"];
+nodeMatriz->nodeSeguridadyvigilancia;
+nodeSeguridadyvigilancia[label="Seguridad y vigilancia"];
+nodeSeguridadyvigilancia->nodeSeguridadyvigilancia13;
+nodeSeguridadyvigilancia13->nodeSeguridadyvigilancia;
+{rank="same"; nodeSeguridadyvigilancia; nodeSeguridadyvigilancia13} 
+nodeMatriz->node13;
+node13[label="13"];
+node13->nodeSeguridadyvigilancia13;
+nodeSeguridadyvigilancia13->node13;
+nodeSeguridadyvigilancia13[label="{Práctica Fresco Zapatos|Práctica Fresco Zapatos|Sin marca Caucho Ensalada|Sin marca Plástico Tuna|Práctica Fresco Zapatos}"];
+{rank="same"; nodeMatriz; node13} 
+}
+}

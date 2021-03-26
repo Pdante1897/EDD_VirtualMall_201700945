@@ -337,7 +337,7 @@ func (this *Matriz) Graphviz() *strings.Builder {
 			if tmp.(*NodoPedido).Este == nil {
 				break
 			} else {
-				fmt.Fprintf(s, "node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1)+"[label=\""+tmp.(*NodoPedido).Cola.Nombre+"\"];\n")
+				fmt.Fprintf(s, "node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1)+"[label=\""+tmp.(*NodoPedido).Cola.GenerarGraphviz()+"\"];\n")
 				fmt.Fprintf(s, "node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1)+"->node"+strings.Replace(tmp.(*NodoPedido).Este.(*NodoPedido).Cola.Nombre, " ", "", -1)+";\n")
 				fmt.Fprintf(s, "node"+strings.Replace(tmp.(*NodoPedido).Este.(*NodoPedido).Cola.Nombre, " ", "", -1)+"->node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1)+";\n")
 				fmt.Fprintf(&rank2, "; node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1))
@@ -367,11 +367,11 @@ func (this *Matriz) Graphviz() *strings.Builder {
 		}
 		for tmp != nil {
 			if tmp.(*NodoPedido).Sur == nil {
-				fmt.Fprintf(s, "node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1)+"[label=\""+tmp.(*NodoPedido).Cola.Nombre+"\"];\n")
+				fmt.Fprintf(s, "node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1)+"[label=\""+tmp.(*NodoPedido).Cola.GenerarGraphviz()+"\"];\n")
 				break
 			} else {
 
-				fmt.Fprintf(s, "node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1)+"[label=\""+tmp.(*NodoPedido).Cola.Nombre+"\"];\n")
+				fmt.Fprintf(s, "node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1)+"[label=\""+tmp.(*NodoPedido).Cola.GenerarGraphviz()+"\"];\n")
 				fmt.Fprintf(s, "node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1)+"->node"+strings.Replace(tmp.(*NodoPedido).Sur.(*NodoPedido).Cola.Nombre, " ", "", -1)+";\n")
 				fmt.Fprintf(s, "node"+strings.Replace(tmp.(*NodoPedido).Sur.(*NodoPedido).Cola.Nombre, " ", "", -1)+"->node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1)+";\n")
 				fmt.Fprintf(&rank2, "; node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1))

@@ -1,3 +1,4 @@
+<h1>TIENDAS!</h1>
 <ng-container *ngIf="lista_tiendas">
     <table class="table table-striped">
         <tr>
@@ -22,7 +23,7 @@
         </tr>
         <tr *ngFor="let tienda of listaAux">
             <td>
-                <a href="productos/{{tienda.Nombre}}/{{tienda.Departamento}}/{{tienda.Calificacion}}"> {{tienda.Nombre}} </a>
+                <a class="btn btn-primary py-0" href="productos/{{tienda.Nombre}}/{{tienda.Departamento}}/{{tienda.Calificacion}}"> {{tienda.Nombre}} </a>
             </td>
             <td>
                 {{tienda.Departamento}}
@@ -38,7 +39,7 @@
                 {{tienda.Calificacion}}
             </td>
             <td>
-                <img src="{{tienda.Logo}}" style="width: 150px; height: 150px;" alt="">
+                <img src="{{tienda.Logo}}" style="width: 200px; height: 200px;" alt="">
             </td>
         </tr>
     </table>

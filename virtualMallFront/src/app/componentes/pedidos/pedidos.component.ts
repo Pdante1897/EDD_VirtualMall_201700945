@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Producto } from 'src/app/models/productos/producto';
 
 @Component({
   selector: 'app-pedidos',
@@ -8,8 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class PedidosComponent implements OnInit {
 
   constructor() { }
-
   ngOnInit(): void {
+
   }
 
 }

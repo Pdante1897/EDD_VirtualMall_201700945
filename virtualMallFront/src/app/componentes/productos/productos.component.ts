@@ -43,5 +43,21 @@ export class ProductosComponent implements OnInit {
       console.log(i)
     }
   }
+
+  agregarCarrito(prod: Producto){
+    var productos : Producto[]=[]
+    if (localStorage.getItem('carrito')!=null){
+      productos = JSON.parse(localStorage.getItem('carrito')||"")
+      productos.push(prod)
+      localStorage.setItem('carrito', JSON.stringify(productos))
+    }else{
+      productos.push(prod)
+      localStorage.setItem('carrito', JSON.stringify(productos))
+
+    }
+
+   
+  }
+
 }
 

@@ -1,1 +1,61 @@
-<p>carrito works!</p>
+<h1>Carrito!</h1>
+    <table class="table table-striped">
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Departamento
+            </th>
+            <th>
+                Descripcion
+            </th>
+            <th>
+                Precio
+            </th>
+            <th>
+                Cantidad
+            </th>
+            <th>
+                Disponibles
+            </th>
+            <th>
+                Imagen
+            </th>
+        </tr>
+        <tr *ngFor="let producto of productos; let i = index">
+            <td>
+                {{i}}
+            </td>
+            <td>
+                {{producto.Nombre}}
+            </td>
+            <td>
+                {{producto.Codigo}}
+            </td>
+            <td>
+                {{producto.Descripcion}}
+            </td>
+            <td>
+                {{producto.Precio}}
+    
+            </td>
+            <td>
+                1
+            </td>
+            <td>
+                {{producto.Cantidad}}
+            </td>
+            <td>
+                <img src="{{producto.Imagen}}" style="width: 200px; height: 200px;" alt="">
+            </td>
+        </tr>
+        <tr>
+            <td><h3>Total:</h3></td>
+            <td><h3>Q. {{suma}}</h3></td>
+            <td ><button class="btn btn-primary py-0" style="height: 50px; width: 500px;">Comprar</button></td>
+        </tr>
+    </table>

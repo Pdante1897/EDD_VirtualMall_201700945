@@ -1,0 +1,17 @@
+digraph G{
+node[shape="box" shape="record"]
+graph[splines="ortho"]
+nodeMatriz[label="Matriz"];
+nodeMatriz->nodeSeguridadyvigilancia;
+nodeSeguridadyvigilancia[label="Seguridad y vigilancia"];
+nodeSeguridadyvigilancia->nodeSeguridadyvigilancia31;
+nodeSeguridadyvigilancia31->nodeSeguridadyvigilancia;
+{rank="same"; nodeSeguridadyvigilancia; nodeSeguridadyvigilancia31} 
+nodeMatriz->node31;
+node31[label="31"];
+node31->nodeSeguridadyvigilancia31;
+nodeSeguridadyvigilancia31->node31;
+nodeSeguridadyvigilancia31[label="{Gorgeous Acero Pelota|Gorgeous Acero Pelota|Inteligente Hormigon Raton|Increible Frozen Toallas}"];
+{rank="same"; nodeMatriz; node31} 
+}
+}

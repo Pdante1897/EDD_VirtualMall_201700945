@@ -55,3 +55,15 @@ func (this *Cola) Pop() Producto {
 	}
 
 }
+
+func (this *Cola) GenerarGraphviz() string {
+	var cadena string
+	aux := this.inicio
+	cadena = "{" + aux.Producto.Nombre
+	for aux != nil {
+		cadena += "|" + aux.Producto.Nombre
+		aux = aux.siguiente
+	}
+	cadena += "}"
+	return cadena
+}
