@@ -1,0 +1,51 @@
+<ng-container *ngIf="lista_productos">
+    <table class="table table-striped">
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Departamento
+            </th>
+            <th>
+                Descripcion
+            </th>
+            <th>
+                Precio
+            </th>
+            <th>
+                Cantidad
+            </th>
+            <th>
+                Imagen
+            </th>
+        </tr>
+        <tr *ngFor="let producto of listaAux; let i = index">
+            <td>
+                {{i}}
+            </td>
+            <td>
+                <a href=""> {{producto.Nombre}} </a>
+            </td>
+            <td>
+                {{producto.Codigo}}
+            </td>
+            <td>
+                {{producto.Descripcion}}
+            </td>
+            <td>
+                {{producto.Precio}}
+    
+            </td>
+            <td>
+                {{producto.Cantidad}}
+            </td>
+            <td>
+                <img src="{{producto.Imagen}}" style="width: 200px; height: 200px;" alt="">
+            </td>
+        </tr>
+    </table>
+</ng-container>

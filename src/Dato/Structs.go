@@ -24,6 +24,18 @@ type Tienda struct {
 	Inventario   ArbolIn
 }
 
+type TiendaF struct {
+	Departamento string `json:"Departamento"`
+	Nombre       string `json:"Nombre"`
+	Descripcion  string `json:"Descripcion"`
+	Contacto     string `json:"Contacto"`
+	Calificacion int    `json:"Calificacion"`
+	Logo         string `json:"Logo"`
+}
+type ArrTienda struct {
+	Tiendas []TiendaF `json:"Tiendas"`
+}
+
 func (this Tienda) ToString() string {
 	return ("Nombre: " + this.Nombre + " Descripcion: " + this.Descripcion + " Contacto: " + this.Contacto + " Calificacion: " + strconv.Itoa(this.Calificacion))
 }
@@ -264,4 +276,28 @@ func GraficarArbol(s string, num string) {
 	fmt.Fprintf(&cadena, "}\n")
 	nombre := strings.Replace(num, " ", "", -1)
 	guardarArchivo(cadena.String(), strings.Replace(nombre, ",", "", -1), "Arbol")
+}
+
+func (this *ListaDoble) GetTiendas() []TiendaF {
+	var tiendas []TiendaF
+	aux := this.Inicio
+
+	for aux != nil {
+		aux2 := TiendaF{this.Nombre,
+			aux.Tienda.Nombre,
+			aux.Tienda.Descripcion,
+			aux.Tienda.Contacto,
+			aux.Tienda.Calificacion,
+			aux.Tienda.Logo,
+		}
+		tiendas = append(tiendas, aux2)
+		aux = aux.Siguiente
+	}
+	return tiendas
+}
+
+func (this *Nodo) GetProductos() ArrProducto {
+	var arreglo ArrProducto
+	arreglo.Productos = this.Tienda.Inventario.Raiz.ObtenerProductos(nil)
+	return arreglo
 }

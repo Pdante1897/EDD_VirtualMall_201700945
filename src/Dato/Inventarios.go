@@ -20,6 +20,10 @@ type Producto struct {
 	Imagen      string  `json:"Imagen"`
 }
 
+type ArrProducto struct {
+	Productos []Producto `json:"Productos"`
+}
+
 type ArbolIn struct {
 	Raiz *NodoAI
 }
@@ -199,4 +203,22 @@ func (this *NodoAI) GenerarGraphviz() string {
 	}
 
 	return cadena
+}
+func (this *NodoAI) ObtenerProductos(prod []Producto) []Producto {
+	var productos []Producto
+
+	if this.Right == nil && this.Left == nil {
+
+		productos = append(prod, this.Valor)
+	} else {
+		productos = append(prod, this.Valor)
+	}
+	if this.Left != nil {
+		productos = append(this.Left.ObtenerProductos(productos))
+	}
+	if this.Right != nil {
+		productos = append(this.Right.ObtenerProductos(productos))
+	}
+
+	return productos
 }

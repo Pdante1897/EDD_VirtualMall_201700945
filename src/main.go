@@ -12,6 +12,8 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/gorilla/handlers"
+
 	"./Dato"
 	"./Graphviz"
 	"github.com/gorilla/mux"
@@ -307,10 +309,11 @@ func main() {
 	router.HandleFunc("/cargarinventario", agregarInv).Methods("POST")
 	router.HandleFunc("/cargarpedido", agregarPedidos).Methods("POST")
 	router.HandleFunc("/getMatriz", generarImgM).Methods("GET")
-	router.HandleFunc("/getInv", generarImgInv).Methods("GET")
+	router.HandleFunc("/getImgInv", generarImgInv).Methods("GET")
+	router.HandleFunc("/getTiendas", getTiendas).Methods("GET")
+	router.HandleFunc("/getProductos/{nombre}+{departamento}+{calificacion}", getInventarios).Methods("GET")
 
-	log.Fatal(http.ListenAndServe(":3000", router))
-
+	log.Fatal(http.ListenAndServe(":3000", handlers.CORS(handlers.AllowedHeaders([]string{"X-Requested-With", "Content-Type", "Authorization"}), handlers.AllowedMethods([]string{"GET", "POST", "PUT", "HEAD", "OPTIONS"}), handlers.AllowedOrigins([]string{"*"}))(router)))
 }
 func Eliminar(w http.ResponseWriter, r *http.Request) {
 	eliminar := new(Dato.Eliminar)
@@ -340,6 +343,35 @@ func BuscId(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, string(ArchivoTiendas))
 
 }
-func Guardar() {
+func getTiendas(w http.ResponseWriter, r *http.Request) {
+	var tiendas []Dato.TiendaF
+	for i := 0; i < len(Listad); i++ {
+		var aux = Listad[i].GetTiendas()
+		for j := 0; j < len(aux); j++ {
+			tiendas = append(tiendas, aux[j])
+		}
+	}
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(&Dato.ArrTienda{Tiendas: tiendas})
+
+}
+
+func getInventarios(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	var buscar Dato.Busqueda
+	buscar.Nombre = strings.ReplaceAll(vars["nombre"], "-", " ")
+	buscar.Departamento = strings.ReplaceAll(vars["departamento"], "-", " ")
+	calificacion, err := strconv.Atoi(vars["calificacion"])
+	if err != nil {
+		fmt.Fprintf(w, "Id invalida")
+		return
+	}
+	buscar.Calificacion = calificacion
+	var encontrado *Dato.Nodo
+	encontrado = Listad[Dato.RowMajor(Ind, Dep, buscar.NumDep(Listad), buscar.Calificacion-1)].Buscar(buscar.Nombre)
+	productos := encontrado.GetProductos()
+
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(&Dato.ArrProducto{Productos: productos.Productos})
 
 }

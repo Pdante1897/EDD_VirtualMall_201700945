@@ -1,1 +1,45 @@
-<p>tiendas works!</p>
+<ng-container *ngIf="lista_tiendas">
+    <table class="table table-striped">
+        <tr>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Departamento
+            </th>
+            <th>
+                Descripcion
+            </th>
+            <th>
+                Contacto
+            </th>
+            <th>
+                Calificacion
+            </th>
+            <th>
+                Logo
+            </th>
+        </tr>
+        <tr *ngFor="let tienda of listaAux">
+            <td>
+                <a href="productos/{{tienda.Nombre}}/{{tienda.Departamento}}/{{tienda.Calificacion}}"> {{tienda.Nombre}} </a>
+            </td>
+            <td>
+                {{tienda.Departamento}}
+            </td>
+            <td>
+                {{tienda.Descripcion}}
+            </td>
+            <td>
+                {{tienda.Contacto}}
+    
+            </td>
+            <td>
+                {{tienda.Calificacion}}
+            </td>
+            <td>
+                <img src="{{tienda.Logo}}" style="width: 150px; height: 150px;" alt="">
+            </td>
+        </tr>
+    </table>
+</ng-container>
