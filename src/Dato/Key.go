@@ -1,12 +1,13 @@
 package Dato
 
 type Key struct {
-	Value int
-	Left  *NodoB
-	Right *NodoB
+	Value   int64
+	Usuario Usuario
+	Left    *NodoB
+	Right   *NodoB
 }
 
-func NewKey(valor int) *Key {
-	key := Key{valor, nil, nil}
+func NewKey(valor int64, us Usuario) *Key {
+	key := Key{valor, us, nil, nil}
 	return &key
 }

@@ -26,6 +26,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 
 var Listad []Dato.ListaDoble
 var ListaS Dato.ListaE
+var ArbolB Dato.ArbolB
 
 var Ind int = 0
 var Dep int = 0
@@ -315,6 +316,21 @@ func main() {
 
 	log.Fatal(http.ListenAndServe(":3000", handlers.CORS(handlers.AllowedHeaders([]string{"X-Requested-With", "Content-Type", "Authorization"}), handlers.AllowedMethods([]string{"GET", "POST", "PUT", "HEAD", "OPTIONS"}), handlers.AllowedOrigins([]string{"*"}))(router)))
 }
+
+func cargarUsuarios(w http.ResponseWriter, r *http.Request) {
+	archivo := new(Dato.JsonUsuarios)
+	reqBody, err := ioutil.ReadAll(r.Body)
+	if err != nil {
+		fmt.Fprintf(w, "Error al insertar mensaje")
+		return
+	}
+	json.Unmarshal(reqBody, &archivo)
+	for i := 0; i < len(archivo.Usuarios); i++ {
+		nuevakey := Dato.NewKey(archivo.Usuarios[i].Dpi, archivo.Usuarios[i])
+		ArbolB.Insert(nuevakey)
+	}
+}
+
 func Eliminar(w http.ResponseWriter, r *http.Request) {
 	eliminar := new(Dato.Eliminar)
 	reqBody, err := ioutil.ReadAll(r.Body)
