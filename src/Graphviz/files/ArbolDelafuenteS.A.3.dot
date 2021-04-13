@@ -1,0 +1,20 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo7[label="{ Codigo: 7 | Nombre: Práctica Caucho Tocino | Precio: 92 | Cantidad: 472}"];
+nodo5[label="{ Codigo: 5 | Nombre: Hecho a mano Caucho Pollo | Precio: 252 | Cantidad: 337}"];
+nodo4[label="{ Codigo: 4 | Nombre: Licencia Hormigón Embutidos | Precio: 789 | Cantidad: 306}"];
+nodo5->nodo4;
+nodo6[label="{ Codigo: 6 | Nombre: Elegante Frozen Mesa | Precio: 883 | Cantidad: 29}"];
+nodo5->nodo6;
+nodo7->nodo5;
+nodo10[label="{ Codigo: 10 | Nombre: Licencia Plástico Presidente | Precio: 155 | Cantidad: 393}"];
+nodo8[label="{ Codigo: 8 | Nombre: Artesanal Fresco Pizza | Precio: 808 | Cantidad: 202}"];
+nodo9[label="{ Codigo: 9 | Nombre: Increíble Frozen Pollo | Precio: 695 | Cantidad: 21}"];
+nodo8->nodo9;
+nodo10->nodo8;
+nodo12[label="{ Codigo: 12 | Nombre: Sabrosa Soft Tuna | Precio: 654 | Cantidad: 125}"];
+nodo11[label="{ Codigo: 11 | Nombre: Increíble Cotton Zapatos | Precio: 215 | Cantidad: 203}"];
+nodo12->nodo11;
+nodo10->nodo12;
+nodo7->nodo10;
+}

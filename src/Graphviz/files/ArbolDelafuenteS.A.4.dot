@@ -1,0 +1,34 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo537[label="{ Codigo: 537 | Nombre: Increíble Frozen Auto | Precio: 933 | Cantidad: 77}"];
+nodo534[label="{ Codigo: 534 | Nombre: Sin marca Fresco Presidente | Precio: 414 | Cantidad: 56}"];
+nodo532[label="{ Codigo: 532 | Nombre: Fantástico Fresco Guantes | Precio: 739 | Cantidad: 212}"];
+nodo533[label="{ Codigo: 533 | Nombre: Genérica Granito Guantes | Precio: 190 | Cantidad: 100}"];
+nodo532->nodo533;
+nodo534->nodo532;
+nodo536[label="{ Codigo: 536 | Nombre: Hecho a mano Hormigón Jabón | Precio: 689 | Cantidad: 272}"];
+nodo535[label="{ Codigo: 535 | Nombre: Práctica Hormigón Tocino | Precio: 970 | Cantidad: 474}"];
+nodo536->nodo535;
+nodo534->nodo536;
+nodo537->nodo534;
+nodo540[label="{ Codigo: 540 | Nombre: Sabrosa Soft Pizza | Precio: 924 | Cantidad: 235}"];
+nodo538[label="{ Codigo: 538 | Nombre: Sabrosa Soft Jabón | Precio: 366 | Cantidad: 310}"];
+nodo539[label="{ Codigo: 539 | Nombre: Licencia Madera Pantalones | Precio: 634 | Cantidad: 104}"];
+nodo538->nodo539;
+nodo540->nodo538;
+nodo542[label="{ Codigo: 542 | Nombre: Práctica Cotton Pantalones | Precio: 372 | Cantidad: 129}"];
+nodo541[label="{ Codigo: 541 | Nombre: Genérica Madera Pollo | Precio: 11 | Cantidad: 147}"];
+nodo542->nodo541;
+nodo546[label="{ Codigo: 546 | Nombre: Práctica Cotton Bike | Precio: 978 | Cantidad: 24}"];
+nodo544[label="{ Codigo: 544 | Nombre: Refinado Fresco Pescado | Precio: 158 | Cantidad: 247}"];
+nodo543[label="{ Codigo: 543 | Nombre: Rústico Acero Auto | Precio: 780 | Cantidad: 259}"];
+nodo544->nodo543;
+nodo545[label="{ Codigo: 545 | Nombre: Sabrosa Cotton Toallas | Precio: 416 | Cantidad: 7}"];
+nodo544->nodo545;
+nodo546->nodo544;
+nodo547[label="{ Codigo: 547 | Nombre: Hecho a mano Metal Presidente | Precio: 907 | Cantidad: 178}"];
+nodo546->nodo547;
+nodo542->nodo546;
+nodo540->nodo542;
+nodo537->nodo540;
+}

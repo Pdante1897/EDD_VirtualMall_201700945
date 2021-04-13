@@ -1,0 +1,8 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo325[label="{ Codigo: 325 | Nombre: Sabrosa Madera Bike | Precio: 820 | Cantidad: 395}"];
+nodo324[label="{ Codigo: 324 | Nombre: Práctica Cotton Queso | Precio: 454 | Cantidad: 144}"];
+nodo325->nodo324;
+nodo326[label="{ Codigo: 326 | Nombre: Hecho a mano Acero Ratón | Precio: 872 | Cantidad: 235}"];
+nodo325->nodo326;
+}

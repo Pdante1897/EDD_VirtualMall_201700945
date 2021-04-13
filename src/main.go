@@ -13,11 +13,11 @@ import (
 	"strings"
 
 	"github.com/gorilla/handlers"
+	"github.com/manucorporat/try"
 
 	"./Dato"
 	"./Graphviz"
 	"github.com/gorilla/mux"
-	"github.com/manucorporat/try"
 )
 
 func index(w http.ResponseWriter, r *http.Request) {
@@ -26,7 +26,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 
 var Listad []Dato.ListaDoble
 var ListaS Dato.ListaE
-var ArbolB Dato.ArbolB
+var Arbol = Dato.NewArbol(5)
 
 var Ind int = 0
 var Dep int = 0
@@ -312,6 +312,9 @@ func main() {
 	router.HandleFunc("/getMatriz", generarImgM).Methods("GET")
 	router.HandleFunc("/getImgInv", generarImgInv).Methods("GET")
 	router.HandleFunc("/getTiendas", getTiendas).Methods("GET")
+	router.HandleFunc("/getUsuarios", getUsuarios).Methods("GET")
+	router.HandleFunc("/cargarUsuarios", cargarUsuarios).Methods("POST")
+
 	router.HandleFunc("/getProductos/{nombre}+{departamento}+{calificacion}", getInventarios).Methods("GET")
 
 	log.Fatal(http.ListenAndServe(":3000", handlers.CORS(handlers.AllowedHeaders([]string{"X-Requested-With", "Content-Type", "Authorization"}), handlers.AllowedMethods([]string{"GET", "POST", "PUT", "HEAD", "OPTIONS"}), handlers.AllowedOrigins([]string{"*"}))(router)))
@@ -327,8 +330,15 @@ func cargarUsuarios(w http.ResponseWriter, r *http.Request) {
 	json.Unmarshal(reqBody, &archivo)
 	for i := 0; i < len(archivo.Usuarios); i++ {
 		nuevakey := Dato.NewKey(archivo.Usuarios[i].Dpi, archivo.Usuarios[i])
-		ArbolB.Insert(nuevakey)
+
+		Arbol.Insert(nuevakey)
+
 	}
+	fmt.Println(Arbol.Raiz.Keys[0].Value)
+}
+
+func getUsuarios(w http.ResponseWriter, r *http.Request) {
+	Dato.GraficarArbolB(Arbol.Raiz)
 }
 
 func Eliminar(w http.ResponseWriter, r *http.Request) {

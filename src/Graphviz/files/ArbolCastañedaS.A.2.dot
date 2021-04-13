@@ -1,0 +1,46 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo356[label="{ Codigo: 356 | Nombre: Artesanal Acero Jabón | Precio: 874 | Cantidad: 334}"];
+nodo350[label="{ Codigo: 350 | Nombre: Artesanal Acero Teclado | Precio: 536 | Cantidad: 216}"];
+nodo348[label="{ Codigo: 348 | Nombre: Fantástico Acero Presidente | Precio: 901 | Cantidad: 32}"];
+nodo347[label="{ Codigo: 347 | Nombre: Hecho a mano Caucho Camisa | Precio: 457 | Cantidad: 263}"];
+nodo348->nodo347;
+nodo349[label="{ Codigo: 349 | Nombre: Sabrosa Frozen Pollo | Precio: 705 | Cantidad: 228}"];
+nodo348->nodo349;
+nodo350->nodo348;
+nodo352[label="{ Codigo: 352 | Nombre: Increíble Fresco Zapatos | Precio: 338 | Cantidad: 320}"];
+nodo351[label="{ Codigo: 351 | Nombre: Hecho a mano Plástico Camisa | Precio: 369 | Cantidad: 448}"];
+nodo352->nodo351;
+nodo354[label="{ Codigo: 354 | Nombre: Sabrosa Madera Pollo | Precio: 291 | Cantidad: 181}"];
+nodo353[label="{ Codigo: 353 | Nombre: Ergonómico Plástico Pizza | Precio: 236 | Cantidad: 98}"];
+nodo354->nodo353;
+nodo355[label="{ Codigo: 355 | Nombre: Ergonómico Plástico Pelota | Precio: 283 | Cantidad: 357}"];
+nodo354->nodo355;
+nodo352->nodo354;
+nodo350->nodo352;
+nodo356->nodo350;
+nodo364[label="{ Codigo: 364 | Nombre: Práctica Soft Bike | Precio: 121 | Cantidad: 309}"];
+nodo360[label="{ Codigo: 360 | Nombre: Refinado Granito Jabón | Precio: 233 | Cantidad: 256}"];
+nodo358[label="{ Codigo: 358 | Nombre: Refinado Fresco Computadora | Precio: 185 | Cantidad: 22}"];
+nodo357[label="{ Codigo: 357 | Nombre: Ergonómico Caucho Auto | Precio: 11 | Cantidad: 385}"];
+nodo358->nodo357;
+nodo359[label="{ Codigo: 359 | Nombre: Artesanal Hormigón Ratón | Precio: 90 | Cantidad: 378}"];
+nodo358->nodo359;
+nodo360->nodo358;
+nodo362[label="{ Codigo: 362 | Nombre: Sin marca Soft Pantalones | Precio: 241 | Cantidad: 134}"];
+nodo361[label="{ Codigo: 361 | Nombre: Sabrosa Acero Camisa | Precio: 548 | Cantidad: 13}"];
+nodo362->nodo361;
+nodo363[label="{ Codigo: 363 | Nombre: Sabrosa Acero Pelota | Precio: 585 | Cantidad: 439}"];
+nodo362->nodo363;
+nodo360->nodo362;
+nodo364->nodo360;
+nodo366[label="{ Codigo: 366 | Nombre: Sabrosa Hormigón Tocino | Precio: 322 | Cantidad: 320}"];
+nodo365[label="{ Codigo: 365 | Nombre: Increíble Hormigón Guantes | Precio: 249 | Cantidad: 141}"];
+nodo366->nodo365;
+nodo368[label="{ Codigo: 368 | Nombre: Sabrosa Caucho Camisa | Precio: 131 | Cantidad: 103}"];
+nodo367[label="{ Codigo: 367 | Nombre: Sabrosa Hormigón Ratón | Precio: 903 | Cantidad: 320}"];
+nodo368->nodo367;
+nodo366->nodo368;
+nodo364->nodo366;
+nodo356->nodo364;
+}

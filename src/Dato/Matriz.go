@@ -306,72 +306,86 @@ func (this *Matriz) Imprimir2() {
 func (this *Matriz) Graphviz() *strings.Builder {
 	var s *strings.Builder
 	var rank strings.Builder
-	var rank2 strings.Builder
+	//var rank2 strings.Builder
 	var rank3 strings.Builder
+	cont := 0
 	fmt.Fprintf(&rank, "{rank=\"same\"; nodeMatriz")
-	fmt.Fprintf(&rank2, "{rank=\"same\"")
 	fmt.Fprintf(&rank3, "{rank=\"same\"")
 
 	s = new(strings.Builder)
 	var aux interface{} = this.CabVer
 	fmt.Fprintf(s, "nodeMatriz[label=\"Matriz\"];\n")
 	fmt.Fprintf(s, "nodeMatriz->node"+strings.Replace(aux.(*NodoCabVert).Departamento, " ", "", -1)+";\n")
-	if aux.(*NodoCabVert).Sur != nil {
-		fmt.Fprintf(s, "node"+strings.Replace(aux.(*NodoCabVert).Departamento, " ", "", -1)+"->node"+strings.Replace(aux.(*NodoCabVert).Sur.(*NodoCabVert).Departamento, " ", "", -1)+";\n")
-		fmt.Fprintf(s, "node"+strings.Replace(aux.(*NodoCabVert).Sur.(*NodoCabVert).Departamento, " ", "", -1)+"->node"+strings.Replace(aux.(*NodoCabVert).Departamento, " ", "", -1)+";\n")
 
-	}
 	for aux != nil {
+		if aux.(*NodoCabVert).Sur != nil {
+			fmt.Fprintf(s, "node"+strings.Replace(aux.(*NodoCabVert).Departamento, " ", "", -1)+"->node"+strings.Replace(aux.(*NodoCabVert).Sur.(*NodoCabVert).Departamento, " ", "", -1)+";\n")
+			fmt.Fprintf(s, "node"+strings.Replace(aux.(*NodoCabVert).Sur.(*NodoCabVert).Departamento, " ", "", -1)+"->node"+strings.Replace(aux.(*NodoCabVert).Departamento, " ", "", -1)+";\n")
+
+		}
 		var rank3 strings.Builder
 		fmt.Fprintf(&rank3, "{rank=\"same\"")
 		fmt.Fprintf(s, "node"+strings.Replace(aux.(*NodoCabVert).Departamento, " ", "", -1)+"[label=\""+aux.(*NodoCabVert).Departamento+"\"];\n")
 		fmt.Fprintf(&rank3, "; node"+strings.Replace(aux.(*NodoCabVert).Departamento, " ", "", -1))
 
 		tmp := aux.(*NodoCabVert).Este
-
-		fmt.Fprintf(s, "node"+strings.Replace(aux.(*NodoCabVert).Departamento, " ", "", -1)+"->node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1)+";\n")
-		fmt.Fprintf(s, "node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1)+"->node"+strings.Replace(aux.(*NodoCabVert).Departamento, " ", "", -1)+";\n")
+		if tmp != nil {
+			fmt.Fprintf(s, "node"+strings.Replace(aux.(*NodoCabVert).Departamento, " ", "", -1)+"->node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1)+";\n")
+			fmt.Fprintf(s, "node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1)+"->node"+strings.Replace(aux.(*NodoCabVert).Departamento, " ", "", -1)+";\n")
+		}
 
 		for tmp != nil {
 			fmt.Fprintf(&rank3, "; node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1))
 			if tmp.(*NodoPedido).Este == nil {
 				break
 			} else {
-				fmt.Fprintf(s, "node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1)+"[label=\""+tmp.(*NodoPedido).Cola.GenerarGraphviz()+"\"];\n")
+				cont++
+				fmt.Fprintf(s, "node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1)+"[shape=circle; label=\""+strconv.Itoa(cont)+"\"];\n")
 				fmt.Fprintf(s, "node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1)+"->node"+strings.Replace(tmp.(*NodoPedido).Este.(*NodoPedido).Cola.Nombre, " ", "", -1)+";\n")
 				fmt.Fprintf(s, "node"+strings.Replace(tmp.(*NodoPedido).Este.(*NodoPedido).Cola.Nombre, " ", "", -1)+"->node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1)+";\n")
-				fmt.Fprintf(&rank2, "; node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1))
+				//fmt.Fprintf(&rank2, "; node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1))
 
 			}
 			tmp = tmp.(*NodoPedido).Este
 		}
-		fmt.Print("\n")
+		//fmt.Print("\n")
 		aux = aux.(*NodoCabVert).Sur
-		fmt.Fprintf(s, rank3.String()+"} \n")
+		//fmt.Fprintf(s, rank3.String()+"} \n")
 
 	}
 
 	aux = this.CabHor
 	fmt.Fprintf(s, "nodeMatriz->node"+strconv.Itoa(aux.(*NodoCabHor).Dia)+";\n")
 	for aux != nil {
+		var rank2 strings.Builder
+		fmt.Fprintf(&rank2, "{rank=\"same\"")
 		fmt.Fprintf(s, "node"+strconv.Itoa(aux.(*NodoCabHor).Dia)+"[label=\""+strconv.Itoa(aux.(*NodoCabHor).Dia)+"\"];\n")
-		tmp := aux.(*NodoCabHor).Sur
-		fmt.Fprintf(s, "node"+strconv.Itoa(aux.(*NodoCabHor).Dia)+"->node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1)+";\n")
-		fmt.Fprintf(s, "node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1)+"->node"+strconv.Itoa(aux.(*NodoCabHor).Dia)+";\n")
-		fmt.Fprintf(&rank, "; node"+strconv.Itoa(aux.(*NodoCabHor).Dia))
-
 		if aux.(*NodoCabHor).Este != nil {
 			fmt.Fprintf(s, "node"+strconv.Itoa(aux.(*NodoCabHor).Dia)+"->node"+strconv.Itoa(aux.(*NodoCabHor).Este.(*NodoCabHor).Dia)+";\n")
 			fmt.Fprintf(s, "node"+strconv.Itoa(aux.(*NodoCabHor).Este.(*NodoCabHor).Dia)+"->node"+strconv.Itoa(aux.(*NodoCabHor).Dia)+";\n")
 
 		}
+		tmp := aux.(*NodoCabHor).Sur
+		if tmp != nil {
+			fmt.Fprintf(s, "node"+strconv.Itoa(aux.(*NodoCabHor).Dia)+"->node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1)+";\n")
+			fmt.Fprintf(s, "node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1)+"->node"+strconv.Itoa(aux.(*NodoCabHor).Dia)+";\n")
+			fmt.Fprintf(&rank, "; node"+strconv.Itoa(aux.(*NodoCabHor).Dia))
+			if reflect.TypeOf(tmp.(*NodoPedido).Oeste).String() == "*Dato.NodoCabVert" {
+				fmt.Fprintf(&rank2, "; node"+strings.Replace(tmp.(*NodoPedido).Oeste.(*NodoCabVert).Departamento, " ", "", -1))
+			}
+
+		}
+
 		for tmp != nil {
 			if tmp.(*NodoPedido).Sur == nil {
-				fmt.Fprintf(s, "node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1)+"[label=\""+tmp.(*NodoPedido).Cola.GenerarGraphviz()+"\"];\n")
+				cont++
+				fmt.Fprintf(s, "node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1)+"[shape=circle; label=\""+strconv.Itoa(cont)+"\"];\n")
+				fmt.Fprintf(&rank2, "; node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1))
+
 				break
 			} else {
-
-				fmt.Fprintf(s, "node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1)+"[label=\""+tmp.(*NodoPedido).Cola.GenerarGraphviz()+"\"];\n")
+				cont++
+				fmt.Fprintf(s, "node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1)+"[shape=circle; label=\""+strconv.Itoa(cont)+"\"];\n")
 				fmt.Fprintf(s, "node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1)+"->node"+strings.Replace(tmp.(*NodoPedido).Sur.(*NodoPedido).Cola.Nombre, " ", "", -1)+";\n")
 				fmt.Fprintf(s, "node"+strings.Replace(tmp.(*NodoPedido).Sur.(*NodoPedido).Cola.Nombre, " ", "", -1)+"->node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1)+";\n")
 				fmt.Fprintf(&rank2, "; node"+strings.Replace(tmp.(*NodoPedido).Cola.Nombre, " ", "", -1))
@@ -380,11 +394,10 @@ func (this *Matriz) Graphviz() *strings.Builder {
 
 			tmp = tmp.(*NodoPedido).Sur
 		}
-		fmt.Println("")
+		fmt.Fprintf(s, rank2.String()+"} \n")
 		aux = aux.(*NodoCabHor).Este
 	}
 	fmt.Fprintf(s, rank.String()+"} \n")
-	//fmt.Fprintf(s, rank2.String()+"} \n")
 
 	return s
 }

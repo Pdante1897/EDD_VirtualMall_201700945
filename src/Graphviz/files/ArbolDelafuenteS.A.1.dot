@@ -1,0 +1,36 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo736[label="{ Codigo: 736 | Nombre: Fantástico Caucho Tocino | Precio: 677 | Cantidad: 432}"];
+nodo733[label="{ Codigo: 733 | Nombre: Sabrosa Acero Bike | Precio: 931 | Cantidad: 481}"];
+nodo731[label="{ Codigo: 731 | Nombre: Gorgeous Soft Jabón | Precio: 276 | Cantidad: 57}"];
+nodo732[label="{ Codigo: 732 | Nombre: Fantástico Granito Embutidos | Precio: 70 | Cantidad: 229}"];
+nodo731->nodo732;
+nodo733->nodo731;
+nodo734[label="{ Codigo: 734 | Nombre: Increíble Metal Tocino | Precio: 45 | Cantidad: 251}"];
+nodo735[label="{ Codigo: 735 | Nombre: Práctica Plástico Tuna | Precio: 3 | Cantidad: 191}"];
+nodo734->nodo735;
+nodo733->nodo734;
+nodo736->nodo733;
+nodo740[label="{ Codigo: 740 | Nombre: Sin marca Cotton Zapatos | Precio: 237 | Cantidad: 1}"];
+nodo738[label="{ Codigo: 738 | Nombre: Artesanal Frozen Mesa | Precio: 641 | Cantidad: 317}"];
+nodo737[label="{ Codigo: 737 | Nombre: Gorgeous Metal Toallas | Precio: 225 | Cantidad: 61}"];
+nodo738->nodo737;
+nodo739[label="{ Codigo: 739 | Nombre: Elegante Granito Pantalones | Precio: 620 | Cantidad: 423}"];
+nodo738->nodo739;
+nodo740->nodo738;
+nodo744[label="{ Codigo: 744 | Nombre: Increíble Acero Pantalones | Precio: 855 | Cantidad: 283}"];
+nodo742[label="{ Codigo: 742 | Nombre: Elegante Granito Zapatos | Precio: 740 | Cantidad: 86}"];
+nodo741[label="{ Codigo: 741 | Nombre: Hecho a mano Fresco Presidente | Precio: 447 | Cantidad: 285}"];
+nodo742->nodo741;
+nodo743[label="{ Codigo: 743 | Nombre: Licencia Cotton Embutidos | Precio: 822 | Cantidad: 271}"];
+nodo742->nodo743;
+nodo744->nodo742;
+nodo746[label="{ Codigo: 746 | Nombre: Sabrosa Plástico Presidente | Precio: 507 | Cantidad: 408}"];
+nodo745[label="{ Codigo: 745 | Nombre: Artesanal Frozen Sombrero | Precio: 27 | Cantidad: 496}"];
+nodo746->nodo745;
+nodo747[label="{ Codigo: 747 | Nombre: Increíble Fresco Camisa | Precio: 284 | Cantidad: 174}"];
+nodo746->nodo747;
+nodo744->nodo746;
+nodo740->nodo744;
+nodo736->nodo740;
+}

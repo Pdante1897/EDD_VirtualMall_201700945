@@ -1,0 +1,24 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo551[label="{ Codigo: 551 | Nombre: Ergonómico Acero Ratón | Precio: 176 | Cantidad: 172}"];
+nodo548[label="{ Codigo: 548 | Nombre: Inteligente Soft Presidente | Precio: 511 | Cantidad: 442}"];
+nodo546[label="{ Codigo: 546 | Nombre: Increíble Frozen Embutidos | Precio: 400 | Cantidad: 33}"];
+nodo545[label="{ Codigo: 545 | Nombre: Artesanal Plástico Mesa | Precio: 597 | Cantidad: 65}"];
+nodo546->nodo545;
+nodo547[label="{ Codigo: 547 | Nombre: Hecho a mano Cotton Tocino | Precio: 972 | Cantidad: 466}"];
+nodo546->nodo547;
+nodo548->nodo546;
+nodo550[label="{ Codigo: 550 | Nombre: Increíble Soft Pescado | Precio: 628 | Cantidad: 324}"];
+nodo549[label="{ Codigo: 549 | Nombre: Ergonómico Caucho Tocino | Precio: 798 | Cantidad: 23}"];
+nodo550->nodo549;
+nodo548->nodo550;
+nodo551->nodo548;
+nodo553[label="{ Codigo: 553 | Nombre: Inteligente Granito Ratón | Precio: 419 | Cantidad: 500}"];
+nodo552[label="{ Codigo: 552 | Nombre: Artesanal Plástico Mesa | Precio: 267 | Cantidad: 195}"];
+nodo553->nodo552;
+nodo554[label="{ Codigo: 554 | Nombre: Gorgeous Madera Pescado | Precio: 120 | Cantidad: 125}"];
+nodo555[label="{ Codigo: 555 | Nombre: Inteligente Soft Toallas | Precio: 888 | Cantidad: 157}"];
+nodo554->nodo555;
+nodo553->nodo554;
+nodo551->nodo553;
+}

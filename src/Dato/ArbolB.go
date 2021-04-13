@@ -20,7 +20,7 @@ func (this *ArbolB) Insert(nuevaKey *Key) {
 		nodo := this.Raiz
 		posInsertado = this.colocarNodo(nodo, nuevaKey)
 		if posInsertado != -1 {
-			if posInsertado == nodo.Max {
+			if posInsertado == nodo.Max-1 {
 				medio := nodo.Max / 2
 				keycentral := nodo.Keys[medio]
 				right := NewNodoB(this.Num)
@@ -69,7 +69,7 @@ func (this *ArbolB) Insert(nuevaKey *Key) {
 		indiceCol := this.colocarNodo(nodo, nuevaKey)
 		if indiceCol == nodo.Max-1 {
 			for nodo.NodoPadre != nil {
-				indiceMed := nodo.Max
+				indiceMed := nodo.Max / 2
 				keycentral := nodo.Keys[indiceMed]
 				left := NewNodoB(this.Num)
 				right := NewNodoB(this.Num)
@@ -177,11 +177,11 @@ func (this *ArbolB) colocarNodo(nodo *NodoB, nuevaKey *Key) int {
 					break
 				}
 			}
-			if !inserted {
+			if inserted == false {
 				nodo.Poner(0, nuevaKey)
 				nodo.Keys[1].Left = nuevaKey.Right
 			}
-			indice = 1
+			indice = i
 			break
 		}
 	}

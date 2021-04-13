@@ -1,0 +1,30 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo571[label="{ Codigo: 571 | Nombre: Genérica Soft Sombrero | Precio: 61 | Cantidad: 30}"];
+nodo567[label="{ Codigo: 567 | Nombre: Genérica Cotton Embutidos | Precio: 21 | Cantidad: 411}"];
+nodo565[label="{ Codigo: 565 | Nombre: Práctica Soft Pollo | Precio: 663 | Cantidad: 305}"];
+nodo564[label="{ Codigo: 564 | Nombre: Genérica Caucho Tocino | Precio: 102 | Cantidad: 266}"];
+nodo565->nodo564;
+nodo566[label="{ Codigo: 566 | Nombre: Inteligente Acero Mesa | Precio: 34 | Cantidad: 143}"];
+nodo565->nodo566;
+nodo567->nodo565;
+nodo569[label="{ Codigo: 569 | Nombre: Artesanal Frozen Pescado | Precio: 23 | Cantidad: 158}"];
+nodo568[label="{ Codigo: 568 | Nombre: Hecho a mano Madera Camisa | Precio: 147 | Cantidad: 423}"];
+nodo569->nodo568;
+nodo570[label="{ Codigo: 570 | Nombre: Licencia Fresco Auto | Precio: 672 | Cantidad: 153}"];
+nodo569->nodo570;
+nodo567->nodo569;
+nodo571->nodo567;
+nodo574[label="{ Codigo: 574 | Nombre: Elegante Plástico Camisa | Precio: 534 | Cantidad: 448}"];
+nodo573[label="{ Codigo: 573 | Nombre: Inteligente Granito Zapatos | Precio: 405 | Cantidad: 163}"];
+nodo572[label="{ Codigo: 572 | Nombre: Genérica Caucho Pantalones | Precio: 465 | Cantidad: 91}"];
+nodo573->nodo572;
+nodo574->nodo573;
+nodo576[label="{ Codigo: 576 | Nombre: Inteligente Madera Pescado | Precio: 308 | Cantidad: 133}"];
+nodo575[label="{ Codigo: 575 | Nombre: Práctica Madera Tocino | Precio: 675 | Cantidad: 206}"];
+nodo576->nodo575;
+nodo577[label="{ Codigo: 577 | Nombre: Ergonómico Madera Embutidos | Precio: 728 | Cantidad: 273}"];
+nodo576->nodo577;
+nodo574->nodo576;
+nodo571->nodo574;
+}

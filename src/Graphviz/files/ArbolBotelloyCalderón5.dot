@@ -1,0 +1,16 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo684[label="{ Codigo: 684 | Nombre: Licencia Hormigón Ratón | Precio: 598 | Cantidad: 148}"];
+nodo682[label="{ Codigo: 682 | Nombre: Gorgeous Cotton Embutidos | Precio: 258 | Cantidad: 206}"];
+nodo681[label="{ Codigo: 681 | Nombre: Práctica Soft Guantes | Precio: 356 | Cantidad: 50}"];
+nodo682->nodo681;
+nodo683[label="{ Codigo: 683 | Nombre: Práctica Metal Ratón | Precio: 263 | Cantidad: 70}"];
+nodo682->nodo683;
+nodo684->nodo682;
+nodo686[label="{ Codigo: 686 | Nombre: Sabrosa Metal Teclado | Precio: 406 | Cantidad: 305}"];
+nodo685[label="{ Codigo: 685 | Nombre: Increíble Plástico Tuna | Precio: 44 | Cantidad: 54}"];
+nodo686->nodo685;
+nodo687[label="{ Codigo: 687 | Nombre: Sin marca Metal Computadora | Precio: 283 | Cantidad: 227}"];
+nodo686->nodo687;
+nodo684->nodo686;
+}

@@ -1,0 +1,32 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo876[label="{ Codigo: 876 | Nombre: Hecho a mano Acero Computadora | Precio: 719 | Cantidad: 123}"];
+nodo871[label="{ Codigo: 871 | Nombre: Licencia Caucho Bike | Precio: 923 | Cantidad: 320}"];
+nodo870[label="{ Codigo: 870 | Nombre: Hecho a mano Plástico Sombrero | Precio: 997 | Cantidad: 129}"];
+nodo869[label="{ Codigo: 869 | Nombre: Rústico Frozen Presidente | Precio: 151 | Cantidad: 112}"];
+nodo870->nodo869;
+nodo871->nodo870;
+nodo874[label="{ Codigo: 874 | Nombre: Hecho a mano Plástico Computadora | Precio: 498 | Cantidad: 349}"];
+nodo872[label="{ Codigo: 872 | Nombre: Increíble Acero Computadora | Precio: 80 | Cantidad: 60}"];
+nodo873[label="{ Codigo: 873 | Nombre: Genérica Soft Pelota | Precio: 734 | Cantidad: 455}"];
+nodo872->nodo873;
+nodo874->nodo872;
+nodo875[label="{ Codigo: 875 | Nombre: Increíble Granito Pelota | Precio: 1000 | Cantidad: 245}"];
+nodo874->nodo875;
+nodo871->nodo874;
+nodo876->nodo871;
+nodo879[label="{ Codigo: 879 | Nombre: Rústico Cotton Queso | Precio: 962 | Cantidad: 31}"];
+nodo877[label="{ Codigo: 877 | Nombre: Fantástico Metal Tuna | Precio: 843 | Cantidad: 257}"];
+nodo878[label="{ Codigo: 878 | Nombre: Pequeño Caucho Pantalones | Precio: 175 | Cantidad: 72}"];
+nodo877->nodo878;
+nodo879->nodo877;
+nodo881[label="{ Codigo: 881 | Nombre: Inteligente Caucho Auto | Precio: 373 | Cantidad: 481}"];
+nodo880[label="{ Codigo: 880 | Nombre: Sin marca Fresco Pizza | Precio: 130 | Cantidad: 157}"];
+nodo881->nodo880;
+nodo883[label="{ Codigo: 883 | Nombre: Ergonómico Fresco Zapatos | Precio: 559 | Cantidad: 184}"];
+nodo882[label="{ Codigo: 882 | Nombre: Genérica Hormigón Pantalones | Precio: 825 | Cantidad: 121}"];
+nodo883->nodo882;
+nodo881->nodo883;
+nodo879->nodo881;
+nodo876->nodo879;
+}

@@ -1,0 +1,4 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo268[label="{ Codigo: 268 | Nombre: Inteligente Soft Pelota | Precio: 804 | Cantidad: 344}"];
+}

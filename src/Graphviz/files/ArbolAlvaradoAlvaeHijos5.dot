@@ -1,0 +1,48 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo451[label="{ Codigo: 451 | Nombre: Sabrosa Madera Pizza | Precio: 515 | Cantidad: 252}"];
+nodo446[label="{ Codigo: 446 | Nombre: Rústico Madera Embutidos | Precio: 991 | Cantidad: 65}"];
+nodo445[label="{ Codigo: 445 | Nombre: Sabrosa Frozen Pollo | Precio: 12 | Cantidad: 284}"];
+nodo444[label="{ Codigo: 444 | Nombre: Sin marca Fresco Pollo | Precio: 454 | Cantidad: 137}"];
+nodo445->nodo444;
+nodo446->nodo445;
+nodo448[label="{ Codigo: 448 | Nombre: Pequeño Granito Queso | Precio: 801 | Cantidad: 449}"];
+nodo447[label="{ Codigo: 447 | Nombre: Refinado Acero Embutidos | Precio: 225 | Cantidad: 141}"];
+nodo448->nodo447;
+nodo449[label="{ Codigo: 449 | Nombre: Sabrosa Metal Zapatos | Precio: 891 | Cantidad: 105}"];
+nodo450[label="{ Codigo: 450 | Nombre: Increíble Acero Pantalones | Precio: 953 | Cantidad: 116}"];
+nodo449->nodo450;
+nodo448->nodo449;
+nodo446->nodo448;
+nodo451->nodo446;
+nodo453[label="{ Codigo: 453 | Nombre: Práctica Frozen Computadora | Precio: 670 | Cantidad: 404}"];
+nodo452[label="{ Codigo: 452 | Nombre: Fantástico Madera Computadora | Precio: 564 | Cantidad: 47}"];
+nodo453->nodo452;
+nodo456[label="{ Codigo: 456 | Nombre: Genérica Hormigón Bike | Precio: 696 | Cantidad: 498}"];
+nodo454[label="{ Codigo: 454 | Nombre: Increíble Caucho Ratón | Precio: 122 | Cantidad: 240}"];
+nodo455[label="{ Codigo: 455 | Nombre: Hecho a mano Soft Mesa | Precio: 745 | Cantidad: 265}"];
+nodo454->nodo455;
+nodo456->nodo454;
+nodo459[label="{ Codigo: 459 | Nombre: Ergonómico Plástico Pelota | Precio: 266 | Cantidad: 355}"];
+nodo458[label="{ Codigo: 458 | Nombre: Gorgeous Hormigón Computadora | Precio: 359 | Cantidad: 450}"];
+nodo457[label="{ Codigo: 457 | Nombre: Increíble Caucho Sombrero | Precio: 198 | Cantidad: 208}"];
+nodo458->nodo457;
+nodo459->nodo458;
+nodo463[label="{ Codigo: 463 | Nombre: Pequeño Soft Zapatos | Precio: 53 | Cantidad: 220}"];
+nodo461[label="{ Codigo: 461 | Nombre: Sin marca Plástico Zapatos | Precio: 695 | Cantidad: 27}"];
+nodo460[label="{ Codigo: 460 | Nombre: Gorgeous Madera Pollo | Precio: 735 | Cantidad: 2}"];
+nodo461->nodo460;
+nodo462[label="{ Codigo: 462 | Nombre: Artesanal Metal Pantalones | Precio: 992 | Cantidad: 64}"];
+nodo461->nodo462;
+nodo463->nodo461;
+nodo465[label="{ Codigo: 465 | Nombre: Sin marca Madera Ensalada | Precio: 503 | Cantidad: 415}"];
+nodo464[label="{ Codigo: 464 | Nombre: Fantástico Caucho Pizza | Precio: 134 | Cantidad: 36}"];
+nodo465->nodo464;
+nodo466[label="{ Codigo: 466 | Nombre: Increíble Frozen Computadora | Precio: 804 | Cantidad: 260}"];
+nodo465->nodo466;
+nodo463->nodo465;
+nodo459->nodo463;
+nodo456->nodo459;
+nodo453->nodo456;
+nodo451->nodo453;
+}

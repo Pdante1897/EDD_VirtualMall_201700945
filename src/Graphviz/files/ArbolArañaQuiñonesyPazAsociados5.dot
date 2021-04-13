@@ -1,0 +1,14 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo70[label="{ Codigo: 70 | Nombre: Licencia Metal Jabón | Precio: 219 | Cantidad: 58}"];
+nodo69[label="{ Codigo: 69 | Nombre: Increíble Granito Bike | Precio: 541 | Cantidad: 269}"];
+nodo70->nodo69;
+nodo72[label="{ Codigo: 72 | Nombre: Pequeño Soft Ensalada | Precio: 5 | Cantidad: 21}"];
+nodo71[label="{ Codigo: 71 | Nombre: Sabrosa Acero Ratón | Precio: 365 | Cantidad: 408}"];
+nodo72->nodo71;
+nodo73[label="{ Codigo: 73 | Nombre: Inteligente Granito Camisa | Precio: 341 | Cantidad: 386}"];
+nodo74[label="{ Codigo: 74 | Nombre: Hecho a mano Hormigón Computadora | Precio: 351 | Cantidad: 424}"];
+nodo73->nodo74;
+nodo72->nodo73;
+nodo70->nodo72;
+}

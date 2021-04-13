@@ -1,0 +1,12 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo966[label="{ Codigo: 966 | Nombre: Inteligente Soft Toallas | Precio: 855 | Cantidad: 437}"];
+nodo965[label="{ Codigo: 965 | Nombre: Inteligente Hormigón Embutidos | Precio: 836 | Cantidad: 423}"];
+nodo964[label="{ Codigo: 964 | Nombre: Elegante Madera Pantalones | Precio: 359 | Cantidad: 449}"];
+nodo965->nodo964;
+nodo966->nodo965;
+nodo968[label="{ Codigo: 968 | Nombre: Increíble Cotton Bike | Precio: 748 | Cantidad: 400}"];
+nodo967[label="{ Codigo: 967 | Nombre: Ergonómico Caucho Pelota | Precio: 315 | Cantidad: 300}"];
+nodo968->nodo967;
+nodo966->nodo968;
+}

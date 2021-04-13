@@ -1,0 +1,14 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo751[label="{ Codigo: 751 | Nombre: Refinado Fresco Sombrero | Precio: 484 | Cantidad: 55}"];
+nodo749[label="{ Codigo: 749 | Nombre: Hecho a mano Cotton Tocino | Precio: 931 | Cantidad: 439}"];
+nodo748[label="{ Codigo: 748 | Nombre: Sin marca Granito Presidente | Precio: 679 | Cantidad: 396}"];
+nodo749->nodo748;
+nodo750[label="{ Codigo: 750 | Nombre: Licencia Plástico Ratón | Precio: 710 | Cantidad: 215}"];
+nodo749->nodo750;
+nodo751->nodo749;
+nodo753[label="{ Codigo: 753 | Nombre: Licencia Caucho Ensalada | Precio: 543 | Cantidad: 308}"];
+nodo752[label="{ Codigo: 752 | Nombre: Sin marca Plástico Pescado | Precio: 864 | Cantidad: 478}"];
+nodo753->nodo752;
+nodo751->nodo753;
+}

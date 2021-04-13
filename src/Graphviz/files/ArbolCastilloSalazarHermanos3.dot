@@ -1,0 +1,46 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo69[label="{ Codigo: 69 | Nombre: Práctica Plástico Bike | Precio: 898 | Cantidad: 136}"];
+nodo64[label="{ Codigo: 64 | Nombre: Increíble Metal Tocino | Precio: 862 | Cantidad: 89}"];
+nodo62[label="{ Codigo: 62 | Nombre: Elegante Metal Pantalones | Precio: 550 | Cantidad: 77}"];
+nodo61[label="{ Codigo: 61 | Nombre: Licencia Soft Pelota | Precio: 961 | Cantidad: 368}"];
+nodo62->nodo61;
+nodo63[label="{ Codigo: 63 | Nombre: Gorgeous Metal Ensalada | Precio: 142 | Cantidad: 105}"];
+nodo62->nodo63;
+nodo64->nodo62;
+nodo66[label="{ Codigo: 66 | Nombre: Sabrosa Cotton Embutidos | Precio: 737 | Cantidad: 344}"];
+nodo65[label="{ Codigo: 65 | Nombre: Elegante Caucho Pizza | Precio: 583 | Cantidad: 129}"];
+nodo66->nodo65;
+nodo67[label="{ Codigo: 67 | Nombre: Artesanal Plástico Guantes | Precio: 366 | Cantidad: 497}"];
+nodo68[label="{ Codigo: 68 | Nombre: Sin marca Metal Embutidos | Precio: 394 | Cantidad: 119}"];
+nodo67->nodo68;
+nodo66->nodo67;
+nodo64->nodo66;
+nodo69->nodo64;
+nodo75[label="{ Codigo: 75 | Nombre: Hecho a mano Fresco Queso | Precio: 212 | Cantidad: 418}"];
+nodo72[label="{ Codigo: 72 | Nombre: Inteligente Caucho Embutidos | Precio: 781 | Cantidad: 450}"];
+nodo71[label="{ Codigo: 71 | Nombre: Inteligente Cotton Ratón | Precio: 319 | Cantidad: 100}"];
+nodo70[label="{ Codigo: 70 | Nombre: Genérica Soft Ratón | Precio: 319 | Cantidad: 66}"];
+nodo71->nodo70;
+nodo72->nodo71;
+nodo73[label="{ Codigo: 73 | Nombre: Fantástico Hormigón Pantalones | Precio: 533 | Cantidad: 436}"];
+nodo74[label="{ Codigo: 74 | Nombre: Artesanal Hormigón Mesa | Precio: 555 | Cantidad: 288}"];
+nodo73->nodo74;
+nodo72->nodo73;
+nodo75->nodo72;
+nodo78[label="{ Codigo: 78 | Nombre: Práctica Cotton Embutidos | Precio: 92 | Cantidad: 274}"];
+nodo77[label="{ Codigo: 77 | Nombre: Genérica Hormigón Presidente | Precio: 894 | Cantidad: 291}"];
+nodo76[label="{ Codigo: 76 | Nombre: Pequeño Granito Sombrero | Precio: 682 | Cantidad: 223}"];
+nodo77->nodo76;
+nodo78->nodo77;
+nodo81[label="{ Codigo: 81 | Nombre: Refinado Metal Auto | Precio: 86 | Cantidad: 481}"];
+nodo79[label="{ Codigo: 79 | Nombre: Refinado Caucho Tocino | Precio: 222 | Cantidad: 339}"];
+nodo80[label="{ Codigo: 80 | Nombre: Gorgeous Hormigón Zapatos | Precio: 296 | Cantidad: 41}"];
+nodo79->nodo80;
+nodo81->nodo79;
+nodo82[label="{ Codigo: 82 | Nombre: Pequeño Plástico Pantalones | Precio: 278 | Cantidad: 235}"];
+nodo81->nodo82;
+nodo78->nodo81;
+nodo75->nodo78;
+nodo69->nodo75;
+}

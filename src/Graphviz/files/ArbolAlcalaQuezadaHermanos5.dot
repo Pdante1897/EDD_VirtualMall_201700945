@@ -1,0 +1,10 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo243[label="{ Codigo: 243 | Nombre: Artesanal Fresco Pantalones | Precio: 149 | Cantidad: 457}"];
+nodo242[label="{ Codigo: 242 | Nombre: Gorgeous Frozen Pizza | Precio: 965 | Cantidad: 21}"];
+nodo243->nodo242;
+nodo244[label="{ Codigo: 244 | Nombre: Increíble Granito Pantalones | Precio: 677 | Cantidad: 153}"];
+nodo245[label="{ Codigo: 245 | Nombre: Licencia Frozen Embutidos | Precio: 566 | Cantidad: 117}"];
+nodo244->nodo245;
+nodo243->nodo244;
+}
