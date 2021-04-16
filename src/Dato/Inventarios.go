@@ -188,7 +188,6 @@ func BusquedaArbIn(nodo *NodoAI, Codigo int) *NodoAI {
 
 func (this *NodoAI) GenerarGraphviz() string {
 	var cadena = ""
-
 	if this.Right == nil && this.Left == nil {
 		precio := strconv.FormatFloat(this.Valor.Precio, 'f', -1, 64)
 		cadena = "nodo" + strconv.Itoa(this.Valor.Codigo) + "[label=\"{ Codigo: " + strconv.Itoa(this.Valor.Codigo) + " | Nombre: " + this.Valor.Nombre + " | Precio: " + precio + " | Cantidad: " + strconv.Itoa(int(this.Valor.Cantidad)) + "}\"];\n"
@@ -202,9 +201,9 @@ func (this *NodoAI) GenerarGraphviz() string {
 	if this.Right != nil {
 		cadena += this.Right.GenerarGraphviz() + "nodo" + strconv.Itoa(this.Valor.Codigo) + "->nodo" + strconv.Itoa(this.Right.Valor.Codigo) + ";\n"
 	}
-
 	return cadena
 }
+
 func (this *NodoAI) ObtenerProductos(prod []Producto) []Producto {
 	var productos []Producto
 

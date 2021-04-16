@@ -27,6 +27,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 var Listad []Dato.ListaDoble
 var ListaS Dato.ListaE
 var Arbol = Dato.NewArbol(5)
+var Grafo Dato.ListaAdy
 
 var Ind int = 0
 var Dep int = 0
@@ -300,6 +301,7 @@ func main() {
 	fmt.Println(Dato.BusquedaArb(arbol.Raiz, 15).Valor.Indice)
 	*/
 	fmt.Println("un server papu")
+
 	router := mux.NewRouter()
 	router.HandleFunc("/", index).Methods("GET")
 	router.HandleFunc("/cargartienda", agregar).Methods("POST")
@@ -314,10 +316,33 @@ func main() {
 	router.HandleFunc("/getTiendas", getTiendas).Methods("GET")
 	router.HandleFunc("/getUsuarios", getUsuarios).Methods("GET")
 	router.HandleFunc("/cargarUsuarios", cargarUsuarios).Methods("POST")
+	router.HandleFunc("/cargarGrafos", cargarGrafos).Methods("POST")
 
 	router.HandleFunc("/getProductos/{nombre}+{departamento}+{calificacion}", getInventarios).Methods("GET")
 
 	log.Fatal(http.ListenAndServe(":3000", handlers.CORS(handlers.AllowedHeaders([]string{"X-Requested-With", "Content-Type", "Authorization"}), handlers.AllowedMethods([]string{"GET", "POST", "PUT", "HEAD", "OPTIONS"}), handlers.AllowedOrigins([]string{"*"}))(router)))
+}
+
+func cargarGrafos(w http.ResponseWriter, r *http.Request) {
+	Grafo = *Dato.NewLista()
+	archivo := new(Dato.ArchivoJsonGrafo)
+	reqBody, err := ioutil.ReadAll(r.Body)
+	if err != nil {
+		fmt.Fprintf(w, "Error al insertar mensaje")
+		return
+	}
+	json.Unmarshal(reqBody, &archivo)
+	for i := 0; i < len(archivo.Nodos); i++ {
+		Grafo.Insert(archivo.Nodos[i].Nombre)
+	}
+	for i := 0; i < len(archivo.Nodos); i++ {
+		for j := 0; j < len(archivo.Nodos[i].Enlaces); j++ {
+			Grafo.Enlazar(archivo.Nodos[i].Nombre, archivo.Nodos[i].Enlaces[j].Nombre, archivo.Nodos[i].Enlaces[j].Distancia)
+		}
+	}
+	Grafo.Inicial = archivo.PosicionInicialrobot
+	Grafo.Entrega = archivo.Entrega
+	Grafo.Draw()
 }
 
 func cargarUsuarios(w http.ResponseWriter, r *http.Request) {
