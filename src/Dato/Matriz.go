@@ -14,6 +14,7 @@ type NodoPedido struct {
 	Oeste        interface{}
 	Cola         *Cola
 	Departamento string
+	Cliente      int64
 	Dia          int
 }
 

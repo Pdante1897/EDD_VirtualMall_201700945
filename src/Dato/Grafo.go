@@ -2,6 +2,10 @@ package Dato
 
 import (
 	"fmt"
+	"log"
+	"os"
+	"os/exec"
+	"path/filepath"
 	"strings"
 )
 
@@ -125,8 +129,66 @@ func (this *ListaAdy) Draw() {
 	}
 
 	fmt.Fprintf(&s, "}")
-	fmt.Println(s.String())
+	guardarArchivoGrafo(s.String(), "", "Grafo")
+	DirGrafo("Grafo")
 
+}
+
+func guardarArchivoGrafo(cadena string, num string, nom string) {
+	fil, err := os.Create("./Graphviz/files/" + nom + num + ".circo")
+	if err != nil {
+		fmt.Println(err)
+		fmt.Println("error")
+		return
+	}
+	bytes, err := fil.WriteString(cadena)
+	if err != nil {
+
+		fmt.Println(err)
+		fmt.Println("error")
+		fil.Close()
+		return
+	}
+	fmt.Println(bytes, "bytes escritos satisfactoriamente! :D")
+	err = fil.Close()
+	if err != nil {
+		fmt.Println(err)
+		fmt.Println("error")
+		return
+	}
+}
+
+func DirGrafo(num string) {
+	dir, err := filepath.Abs(filepath.Dir("./graphviz/graphviz.go"))
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(dir)
+	var cadena strings.Builder
+	fmt.Fprintf(&cadena, "cd c:\\program files\\graphviz\\bin\n  ")
+	fmt.Fprintf(&cadena, "circo -Tpdf \""+dir+"\\files\\"+num+".circo\" -o \""+dir+"\\files\\grafica"+num+".pdf\"\n  ")
+	fil, err := os.Create(dir + "\\files\\archivo.bat")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	bytes, err := fil.WriteString(cadena.String())
+	if err != nil {
+		fmt.Println(err)
+		fil.Close()
+		return
+	}
+	fmt.Println(bytes, "bytes escritos satisfactoriamente! :D")
+	err = fil.Close()
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	cmd := exec.Command(dir + "\\files\\archivo.bat")
+	err = cmd.Run()
+	if err != nil {
+		fmt.Println(err)
+	}
 }
 
 type ListaDobleVert struct {

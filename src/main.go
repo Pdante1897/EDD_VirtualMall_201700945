@@ -79,23 +79,26 @@ func agregarPedidos(w http.ResponseWriter, r *http.Request) {
 			for j := 0; j < len(archivo.Pedidos[i].Productos); j++ {
 				var nodoAI = Dato.BusquedaArbIn(nodo.Tienda.Inventario.Raiz, archivo.Pedidos[i].Productos[j].Codigo)
 				if nodoAI != nil {
-					var cola *Dato.Cola
-					cola = matriz.Buscar(buscar.Departamento + strconv.Itoa(dia))
-					if cola != nil {
+					if Arbol.Raiz.Buscar(archivo.Pedidos[i].Cliente) != nil {
+						var cola *Dato.Cola
+						cola = matriz.Buscar(buscar.Departamento + strconv.Itoa(dia))
+						if cola != nil {
 
-						cola.Push(nodoAI.Valor)
+							cola.Push(nodoAI.Valor)
 
-					} else {
-						var nuevo *Dato.NodoPedido
-						nuevo = new(Dato.NodoPedido)
-						var colaN *Dato.Cola
-						colaN = new(Dato.Cola)
-						colaN.Nombre = buscar.Departamento + strconv.Itoa(dia)
-						colaN.Push(nodoAI.Valor)
-						nuevo.Cola = colaN
-						nuevo.Departamento = buscar.Departamento
-						nuevo.Dia = dia
-						matriz.Add(nuevo)
+						} else {
+							var nuevo *Dato.NodoPedido
+							nuevo = new(Dato.NodoPedido)
+							var colaN *Dato.Cola
+							colaN = new(Dato.Cola)
+							colaN.Nombre = buscar.Departamento + strconv.Itoa(dia)
+							colaN.Push(nodoAI.Valor)
+							nuevo.Cola = colaN
+							nuevo.Departamento = buscar.Departamento
+							nuevo.Dia = dia
+							nuevo.Cliente = archivo.Pedidos[i].Cliente
+							matriz.Add(nuevo)
+						}
 					}
 
 				} else {
@@ -343,6 +346,10 @@ func cargarGrafos(w http.ResponseWriter, r *http.Request) {
 	Grafo.Inicial = archivo.PosicionInicialrobot
 	Grafo.Entrega = archivo.Entrega
 	Grafo.Draw()
+	user := Arbol.Raiz.Buscar(7771566947243)
+
+	fmt.Println(user.Nombre)
+
 }
 
 func cargarUsuarios(w http.ResponseWriter, r *http.Request) {
@@ -357,7 +364,7 @@ func cargarUsuarios(w http.ResponseWriter, r *http.Request) {
 		nuevakey := Dato.NewKey(archivo.Usuarios[i].Dpi, archivo.Usuarios[i])
 
 		Arbol.Insert(nuevakey)
-
+		fmt.Println(archivo.Usuarios[i].Nombre)
 	}
 	fmt.Println(Arbol.Raiz.Keys[0].Value)
 }
