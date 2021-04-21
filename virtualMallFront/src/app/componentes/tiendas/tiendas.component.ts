@@ -12,6 +12,9 @@ import { FormControl } from '@angular/forms';
 export class TiendasComponent implements OnInit {
   lista_tiendas: ArrTienda = new ArrTienda()
   listaAux: Tienda[] = []
+
+  
+
   constructor(private tiendaservise:TiendasService) {
     
    }
@@ -21,7 +24,7 @@ export class TiendasComponent implements OnInit {
       this.lista_tiendas = dataList 
       console.log(this.lista_tiendas)
       console.log(Object.getOwnPropertyDescriptors(this.lista_tiendas))
-    console.log(Object.is(this.lista_tiendas,ArrTienda))
+      console.log(Object.is(this.lista_tiendas,ArrTienda))
       console.log(dataList)
       this.setearLista()
       console.log(this.listaAux)

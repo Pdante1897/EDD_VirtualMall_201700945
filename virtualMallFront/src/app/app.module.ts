@@ -10,6 +10,7 @@ import { PedidosComponent } from './componentes/pedidos/pedidos.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ProductosComponent } from './componentes/productos/productos.component';
 import { AdminComponent } from './componentes/admin/admin.component';
+import { CargarComponent } from './componentes/cargar/cargar.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { AdminComponent } from './componentes/admin/admin.component';
     CarritoComponent,
     PedidosComponent,
     ProductosComponent,
-    AdminComponent
+    AdminComponent,
+    CargarComponent
   ],
   imports: [
     BrowserModule,

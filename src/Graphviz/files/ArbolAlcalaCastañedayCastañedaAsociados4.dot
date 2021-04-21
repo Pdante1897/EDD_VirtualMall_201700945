@@ -1,0 +1,6 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo445[label="{ Codigo: 445 | Nombre: Genérica Hormigón Auto | Precio: 18 | Cantidad: 427}"];
+nodo446[label="{ Codigo: 446 | Nombre: Ergonómico Acero Jabón | Precio: 737 | Cantidad: 239}"];
+nodo445->nodo446;
+}

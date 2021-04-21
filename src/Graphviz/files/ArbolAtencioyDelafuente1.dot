@@ -1,0 +1,10 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo53[label="{ Codigo: 53 | Nombre: Genérica Metal Toallas | Precio: 85 | Cantidad: 246}"];
+nodo52[label="{ Codigo: 52 | Nombre: Ergonómico Soft Presidente | Precio: 250 | Cantidad: 138}"];
+nodo53->nodo52;
+nodo55[label="{ Codigo: 55 | Nombre: Elegante Metal Presidente | Precio: 900 | Cantidad: 222}"];
+nodo54[label="{ Codigo: 54 | Nombre: Refinado Acero Tocino | Precio: 363 | Cantidad: 237}"];
+nodo55->nodo54;
+nodo53->nodo55;
+}

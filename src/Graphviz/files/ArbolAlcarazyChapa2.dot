@@ -1,0 +1,10 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo913[label="{ Codigo: 913 | Nombre: Pequeño Fresco Mesa | Precio: 960 | Cantidad: 347}"];
+nodo912[label="{ Codigo: 912 | Nombre: Increíble Acero Embutidos | Precio: 81 | Cantidad: 44}"];
+nodo913->nodo912;
+nodo915[label="{ Codigo: 915 | Nombre: Hecho a mano Fresco Teclado | Precio: 818 | Cantidad: 35}"];
+nodo914[label="{ Codigo: 914 | Nombre: Fantástico Hormigón Toallas | Precio: 337 | Cantidad: 48}"];
+nodo915->nodo914;
+nodo913->nodo915;
+}

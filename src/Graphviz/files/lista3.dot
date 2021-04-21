@@ -1,0 +1,26 @@
+digraph G{
+node[shape="box" shape="record"]
+graph[splines="ortho"]
+node10[label="B|Cocina|1|pos: 11"];
+node10->node11;
+node11[label="B|Cocina|2|pos: 12"];
+node0xc000047620[label="Bernal e Hijos|951 546 306"];
+node11->node0xc000047620;
+node11->node12;
+node12[label="B|Cocina|3|pos: 13"];
+node12->node13;
+node13[label="B|Cocina|4|pos: 14"];
+node0xc000047680[label="Benavídez y Salcido|947.912.294"];
+node13->node0xc000047680;
+node13->node14;
+node14[label="B|Cocina|5|pos: 15"];
+node0xc0000476e0[label="Báez Mota e Hijos|995 997 240"];
+node14->node0xc0000476e0;
+node0xc000047740[label="Barraza Roldán e Hijos|907.802.124"];
+node0xc0000476e0->node0xc000047740;
+node0xc000047740->node0xc0000476e0;
+node0xc0000477a0[label="Brito S.L.|939-438-351"];
+node0xc000047740->node0xc0000477a0;
+node0xc0000477a0->node0xc000047740;
+{rank="same"; node10; node11; node12; node13; node14}
+}

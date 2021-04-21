@@ -1,0 +1,51 @@
+digraph G{
+node[shape="box" shape="record"]
+graph[splines="ortho"]
+nodeMatriz[label="Matriz"];
+nodeMatriz->nodeCocina;
+nodeCocina[label="Cocina"];
+nodeCocina->nodeCocina9;
+nodeCocina9->nodeCocina;
+nodeCocina9[shape=circle; label="1"];
+nodeCocina9->nodeCocina16;
+nodeCocina16->nodeCocina9;
+nodeCocina16[shape=circle; label="2"];
+nodeCocina16->nodeCocina17;
+nodeCocina17->nodeCocina16;
+nodeCocina17[shape=circle; label="3"];
+nodeCocina17->nodeCocina28;
+nodeCocina28->nodeCocina17;
+nodeMatriz->node9;
+node9[label="9"];
+node9->node16;
+node16->node9;
+node9->nodeCocina9;
+nodeCocina9->node9;
+nodeCocina9[shape=circle; label="4"];
+{rank="same"; nodeCocina; nodeCocina9} 
+node16[label="16"];
+node16->node17;
+node17->node16;
+node16->nodeCocina16;
+nodeCocina16->node16;
+nodeCocina16[shape=circle; label="5"];
+{rank="same"; nodeCocina16} 
+node17[label="17"];
+node17->node28;
+node28->node17;
+{rank="same"} 
+node28[label="28"];
+node28->node17;
+node17->node28;
+node28->nodeCocina28;
+nodeCocina28->node28;
+nodeCocina28[shape=circle; label="6"];
+{rank="same"; nodeCocina28} 
+node17[label="17"];
+node17->nodeCocina17;
+nodeCocina17->node17;
+nodeCocina17[shape=circle; label="7"];
+{rank="same"; nodeCocina17} 
+{rank="same"; nodeMatriz; node9; node16; node28; node17} 
+}
+}

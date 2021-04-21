@@ -1,0 +1,39 @@
+digraph G{
+node[shape="box" shape="record"]
+graph[splines="ortho"]
+nodeMatriz[label="Matriz"];
+nodeMatriz->nodeCocina;
+nodeCocina->nodeReproductoresweb;
+nodeReproductoresweb->nodeCocina;
+nodeCocina[label="Cocina"];
+nodeCocina->nodeCocina17;
+nodeCocina17->nodeCocina;
+nodeReproductoresweb[label="Reproductores web"];
+nodeReproductoresweb->nodeReproductoresweb25;
+nodeReproductoresweb25->nodeReproductoresweb;
+nodeReproductoresweb25[shape=circle; label="1"];
+nodeReproductoresweb25->nodeReproductoresweb27;
+nodeReproductoresweb27->nodeReproductoresweb25;
+nodeMatriz->node17;
+node17[label="17"];
+node17->node25;
+node25->node17;
+node17->nodeCocina17;
+nodeCocina17->node17;
+nodeCocina17[shape=circle; label="2"];
+{rank="same"; nodeCocina; nodeCocina17} 
+node25[label="25"];
+node25->node27;
+node27->node25;
+node25->nodeReproductoresweb25;
+nodeReproductoresweb25->node25;
+nodeReproductoresweb25[shape=circle; label="3"];
+{rank="same"; nodeReproductoresweb; nodeReproductoresweb25} 
+node27[label="27"];
+node27->nodeReproductoresweb27;
+nodeReproductoresweb27->node27;
+nodeReproductoresweb27[shape=circle; label="4"];
+{rank="same"; nodeReproductoresweb27} 
+{rank="same"; nodeMatriz; node17; node25; node27} 
+}
+}

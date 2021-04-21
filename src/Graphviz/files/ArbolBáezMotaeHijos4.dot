@@ -1,0 +1,10 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo471[label="{ Codigo: 471 | Nombre: Pequeño Plástico Guantes | Precio: 865 | Cantidad: 90}"];
+nodo470[label="{ Codigo: 470 | Nombre: Gorgeous Caucho Queso | Precio: 982 | Cantidad: 260}"];
+nodo471->nodo470;
+nodo473[label="{ Codigo: 473 | Nombre: Sin marca Fresco Auto | Precio: 126 | Cantidad: 167}"];
+nodo472[label="{ Codigo: 472 | Nombre: Rústico Cotton Embutidos | Precio: 469 | Cantidad: 84}"];
+nodo473->nodo472;
+nodo471->nodo473;
+}

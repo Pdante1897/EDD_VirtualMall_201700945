@@ -24,7 +24,7 @@ export class ProductosComponent implements OnInit {
       this.lista_productos = dataList 
       console.log(this.lista_productos)
       console.log(Object.getOwnPropertyDescriptors(this.lista_productos))
-    console.log(Object.is(this.lista_productos,ArrProducto))
+      console.log(Object.is(this.lista_productos,ArrProducto))
       console.log(dataList)
       this.setearLista()
       console.log(this.listaAux)

@@ -1,0 +1,47 @@
+<p>cargar works!</p>
+
+
+<div>
+    <h3>Cargar Tiendas</h3>
+    <form #formulario="ngForm">
+        <input type="file" id="file-input" (change)="leerArchivo($event)" />
+        <button (click)="subirArchivo($event, cargarTiendas)">Subir archivo</button>
+       </form>
+       <p>  </p>
+       <a class="btn btn-primary py-0"  (click)="getTiendas()"> Refrescar Graficas</a>
+    </div>
+<div>
+    <h3>Cargar Inventarios</h3>
+    <form #formulario="ngForm">
+        <input type="file" id="file-input2" (change)="leerArchivo($event)" />
+        <button (click)="subirArchivo($event, cargarInventarios)">Subir archivo</button>
+      </form>
+      <p>  </p>
+        <a class="btn btn-primary py-0"   (click)="getInventarios()"> Generar Graficas</a>
+</div>
+<div>
+    <h3>Cargar Usuarios</h3>
+    <form #formulario="ngForm">
+        <input type="file" id="file-input3" (change)="leerArchivo($event)" />
+        <button (click)="subirArchivo($event, cargarUsuarios)">Subir archivo</button>
+      </form>
+      <p>  </p>
+        <a class="btn btn-primary py-0"   (click)="getUsuarios()"> Generar Graficas</a>
+</div>
+<div>
+    <h3>Cargar Pedidos</h3>
+    <form #formulario="ngForm">
+        <input type="file" id="file-input4" (change)="leerArchivo($event)" />
+        <button (click)="subirArchivo($event, cargarPedidos)">Subir archivo</button>
+      </form>
+      <p>  </p>
+        <a class="btn btn-primary py-0"   (click)="getMatriz()"> Generar Graficas</a>
+</div>
+<div>
+    <h3>Cargar Grafos</h3>
+
+    <form #formulario="ngForm">
+        <input type="file" id="file-input5" (change)="leerArchivo($event)" />
+        <button (click)="subirArchivo($event, cargarGrafos)">Subir archivo</button>
+      </form>
+</div>

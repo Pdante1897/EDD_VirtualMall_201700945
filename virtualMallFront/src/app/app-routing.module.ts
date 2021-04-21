@@ -5,6 +5,8 @@ import { TiendasComponent } from "./componentes/tiendas/tiendas.component";
 import { CarritoComponent } from "./componentes/carrito/carrito.component";
 import { PedidosComponent } from "./componentes/pedidos/pedidos.component";
 import { ProductosComponent } from "./componentes/productos/productos.component";
+import { AdminComponent } from './componentes/admin/admin.component';
+import { CargarComponent } from './componentes/cargar/cargar.component';
 
 
 const routes: Routes = [{
@@ -33,6 +35,16 @@ const routes: Routes = [{
 {
   path: 'pedidos',
   component: PedidosComponent,
+}
+,
+{
+  path: 'admin',
+  component: AdminComponent,
+}
+,
+{
+  path: 'cargar',
+  component: CargarComponent,
 }
 ];
 

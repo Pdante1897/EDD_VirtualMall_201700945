@@ -1,1 +1,25 @@
-<p>admin works!</p>
+<a class="btn btn-primary py-0" href="/cargar"> Cargar Tiendas</a>
+<a class="btn btn-primary py-0"  (click)="cargar()"> Refrescar Graficas</a>
+
+    <table class="table table-striped">
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                Nombre
+            </th>
+            
+        </tr>
+        <tr *ngFor="let pdf of listaAux; let i = index">
+            <td>
+                {{i}}
+            </td>
+            <td>
+                <button class="btn btn-primary py-0" (click)="descargar(pdf.Ruta,pdf.Nombre)"> {{pdf.Nombre}} </button>
+            </td>
+            
+           
+        </tr>
+        
+    </table>

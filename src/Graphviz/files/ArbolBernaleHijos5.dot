@@ -1,0 +1,6 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo226[label="{ Codigo: 226 | Nombre: Fantástico Soft Pelota | Precio: 471 | Cantidad: 416}"];
+nodo227[label="{ Codigo: 227 | Nombre: Licencia Granito Toallas | Precio: 964 | Cantidad: 128}"];
+nodo226->nodo227;
+}

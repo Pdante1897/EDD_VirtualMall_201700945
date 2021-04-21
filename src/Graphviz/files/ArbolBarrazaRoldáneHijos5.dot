@@ -1,0 +1,10 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo989[label="{ Codigo: 989 | Nombre: Increíble Caucho Toallas | Precio: 961 | Cantidad: 287}"];
+nodo988[label="{ Codigo: 988 | Nombre: Sin marca Metal Tuna | Precio: 841 | Cantidad: 306}"];
+nodo989->nodo988;
+nodo990[label="{ Codigo: 990 | Nombre: Genérica Soft Guantes | Precio: 614 | Cantidad: 437}"];
+nodo991[label="{ Codigo: 991 | Nombre: Sabrosa Caucho Mesa | Precio: 416 | Cantidad: 474}"];
+nodo990->nodo991;
+nodo989->nodo990;
+}

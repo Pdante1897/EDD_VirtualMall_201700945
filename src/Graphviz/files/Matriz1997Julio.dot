@@ -1,0 +1,27 @@
+digraph G{
+node[shape="box" shape="record"]
+graph[splines="ortho"]
+nodeMatriz[label="Matriz"];
+nodeMatriz->nodeReproductoresweb;
+nodeReproductoresweb[label="Reproductores web"];
+nodeReproductoresweb->nodeReproductoresweb2;
+nodeReproductoresweb2->nodeReproductoresweb;
+nodeReproductoresweb2[shape=circle; label="1"];
+nodeReproductoresweb2->nodeReproductoresweb3;
+nodeReproductoresweb3->nodeReproductoresweb2;
+nodeMatriz->node2;
+node2[label="2"];
+node2->node3;
+node3->node2;
+node2->nodeReproductoresweb2;
+nodeReproductoresweb2->node2;
+nodeReproductoresweb2[shape=circle; label="2"];
+{rank="same"; nodeReproductoresweb; nodeReproductoresweb2} 
+node3[label="3"];
+node3->nodeReproductoresweb3;
+nodeReproductoresweb3->node3;
+nodeReproductoresweb3[shape=circle; label="3"];
+{rank="same"; nodeReproductoresweb3} 
+{rank="same"; nodeMatriz; node2; node3} 
+}
+}

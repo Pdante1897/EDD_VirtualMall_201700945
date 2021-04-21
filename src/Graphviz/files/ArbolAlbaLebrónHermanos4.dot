@@ -1,0 +1,14 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo210[label="{ Codigo: 210 | Nombre: Pequeño Madera Mesa | Precio: 875 | Cantidad: 78}"];
+nodo208[label="{ Codigo: 208 | Nombre: Práctica Metal Ensalada | Precio: 901 | Cantidad: 481}"];
+nodo209[label="{ Codigo: 209 | Nombre: Ergonómico Acero Zapatos | Precio: 877 | Cantidad: 432}"];
+nodo208->nodo209;
+nodo210->nodo208;
+nodo212[label="{ Codigo: 212 | Nombre: Ergonómico Madera Pescado | Precio: 180 | Cantidad: 24}"];
+nodo211[label="{ Codigo: 211 | Nombre: Refinado Acero Pantalones | Precio: 676 | Cantidad: 2}"];
+nodo212->nodo211;
+nodo213[label="{ Codigo: 213 | Nombre: Rústico Plástico Tuna | Precio: 43 | Cantidad: 53}"];
+nodo212->nodo213;
+nodo210->nodo212;
+}

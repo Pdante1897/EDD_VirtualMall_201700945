@@ -1,0 +1,10 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo854[label="{ Codigo: 854 | Nombre: Elegante Cotton Bike | Precio: 205 | Cantidad: 76}"];
+nodo853[label="{ Codigo: 853 | Nombre: Genérica Frozen Embutidos | Precio: 928 | Cantidad: 287}"];
+nodo852[label="{ Codigo: 852 | Nombre: Elegante Acero Ratón | Precio: 423 | Cantidad: 270}"];
+nodo853->nodo852;
+nodo854->nodo853;
+nodo855[label="{ Codigo: 855 | Nombre: Gorgeous Metal Embutidos | Precio: 155 | Cantidad: 188}"];
+nodo854->nodo855;
+}

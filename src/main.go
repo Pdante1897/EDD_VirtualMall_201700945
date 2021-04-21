@@ -75,40 +75,39 @@ func agregarPedidos(w http.ResponseWriter, r *http.Request) {
 		buscar.Nombre = archivo.Pedidos[i].Tienda
 		buscar.Calificacion = archivo.Pedidos[i].Calificacion
 		nodo := Listad[Dato.RowMajor(Ind, Dep, buscar.NumDep(Listad), buscar.Calificacion-1)].Buscar(buscar.Nombre)
-		if nodo != nil {
+		if nodo != nil && Arbol.Raiz.Buscar(archivo.Pedidos[i].Cliente) != nil {
 			for j := 0; j < len(archivo.Pedidos[i].Productos); j++ {
 				var nodoAI = Dato.BusquedaArbIn(nodo.Tienda.Inventario.Raiz, archivo.Pedidos[i].Productos[j].Codigo)
 				if nodoAI != nil {
-					if Arbol.Raiz.Buscar(archivo.Pedidos[i].Cliente) != nil {
-						var cola *Dato.Cola
-						cola = matriz.Buscar(buscar.Departamento + strconv.Itoa(dia))
-						if cola != nil {
+					var cola *Dato.Cola
+					cola = matriz.Buscar(buscar.Departamento + strconv.Itoa(dia))
+					if cola != nil {
 
-							cola.Push(nodoAI.Valor)
+						cola.Push(nodoAI.Valor)
 
-						} else {
-							var nuevo *Dato.NodoPedido
-							nuevo = new(Dato.NodoPedido)
-							var colaN *Dato.Cola
-							colaN = new(Dato.Cola)
-							colaN.Nombre = buscar.Departamento + strconv.Itoa(dia)
-							colaN.Push(nodoAI.Valor)
-							nuevo.Cola = colaN
-							nuevo.Departamento = buscar.Departamento
-							nuevo.Dia = dia
-							nuevo.Cliente = archivo.Pedidos[i].Cliente
-							matriz.Add(nuevo)
-						}
+					} else {
+						var nuevo *Dato.NodoPedido
+						nuevo = new(Dato.NodoPedido)
+						var colaN *Dato.Cola
+						colaN = new(Dato.Cola)
+						colaN.Nombre = buscar.Departamento + strconv.Itoa(dia)
+						colaN.Push(nodoAI.Valor)
+						nuevo.Cola = colaN
+						nuevo.Departamento = buscar.Departamento
+						nuevo.Dia = dia
+						nuevo.Cliente = archivo.Pedidos[i].Cliente
+						matriz.Add(nuevo)
+
 					}
 
-				} else {
-					continue
 				}
 			}
 			matriz.Imprimir()
 			matriz.Imprimir2()
 
 		} else {
+			fmt.Println("No se encontro el cliente")
+
 			continue
 		}
 
@@ -320,8 +319,8 @@ func main() {
 	router.HandleFunc("/getUsuarios", getUsuarios).Methods("GET")
 	router.HandleFunc("/cargarUsuarios", cargarUsuarios).Methods("POST")
 	router.HandleFunc("/cargarGrafos", cargarGrafos).Methods("POST")
-
 	router.HandleFunc("/getProductos/{nombre}+{departamento}+{calificacion}", getInventarios).Methods("GET")
+	router.HandleFunc("/getPDFs", getPDFs).Methods("GET")
 
 	log.Fatal(http.ListenAndServe(":3000", handlers.CORS(handlers.AllowedHeaders([]string{"X-Requested-With", "Content-Type", "Authorization"}), handlers.AllowedMethods([]string{"GET", "POST", "PUT", "HEAD", "OPTIONS"}), handlers.AllowedOrigins([]string{"*"}))(router)))
 }
@@ -412,6 +411,65 @@ func getTiendas(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(&Dato.ArrTienda{Tiendas: tiendas})
 
+}
+func getPDFs(w http.ResponseWriter, r *http.Request) {
+	dir, err := filepath.Abs(filepath.Dir("./graphviz/files/"))
+	if err != nil {
+		log.Fatal(err)
+	}
+	archivos, err := ioutil.ReadDir("./Graphviz/files")
+	if err != nil {
+		log.Fatal(err)
+	}
+	listapdfs := Graphviz.NewListaPDF()
+	var pdfs []Graphviz.Archivopdf
+	for _, archivo := range archivos {
+		if strings.Contains(archivo.Name(), ".pdf") {
+			fmt.Println("Nombre:", dir+"\\"+archivo.Name())
+			var pdf Graphviz.Archivopdf
+			pdf.Nombre = archivo.Name()
+			pdf.Ruta = dir + "\\" + archivo.Name()
+			pdfs = append(pdfs, pdf)
+			copiar(pdf)
+		}
+
+	}
+	listapdfs.Pdfs = pdfs
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(&Graphviz.ListaPdf{Pdfs: listapdfs.Pdfs})
+
+}
+
+func copiar(pdf Graphviz.Archivopdf) {
+	dir, err := filepath.Abs(filepath.Dir("./graphviz/graphviz.go"))
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(dir)
+	var cadena strings.Builder
+	fmt.Fprintf(&cadena, "copy  "+pdf.Ruta+" C:\\Users\\gerar\\Desktop\\ProyectoEdd\\EDD_VirtualMall_201700945\\virtualMallFront\\src\\assets\\download\\ \n  ")
+	fil, err := os.Create(dir + "\\files\\copiar.bat")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	bytes, err := fil.WriteString(cadena.String())
+	if err != nil {
+		fmt.Println(err)
+		fil.Close()
+		return
+	}
+	fmt.Println(bytes, "bytes escritos satisfactoriamente! :D")
+	err = fil.Close()
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	cmd := exec.Command(dir + "\\files\\copiar.bat")
+	err = cmd.Run()
+	if err != nil {
+		fmt.Println(err)
+	}
 }
 
 func getInventarios(w http.ResponseWriter, r *http.Request) {
