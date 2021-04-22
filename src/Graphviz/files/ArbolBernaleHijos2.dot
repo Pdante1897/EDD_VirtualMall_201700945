@@ -1,12 +1,12 @@
 digraph G{
 node[shape="box" shape="record"]
-nodo78[label="{ Codigo: 78 | Nombre: Artesanal Hormigón Bike | Precio: 705 | Cantidad: 108}"];
-nodo76[label="{ Codigo: 76 | Nombre: Inteligente Acero Ensalada | Precio: 893 | Cantidad: 401}"];
-nodo75[label="{ Codigo: 75 | Nombre: Ergonómico Fresco Embutidos | Precio: 964 | Cantidad: 438}"];
+nodo78[label="{ Codigo: 78 | Nombre: Artesanal Hormigón Bike | Precio: 705 | Cantidad: 108 | Almacen: La jirafa}"];
+nodo76[label="{ Codigo: 76 | Nombre: Inteligente Acero Ensalada | Precio: 893 | Cantidad: 401 | Almacen: La maquina neumatica}"];
+nodo75[label="{ Codigo: 75 | Nombre: Ergonómico Fresco Embutidos | Precio: 964 | Cantidad: 438 | Almacen: Andromeda}"];
 nodo76->nodo75;
-nodo77[label="{ Codigo: 77 | Nombre: Sabrosa Frozen Mesa | Precio: 750 | Cantidad: 273}"];
+nodo77[label="{ Codigo: 77 | Nombre: Sabrosa Frozen Mesa | Precio: 750 | Cantidad: 273 | Almacen: Andromeda}"];
 nodo76->nodo77;
 nodo78->nodo76;
-nodo79[label="{ Codigo: 79 | Nombre: Refinado Madera Pollo | Precio: 868 | Cantidad: 23}"];
+nodo79[label="{ Codigo: 79 | Nombre: Refinado Madera Pollo | Precio: 868 | Cantidad: 23 | Almacen: El ave del paraiso}"];
 nodo78->nodo79;
 }

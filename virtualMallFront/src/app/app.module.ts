@@ -11,6 +11,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { ProductosComponent } from './componentes/productos/productos.component';
 import { AdminComponent } from './componentes/admin/admin.component';
 import { CargarComponent } from './componentes/cargar/cargar.component';
+import { LoginComponent } from './componentes/login/login.component';
+import { EncriptarComponent } from './componentes/encriptar/encriptar.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { CargarComponent } from './componentes/cargar/cargar.component';
     PedidosComponent,
     ProductosComponent,
     AdminComponent,
-    CargarComponent
+    CargarComponent,
+    LoginComponent,
+    EncriptarComponent
   ],
   imports: [
     BrowserModule,

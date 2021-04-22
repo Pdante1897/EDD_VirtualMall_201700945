@@ -191,10 +191,10 @@ func (this *NodoAI) GenerarGraphviz() string {
 	var cadena = ""
 	if this.Right == nil && this.Left == nil {
 		precio := strconv.FormatFloat(this.Valor.Precio, 'f', -1, 64)
-		cadena = "nodo" + strconv.Itoa(this.Valor.Codigo) + "[label=\"{ Codigo: " + strconv.Itoa(this.Valor.Codigo) + " | Nombre: " + this.Valor.Nombre + " | Precio: " + precio + " | Cantidad: " + strconv.Itoa(int(this.Valor.Cantidad)) + "}\"];\n"
+		cadena = "nodo" + strconv.Itoa(this.Valor.Codigo) + "[label=\"{ Codigo: " + strconv.Itoa(this.Valor.Codigo) + " | Nombre: " + this.Valor.Nombre + " | Precio: " + precio + " | Cantidad: " + strconv.Itoa(int(this.Valor.Cantidad)) + " | Almacen: " + this.Valor.Almacenamiento + "}\"];\n"
 	} else {
 		precio := strconv.FormatFloat(this.Valor.Precio, 'f', -1, 64)
-		cadena = "nodo" + strconv.Itoa(this.Valor.Codigo) + "[label=\"{ Codigo: " + strconv.Itoa(this.Valor.Codigo) + " | Nombre: " + this.Valor.Nombre + " | Precio: " + precio + " | Cantidad: " + strconv.Itoa(int(this.Valor.Cantidad)) + "}\"];\n"
+		cadena = "nodo" + strconv.Itoa(this.Valor.Codigo) + "[label=\"{ Codigo: " + strconv.Itoa(this.Valor.Codigo) + " | Nombre: " + this.Valor.Nombre + " | Precio: " + precio + " | Cantidad: " + strconv.Itoa(int(this.Valor.Cantidad)) + " | Almacen: " + this.Valor.Almacenamiento + "}\"];\n"
 	}
 	if this.Left != nil {
 		cadena += this.Left.GenerarGraphviz() + "nodo" + strconv.Itoa(this.Valor.Codigo) + "->nodo" + strconv.Itoa(this.Left.Valor.Codigo) + ";\n"

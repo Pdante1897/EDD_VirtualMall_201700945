@@ -1,16 +1,16 @@
 digraph G{
 node[shape="box" shape="record"]
-nodo809[label="{ Codigo: 809 | Nombre: Genérica Fresco Pelota | Precio: 848 | Cantidad: 478}"];
-nodo807[label="{ Codigo: 807 | Nombre: Pequeño Madera Teclado | Precio: 179 | Cantidad: 301}"];
-nodo806[label="{ Codigo: 806 | Nombre: Rústico Madera Presidente | Precio: 228 | Cantidad: 50}"];
+nodo809[label="{ Codigo: 809 | Nombre: Genérica Fresco Pelota | Precio: 848 | Cantidad: 478 | Almacen: El cincel}"];
+nodo807[label="{ Codigo: 807 | Nombre: Pequeño Madera Teclado | Precio: 179 | Cantidad: 301 | Almacen: El carnero}"];
+nodo806[label="{ Codigo: 806 | Nombre: Rústico Madera Presidente | Precio: 228 | Cantidad: 50 | Almacen: Andromeda}"];
 nodo807->nodo806;
-nodo808[label="{ Codigo: 808 | Nombre: Rústico Madera Camisa | Precio: 724 | Cantidad: 304}"];
+nodo808[label="{ Codigo: 808 | Nombre: Rústico Madera Camisa | Precio: 724 | Cantidad: 304 | Almacen: La jirafa}"];
 nodo807->nodo808;
 nodo809->nodo807;
-nodo811[label="{ Codigo: 811 | Nombre: Hecho a mano Fresco Pantalones | Precio: 74 | Cantidad: 137}"];
-nodo810[label="{ Codigo: 810 | Nombre: Hecho a mano Soft Toallas | Precio: 388 | Cantidad: 315}"];
+nodo811[label="{ Codigo: 811 | Nombre: Hecho a mano Fresco Pantalones | Precio: 74 | Cantidad: 137 | Almacen: El cincel}"];
+nodo810[label="{ Codigo: 810 | Nombre: Hecho a mano Soft Toallas | Precio: 388 | Cantidad: 315 | Almacen: Andromeda}"];
 nodo811->nodo810;
-nodo812[label="{ Codigo: 812 | Nombre: Refinado Cotton Sombrero | Precio: 173 | Cantidad: 426}"];
+nodo812[label="{ Codigo: 812 | Nombre: Refinado Cotton Sombrero | Precio: 173 | Cantidad: 426 | Almacen: Andromeda}"];
 nodo811->nodo812;
 nodo809->nodo811;
 }

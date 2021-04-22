@@ -317,6 +317,8 @@ func main() {
 	router.HandleFunc("/getImgInv", generarImgInv).Methods("GET")
 	router.HandleFunc("/getTiendas", getTiendas).Methods("GET")
 	router.HandleFunc("/getUsuarios", getUsuarios).Methods("GET")
+	router.HandleFunc("/getUsuariosSha256", getUsuariosSha256).Methods("GET")
+	router.HandleFunc("/getUsuariosBcrypt", getUsuariosBcrypt).Methods("GET")
 	router.HandleFunc("/cargarUsuarios", cargarUsuarios).Methods("POST")
 	router.HandleFunc("/cargarGrafos", cargarGrafos).Methods("POST")
 	router.HandleFunc("/getProductos/{nombre}+{departamento}+{calificacion}", getInventarios).Methods("GET")
@@ -370,6 +372,12 @@ func cargarUsuarios(w http.ResponseWriter, r *http.Request) {
 
 func getUsuarios(w http.ResponseWriter, r *http.Request) {
 	Dato.GraficarArbolB(Arbol.Raiz)
+}
+func getUsuariosSha256(w http.ResponseWriter, r *http.Request) {
+	Dato.GraficarArbolBSha256(Arbol.Raiz)
+}
+func getUsuariosBcrypt(w http.ResponseWriter, r *http.Request) {
+	Dato.GraficarArbolBBcript(Arbol.Raiz)
 }
 
 func Eliminar(w http.ResponseWriter, r *http.Request) {

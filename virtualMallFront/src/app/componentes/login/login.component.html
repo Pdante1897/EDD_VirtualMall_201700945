@@ -1,0 +1,32 @@
+<p>login works!</p>
+<form id="loginform">
+    <div id="contenedor">
+            
+        <div id="contenedorcentrado">
+            <div id="login">
+                <form id="loginform" #formulario="ngForm">
+                    <label for="usuario">Usuario</label>
+                    <input id="usuario"  [(ngModel)]="usuario" type="text" name="usuario" placeholder="Usuario" required>
+                    
+                    <label for="password">Contraseña</label>
+                    <input id="password"  [(ngModel)]="password" type="password" placeholder="Contraseña" name="password" required>
+                    
+                    <button type="submit" title="Ingresar"(click)="login(usuario, password)" name="Ingresar">Login</button>
+                </form>
+                
+            </div>
+            <div id="derecho">
+                <div class="titulo">
+                    Bienvenido
+                </div>
+                <hr>
+                <div class="pie-form">
+                    <a >¿Perdiste tu contraseña?</a>
+                    <a >¿No tienes Cuenta? Registrate</a>
+                    <hr>
+                    <a >« Volver</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

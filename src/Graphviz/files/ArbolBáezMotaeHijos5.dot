@@ -1,17 +1,17 @@
 digraph G{
 node[shape="box" shape="record"]
-nodo844[label="{ Codigo: 844 | Nombre: Ergonómico Acero Pescado | Precio: 201 | Cantidad: 26}"];
-nodo842[label="{ Codigo: 842 | Nombre: Fantástico Cotton Guantes | Precio: 171 | Cantidad: 108}"];
-nodo841[label="{ Codigo: 841 | Nombre: Genérica Caucho Mesa | Precio: 762 | Cantidad: 178}"];
+nodo844[label="{ Codigo: 844 | Nombre: Ergonómico Acero Pescado | Precio: 201 | Cantidad: 26 | Almacen: El ave del paraiso}"];
+nodo842[label="{ Codigo: 842 | Nombre: Fantástico Cotton Guantes | Precio: 171 | Cantidad: 108 | Almacen: La maquina neumatica}"];
+nodo841[label="{ Codigo: 841 | Nombre: Genérica Caucho Mesa | Precio: 762 | Cantidad: 178 | Almacen: Andromeda}"];
 nodo842->nodo841;
-nodo843[label="{ Codigo: 843 | Nombre: Increíble Cotton Jabón | Precio: 245 | Cantidad: 160}"];
+nodo843[label="{ Codigo: 843 | Nombre: Increíble Cotton Jabón | Precio: 245 | Cantidad: 160 | Almacen: El cangrejo}"];
 nodo842->nodo843;
 nodo844->nodo842;
-nodo846[label="{ Codigo: 846 | Nombre: Práctica Caucho Camisa | Precio: 15 | Cantidad: 110}"];
-nodo845[label="{ Codigo: 845 | Nombre: Licencia Plástico Embutidos | Precio: 665 | Cantidad: 313}"];
+nodo846[label="{ Codigo: 846 | Nombre: Práctica Caucho Camisa | Precio: 15 | Cantidad: 110 | Almacen: El carnero}"];
+nodo845[label="{ Codigo: 845 | Nombre: Licencia Plástico Embutidos | Precio: 665 | Cantidad: 313 | Almacen: El cincel}"];
 nodo846->nodo845;
-nodo847[label="{ Codigo: 847 | Nombre: Práctica Plástico Pollo | Precio: 162 | Cantidad: 313}"];
-nodo848[label="{ Codigo: 848 | Nombre: Rústico Acero Queso | Precio: 414 | Cantidad: 446}"];
+nodo847[label="{ Codigo: 847 | Nombre: Práctica Plástico Pollo | Precio: 162 | Cantidad: 313 | Almacen: El carnero}"];
+nodo848[label="{ Codigo: 848 | Nombre: Rústico Acero Queso | Precio: 414 | Cantidad: 446 | Almacen: La jirafa}"];
 nodo847->nodo848;
 nodo846->nodo847;
 nodo844->nodo846;

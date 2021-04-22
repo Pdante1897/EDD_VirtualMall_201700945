@@ -48,6 +48,25 @@ export class UploadService {
     };
     return this.http.get<any>(baseURL + 'getUsuarios', httpOptions);
   }
+
+  getUsuariosSha256():Observable<any>{
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+    };
+    return this.http.get<any>(baseURL + 'getUsuariosSha256', httpOptions);
+  }
+  getUsuariosBcrypt():Observable<any>{
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+    };
+    return this.http.get<any>(baseURL + 'getUsuariosBcrypt', httpOptions);
+  }
   
   getMatriz():Observable<any>{
 

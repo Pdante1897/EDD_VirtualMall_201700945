@@ -1,18 +1,18 @@
 digraph G{
 node[shape="box" shape="record"]
-nodo815[label="{ Codigo: 815 | Nombre: Elegante Hormigón Embutidos | Precio: 441 | Cantidad: 129}"];
-nodo814[label="{ Codigo: 814 | Nombre: Pequeño Plástico Auto | Precio: 690 | Cantidad: 364}"];
-nodo813[label="{ Codigo: 813 | Nombre: Fantástico Plástico Pantalones | Precio: 313 | Cantidad: 454}"];
+nodo815[label="{ Codigo: 815 | Nombre: Elegante Hormigón Embutidos | Precio: 441 | Cantidad: 129 | Almacen: La jirafa}"];
+nodo814[label="{ Codigo: 814 | Nombre: Pequeño Plástico Auto | Precio: 690 | Cantidad: 364 | Almacen: El altar}"];
+nodo813[label="{ Codigo: 813 | Nombre: Fantástico Plástico Pantalones | Precio: 313 | Cantidad: 454 | Almacen: El ave del paraiso}"];
 nodo814->nodo813;
 nodo815->nodo814;
-nodo819[label="{ Codigo: 819 | Nombre: Práctica Soft Auto | Precio: 720 | Cantidad: 188}"];
-nodo817[label="{ Codigo: 817 | Nombre: Fantástico Granito Auto | Precio: 680 | Cantidad: 419}"];
-nodo816[label="{ Codigo: 816 | Nombre: Elegante Acero Toallas | Precio: 187 | Cantidad: 434}"];
+nodo819[label="{ Codigo: 819 | Nombre: Práctica Soft Auto | Precio: 720 | Cantidad: 188 | Almacen: El altar}"];
+nodo817[label="{ Codigo: 817 | Nombre: Fantástico Granito Auto | Precio: 680 | Cantidad: 419 | Almacen: Andromeda}"];
+nodo816[label="{ Codigo: 816 | Nombre: Elegante Acero Toallas | Precio: 187 | Cantidad: 434 | Almacen: El cangrejo}"];
 nodo817->nodo816;
-nodo818[label="{ Codigo: 818 | Nombre: Genérica Acero Ensalada | Precio: 828 | Cantidad: 475}"];
+nodo818[label="{ Codigo: 818 | Nombre: Genérica Acero Ensalada | Precio: 828 | Cantidad: 475 | Almacen: Andromeda}"];
 nodo817->nodo818;
 nodo819->nodo817;
-nodo820[label="{ Codigo: 820 | Nombre: Refinado Metal Mesa | Precio: 379 | Cantidad: 373}"];
+nodo820[label="{ Codigo: 820 | Nombre: Refinado Metal Mesa | Precio: 379 | Cantidad: 373 | Almacen: El altar}"];
 nodo819->nodo820;
 nodo815->nodo819;
 }

@@ -1,10 +1,10 @@
 digraph G{
 node[shape="box" shape="record"]
-nodo624[label="{ Codigo: 624 | Nombre: Increíble Soft Guantes | Precio: 251 | Cantidad: 475}"];
-nodo622[label="{ Codigo: 622 | Nombre: Rústico Metal Tuna | Precio: 422 | Cantidad: 192}"];
-nodo623[label="{ Codigo: 623 | Nombre: Ergonómico Plástico Bike | Precio: 661 | Cantidad: 52}"];
+nodo624[label="{ Codigo: 624 | Nombre: Increíble Soft Guantes | Precio: 251 | Cantidad: 475 | Almacen: Andromeda}"];
+nodo622[label="{ Codigo: 622 | Nombre: Rústico Metal Tuna | Precio: 422 | Cantidad: 192 | Almacen: La maquina neumatica}"];
+nodo623[label="{ Codigo: 623 | Nombre: Ergonómico Plástico Bike | Precio: 661 | Cantidad: 52 | Almacen: El carnero}"];
 nodo622->nodo623;
 nodo624->nodo622;
-nodo625[label="{ Codigo: 625 | Nombre: Licencia Caucho Camisa | Precio: 299 | Cantidad: 47}"];
+nodo625[label="{ Codigo: 625 | Nombre: Licencia Caucho Camisa | Precio: 299 | Cantidad: 47 | Almacen: La jirafa}"];
 nodo624->nodo625;
 }

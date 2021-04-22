@@ -1,8 +1,8 @@
 digraph G{
 node[shape="box" shape="record"]
-nodo549[label="{ Codigo: 549 | Nombre: Rústico Caucho Tocino | Precio: 20 | Cantidad: 391}"];
-nodo548[label="{ Codigo: 548 | Nombre: Increíble Fresco Zapatos | Precio: 920 | Cantidad: 25}"];
+nodo549[label="{ Codigo: 549 | Nombre: Rústico Caucho Tocino | Precio: 20 | Cantidad: 391 | Almacen: La maquina neumatica}"];
+nodo548[label="{ Codigo: 548 | Nombre: Increíble Fresco Zapatos | Precio: 920 | Cantidad: 25 | Almacen: Andromeda}"];
 nodo549->nodo548;
-nodo550[label="{ Codigo: 550 | Nombre: Hecho a mano Soft Auto | Precio: 184 | Cantidad: 45}"];
+nodo550[label="{ Codigo: 550 | Nombre: Hecho a mano Soft Auto | Precio: 184 | Cantidad: 45 | Almacen: El aguila}"];
 nodo549->nodo550;
 }

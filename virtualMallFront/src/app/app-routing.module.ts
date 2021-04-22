@@ -7,6 +7,8 @@ import { PedidosComponent } from "./componentes/pedidos/pedidos.component";
 import { ProductosComponent } from "./componentes/productos/productos.component";
 import { AdminComponent } from './componentes/admin/admin.component';
 import { CargarComponent } from './componentes/cargar/cargar.component';
+import { LoginComponent } from './componentes/login/login.component';
+import { EncriptarComponent } from './componentes/encriptar/encriptar.component';
 
 
 const routes: Routes = [{
@@ -45,6 +47,15 @@ const routes: Routes = [{
 {
   path: 'cargar',
   component: CargarComponent,
+},
+{
+  path: 'login',
+  component: LoginComponent,
+}
+,
+{
+  path: 'encriptar',
+  component: EncriptarComponent,
 }
 ];
 

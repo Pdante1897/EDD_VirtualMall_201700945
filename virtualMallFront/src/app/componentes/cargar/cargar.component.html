@@ -45,3 +45,9 @@
         <button (click)="subirArchivo($event, cargarGrafos)">Subir archivo</button>
       </form>
 </div>
+<div>    
+  <h3>Set Key</h3>
+  <input type="text" id="input-key" [(ngModel)]="key" />
+  <button  (click)="setKey($event)">Set</button>
+
+</div>
