@@ -1,0 +1,24 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo370[label="{ Codigo: 370 | Nombre: Fantástico Madera Zapatos | Precio: 318 | Cantidad: 238 | Almacen: Canon orbital}"];
+nodo366[label="{ Codigo: 366 | Nombre: Rústico Frozen Embutidos | Precio: 328 | Cantidad: 489 | Almacen: Eliseo}"];
+nodo364[label="{ Codigo: 364 | Nombre: Práctica Acero Pizza | Precio: 985 | Cantidad: 362 | Almacen: Capacitor}"];
+nodo363[label="{ Codigo: 363 | Nombre: Hecho a mano Plástico Guantes | Precio: 539 | Cantidad: 161 | Almacen: The train yard}"];
+nodo364->nodo363;
+nodo365[label="{ Codigo: 365 | Nombre: Refinado Madera Mesa | Precio: 61 | Cantidad: 452 | Almacen: Fragment west}"];
+nodo364->nodo365;
+nodo366->nodo364;
+nodo368[label="{ Codigo: 368 | Nombre: Increíble Caucho Pelota | Precio: 576 | Cantidad: 105 | Almacen: Broken relay}"];
+nodo367[label="{ Codigo: 367 | Nombre: Inteligente Frozen Bike | Precio: 458 | Cantidad: 250 | Almacen: The tree}"];
+nodo368->nodo367;
+nodo369[label="{ Codigo: 369 | Nombre: Hecho a mano Frozen Guantes | Precio: 480 | Cantidad: 11 | Almacen: Repulsor}"];
+nodo368->nodo369;
+nodo366->nodo368;
+nodo370->nodo366;
+nodo372[label="{ Codigo: 372 | Nombre: Artesanal Caucho Camisa | Precio: 138 | Cantidad: 25 | Almacen: Broken relay}"];
+nodo371[label="{ Codigo: 371 | Nombre: Artesanal Hormigón Pescado | Precio: 2 | Cantidad: 119 | Almacen: Lava fissure}"];
+nodo372->nodo371;
+nodo373[label="{ Codigo: 373 | Nombre: Pequeño Plástico Pescado | Precio: 186 | Cantidad: 329 | Almacen: Eliseo}"];
+nodo372->nodo373;
+nodo370->nodo372;
+}

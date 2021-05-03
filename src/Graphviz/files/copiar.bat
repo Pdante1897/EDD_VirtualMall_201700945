@@ -1,2 +1,2 @@
-copy  C:\Users\gerar\Desktop\ProyectoEdd\EDD_VirtualMall_201700945\src\graphviz\files\graficaGrafo.pdf C:\Users\gerar\Desktop\ProyectoEdd\EDD_VirtualMall_201700945\virtualMallFront\src\assets\download\ 
+copy  C:\Users\gerar\Desktop\ProyectoEdd\EDD_VirtualMall_201700945\src\graphviz\files\graficaMatriz1997Septiembre.pdf C:\Users\gerar\Desktop\ProyectoEdd\EDD_VirtualMall_201700945\virtualMallFront\src\assets\download\ 
   

@@ -1,0 +1,26 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo733[label="{ Codigo: 733 | Nombre: Elegante Cotton Jabón | Precio: 432 | Cantidad: 490 | Almacen: The cage}"];
+nodo730[label="{ Codigo: 730 | Nombre: Gorgeous Madera Pelota | Precio: 35 | Cantidad: 22 | Almacen: Oasis}"];
+nodo729[label="{ Codigo: 729 | Nombre: Sin marca Hormigón Camisa | Precio: 135 | Cantidad: 106 | Almacen: Canon orbital}"];
+nodo730->nodo729;
+nodo732[label="{ Codigo: 732 | Nombre: Inteligente Soft Ratón | Precio: 223 | Cantidad: 164 | Almacen: Mirage voyage}"];
+nodo731[label="{ Codigo: 731 | Nombre: Increíble Madera Presidente | Precio: 449 | Cantidad: 107 | Almacen: Harvester}"];
+nodo732->nodo731;
+nodo730->nodo732;
+nodo733->nodo730;
+nodo736[label="{ Codigo: 736 | Nombre: Inteligente Fresco Bike | Precio: 622 | Cantidad: 1 | Almacen: Containment}"];
+nodo734[label="{ Codigo: 734 | Nombre: Hecho a mano Fresco Pelota | Precio: 975 | Cantidad: 342 | Almacen: Crash site}"];
+nodo735[label="{ Codigo: 735 | Nombre: Gorgeous Plástico Zapatos | Precio: 262 | Cantidad: 400 | Almacen: Harvester}"];
+nodo734->nodo735;
+nodo736->nodo734;
+nodo737[label="{ Codigo: 737 | Nombre: Elegante Granito Pescado | Precio: 169 | Cantidad: 396 | Almacen: Spotted lake}"];
+nodo739[label="{ Codigo: 739 | Nombre: Práctica Granito Auto | Precio: 41 | Cantidad: 300 | Almacen: Red electrica}"];
+nodo738[label="{ Codigo: 738 | Nombre: Sin marca Frozen Pantalones | Precio: 240 | Cantidad: 243 | Almacen: Thermal station}"];
+nodo739->nodo738;
+nodo740[label="{ Codigo: 740 | Nombre: Elegante Granito Tocino | Precio: 568 | Cantidad: 393 | Almacen: Containment}"];
+nodo739->nodo740;
+nodo737->nodo739;
+nodo736->nodo737;
+nodo733->nodo736;
+}

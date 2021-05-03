@@ -1,0 +1,57 @@
+digraph G{
+node[shape="box" shape="record"]
+graph[splines="ortho"]
+nodeMatriz[label="Matriz"];
+nodeMatriz->nodeDeportes;
+nodeDeportes->nodeTela;
+nodeTela->nodeDeportes;
+nodeDeportes[label="Deportes"];
+nodeDeportes->nodeDeportes20;
+nodeDeportes20->nodeDeportes;
+nodeTela[label="Tela"];
+nodeTela->nodeTela4;
+nodeTela4->nodeTela;
+nodeTela4[shape=circle; label="1"];
+nodeTela4->nodeTela17;
+nodeTela17->nodeTela4;
+nodeTela17[shape=circle; label="2"];
+nodeTela17->nodeTela23;
+nodeTela23->nodeTela17;
+nodeMatriz->node4;
+node4[label="4"];
+node4->node17;
+node17->node4;
+node4->nodeTela4;
+nodeTela4->node4;
+nodeTela4[shape=circle; label="3"];
+{rank="same"; nodeTela; nodeTela4} 
+node17[label="17"];
+node17->node20;
+node20->node17;
+{rank="same"} 
+node20[label="20"];
+node20->node23;
+node23->node20;
+{rank="same"} 
+node23[label="23"];
+node23->node17;
+node17->node23;
+node23->nodeTela23;
+nodeTela23->node23;
+nodeTela23[shape=circle; label="4"];
+{rank="same"; nodeTela23} 
+node17[label="17"];
+node17->node20;
+node20->node17;
+node17->nodeTela17;
+nodeTela17->node17;
+nodeTela17[shape=circle; label="5"];
+{rank="same"; nodeTela17} 
+node20[label="20"];
+node20->nodeDeportes20;
+nodeDeportes20->node20;
+nodeDeportes20[shape=circle; label="6"];
+{rank="same"; nodeDeportes; nodeDeportes20} 
+{rank="same"; nodeMatriz; node4; node23; node17; node20} 
+}
+}

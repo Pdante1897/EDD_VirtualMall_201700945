@@ -1,0 +1,24 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo924[label="{ Codigo: 924 | Nombre: Licencia Metal Mesa | Precio: 845 | Cantidad: 360 | Almacen: Plaza de los bonsais}"];
+nodo921[label="{ Codigo: 921 | Nombre: Refinado Cotton Toallas | Precio: 863 | Cantidad: 475 | Almacen: Transportador}"];
+nodo919[label="{ Codigo: 919 | Nombre: Elegante Acero Mesa | Precio: 835 | Cantidad: 423 | Almacen: Laboratorios Hammond}"];
+nodo918[label="{ Codigo: 918 | Nombre: Sin marca Plástico Tuna | Precio: 901 | Cantidad: 421 | Almacen: Brecha}"];
+nodo919->nodo918;
+nodo920[label="{ Codigo: 920 | Nombre: Hecho a mano Metal Teclado | Precio: 750 | Cantidad: 36 | Almacen: Salvage}"];
+nodo919->nodo920;
+nodo921->nodo919;
+nodo923[label="{ Codigo: 923 | Nombre: Inteligente Plástico Pescado | Precio: 166 | Cantidad: 234 | Almacen: Oasis}"];
+nodo922[label="{ Codigo: 922 | Nombre: Genérica Plástico Guantes | Precio: 624 | Cantidad: 235 | Almacen: Runoff}"];
+nodo923->nodo922;
+nodo921->nodo923;
+nodo924->nodo921;
+nodo926[label="{ Codigo: 926 | Nombre: Pequeño Frozen Pelota | Precio: 751 | Cantidad: 272 | Almacen: The geyser}"];
+nodo925[label="{ Codigo: 925 | Nombre: Elegante Acero Pescado | Precio: 533 | Cantidad: 176 | Almacen: Drill site}"];
+nodo926->nodo925;
+nodo928[label="{ Codigo: 928 | Nombre: Rústico Metal Ensalada | Precio: 653 | Cantidad: 96 | Almacen: Torres de cultivo}"];
+nodo927[label="{ Codigo: 927 | Nombre: Artesanal Cotton Sombrero | Precio: 44 | Cantidad: 359 | Almacen: Containment}"];
+nodo928->nodo927;
+nodo926->nodo928;
+nodo924->nodo926;
+}

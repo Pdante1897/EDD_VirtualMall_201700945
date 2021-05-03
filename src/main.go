@@ -294,14 +294,14 @@ func generarImgInv(w http.ResponseWriter, r *http.Request) {
 	}
 }
 func main() {
-	/*var arbol = Dato.NewArbol()
-	for i := 0; i < 50; i++ {
-		var lista Dato.ListaDPe
-		lista.Indice = i
-		arbol.Insert(lista)
+	var arbol = Dato.NewMerkel()
+	for i := 1; i < 4; i++ {
+
+		arbol.Insertar(i, strconv.Itoa(i))
 	}
-	fmt.Println(Dato.BusquedaArb(arbol.Raiz, 15).Valor.Indice)
-	*/
+	Dato.GenerarHashArbol(arbol.Raiz)
+	Dato.GuardarArchivo(arbol.Raiz.GenerarGraphvizMerk(), "prueba", "")
+
 	fmt.Println("un server papu")
 
 	router := mux.NewRouter()
@@ -347,9 +347,9 @@ func cargarGrafos(w http.ResponseWriter, r *http.Request) {
 	Grafo.Inicial = archivo.PosicionInicialrobot
 	Grafo.Entrega = archivo.Entrega
 	Grafo.Draw()
-	user := Arbol.Raiz.Buscar(7771566947243)
+	//user := Arbol.Raiz.Buscar(7771566947243)
 
-	fmt.Println(user.Nombre)
+	//fmt.Println(user.Nombre)
 
 }
 

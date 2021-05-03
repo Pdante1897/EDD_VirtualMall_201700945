@@ -193,10 +193,10 @@ func GraficarMatriz(s *strings.Builder, num string) {
 	fmt.Fprintf(&cadena, s.String())
 	fmt.Fprintf(&cadena, "}\n")
 	fmt.Fprintf(&cadena, "}\n")
-	guardarArchivo(cadena.String(), num, "Matriz")
+	GuardarArchivo(cadena.String(), num, "Matriz")
 }
 
-func guardarArchivo(cadena string, num string, nom string) {
+func GuardarArchivo(cadena string, num string, nom string) {
 	fil, err := os.Create("./Graphviz/files/" + nom + num + ".dot")
 	if err != nil {
 		fmt.Println(err)

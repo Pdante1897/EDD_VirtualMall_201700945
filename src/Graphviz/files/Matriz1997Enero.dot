@@ -1,0 +1,41 @@
+digraph G{
+node[shape="box" shape="record"]
+graph[splines="ortho"]
+nodeMatriz[label="Matriz"];
+nodeMatriz->nodeTela;
+nodeTela[label="Tela"];
+nodeTela->nodeTela1;
+nodeTela1->nodeTela;
+nodeTela1[shape=circle; label="1"];
+nodeTela1->nodeTela4;
+nodeTela4->nodeTela1;
+nodeTela4[shape=circle; label="2"];
+nodeTela4->nodeTela12;
+nodeTela12->nodeTela4;
+nodeMatriz->node1;
+node1[label="1"];
+node1->node4;
+node4->node1;
+node1->nodeTela1;
+nodeTela1->node1;
+nodeTela1[shape=circle; label="3"];
+{rank="same"; nodeTela; nodeTela1} 
+node4[label="4"];
+node4->node12;
+node12->node4;
+{rank="same"} 
+node12[label="12"];
+node12->node4;
+node4->node12;
+node12->nodeTela12;
+nodeTela12->node12;
+nodeTela12[shape=circle; label="4"];
+{rank="same"; nodeTela12} 
+node4[label="4"];
+node4->nodeTela4;
+nodeTela4->node4;
+nodeTela4[shape=circle; label="5"];
+{rank="same"; nodeTela4} 
+{rank="same"; nodeMatriz; node1; node12; node4} 
+}
+}

@@ -202,7 +202,7 @@ func GraficarArbolB(Nodo *NodoB) {
 	fmt.Fprintf(&cadena, "node[shape=\"box\" shape=\"record\"]\n")
 	fmt.Fprintf(&cadena, Nodo.GenerarGraphviz(&cadena2))
 	fmt.Fprintf(&cadena, "}\n")
-	guardarArchivo(cadena.String(), "", "ArbolUser")
+	GuardarArchivo(cadena.String(), "", "ArbolUser")
 	Dir("ArbolUser")
 }
 
@@ -214,7 +214,7 @@ func GraficarArbolBSha256(Nodo *NodoB) {
 	fmt.Fprintf(&cadena, "node[shape=\"box\" shape=\"record\"]\n")
 	fmt.Fprintf(&cadena, Nodo.GenerarGraphvizSha256(&cadena2))
 	fmt.Fprintf(&cadena, "}\n")
-	guardarArchivo(cadena.String(), "", "ArbolUserSha256")
+	GuardarArchivo(cadena.String(), "", "ArbolUserSha256")
 	Dir("ArbolUserSha256")
 }
 
@@ -226,7 +226,7 @@ func GraficarArbolBBcript(Nodo *NodoB) {
 	fmt.Fprintf(&cadena, "node[shape=\"box\" shape=\"record\"]\n")
 	fmt.Fprintf(&cadena, Nodo.GenerarGraphvizBcrypt(&cadena2))
 	fmt.Fprintf(&cadena, "}\n")
-	guardarArchivo(cadena.String(), "", "ArbolUserBcript")
+	GuardarArchivo(cadena.String(), "", "ArbolUserBcript")
 	Dir("ArbolUserBcript")
 }
 

@@ -1,0 +1,40 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo683[label="{ Codigo: 683 | Nombre: Artesanal Soft Pelota | Precio: 840 | Cantidad: 141 | Almacen: Market}"];
+nodo675[label="{ Codigo: 675 | Nombre: Elegante Frozen Computadora | Precio: 327 | Cantidad: 388 | Almacen: Artillery}"];
+nodo671[label="{ Codigo: 671 | Nombre: Sabrosa Soft Toallas | Precio: 633 | Cantidad: 141 | Almacen: Mirage voyage}"];
+nodo670[label="{ Codigo: 670 | Nombre: Sabrosa Granito Pizza | Precio: 528 | Cantidad: 278 | Almacen: Broken relay}"];
+nodo671->nodo670;
+nodo673[label="{ Codigo: 673 | Nombre: Pequeño Soft Computadora | Precio: 499 | Cantidad: 446 | Almacen: Red electrica}"];
+nodo672[label="{ Codigo: 672 | Nombre: Increíble Madera Toallas | Precio: 793 | Cantidad: 241 | Almacen: Market}"];
+nodo673->nodo672;
+nodo674[label="{ Codigo: 674 | Nombre: Sin marca Frozen Ratón | Precio: 680 | Cantidad: 145 | Almacen: Transportador}"];
+nodo673->nodo674;
+nodo671->nodo673;
+nodo675->nodo671;
+nodo677[label="{ Codigo: 677 | Nombre: Gorgeous Metal Jabón | Precio: 954 | Cantidad: 162 | Almacen: Airbase}"];
+nodo676[label="{ Codigo: 676 | Nombre: Ergonómico Frozen Teclado | Precio: 968 | Cantidad: 494 | Almacen: Swamps}"];
+nodo677->nodo676;
+nodo681[label="{ Codigo: 681 | Nombre: Increíble Granito Pantalones | Precio: 80 | Cantidad: 16 | Almacen: Labs}"];
+nodo679[label="{ Codigo: 679 | Nombre: Artesanal Madera Camisa | Precio: 256 | Cantidad: 52 | Almacen: Skyhook}"];
+nodo678[label="{ Codigo: 678 | Nombre: Rústico Metal Pollo | Precio: 619 | Cantidad: 222 | Almacen: Oasis}"];
+nodo679->nodo678;
+nodo680[label="{ Codigo: 680 | Nombre: Inteligente Acero Ratón | Precio: 253 | Cantidad: 245 | Almacen: Lava city}"];
+nodo679->nodo680;
+nodo681->nodo679;
+nodo682[label="{ Codigo: 682 | Nombre: Sin marca Frozen Computadora | Precio: 828 | Cantidad: 228 | Almacen: Muelles}"];
+nodo681->nodo682;
+nodo677->nodo681;
+nodo675->nodo677;
+nodo683->nodo675;
+nodo687[label="{ Codigo: 687 | Nombre: Fantástico Granito Pollo | Precio: 128 | Cantidad: 144 | Almacen: The pit}"];
+nodo685[label="{ Codigo: 685 | Nombre: Elegante Frozen Queso | Precio: 41 | Cantidad: 234 | Almacen: Crash site}"];
+nodo684[label="{ Codigo: 684 | Nombre: Rústico Madera Mesa | Precio: 43 | Cantidad: 240 | Almacen: Survey camp}"];
+nodo685->nodo684;
+nodo686[label="{ Codigo: 686 | Nombre: Genérica Granito Pelota | Precio: 970 | Cantidad: 78 | Almacen: The tree}"];
+nodo685->nodo686;
+nodo687->nodo685;
+nodo688[label="{ Codigo: 688 | Nombre: Práctica Frozen Toallas | Precio: 698 | Cantidad: 414 | Almacen: Drill site}"];
+nodo687->nodo688;
+nodo683->nodo687;
+}

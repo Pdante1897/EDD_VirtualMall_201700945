@@ -1,0 +1,67 @@
+digraph G{
+node[shape="box" shape="record"]
+graph[splines="ortho"]
+nodeMatriz[label="Matriz"];
+nodeMatriz->nodeDeportes;
+nodeDeportes->nodeTela;
+nodeTela->nodeDeportes;
+nodeDeportes[label="Deportes"];
+nodeDeportes->nodeDeportes14;
+nodeDeportes14->nodeDeportes;
+nodeDeportes14[shape=circle; label="1"];
+nodeDeportes14->nodeDeportes24;
+nodeDeportes24->nodeDeportes14;
+nodeDeportes24[shape=circle; label="2"];
+nodeDeportes24->nodeDeportes26;
+nodeDeportes26->nodeDeportes24;
+nodeDeportes26[shape=circle; label="3"];
+nodeDeportes26->nodeDeportes29;
+nodeDeportes29->nodeDeportes26;
+nodeTela[label="Tela"];
+nodeTela->nodeTela13;
+nodeTela13->nodeTela;
+nodeMatriz->node13;
+node13[label="13"];
+node13->node14;
+node14->node13;
+node13->nodeTela13;
+nodeTela13->node13;
+nodeTela13[shape=circle; label="4"];
+{rank="same"; nodeTela; nodeTela13} 
+node14[label="14"];
+node14->node24;
+node24->node14;
+{rank="same"} 
+node24[label="24"];
+node24->node26;
+node26->node24;
+{rank="same"} 
+node26[label="26"];
+node26->node29;
+node29->node26;
+node26->nodeDeportes26;
+nodeDeportes26->node26;
+nodeDeportes26[shape=circle; label="5"];
+{rank="same"; nodeDeportes26} 
+node29[label="29"];
+node29->node14;
+node14->node29;
+node29->nodeDeportes29;
+nodeDeportes29->node29;
+nodeDeportes29[shape=circle; label="6"];
+{rank="same"; nodeDeportes29} 
+node14[label="14"];
+node14->node24;
+node24->node14;
+node14->nodeDeportes14;
+nodeDeportes14->node14;
+nodeDeportes14[shape=circle; label="7"];
+{rank="same"; nodeDeportes; nodeDeportes14} 
+node24[label="24"];
+node24->nodeDeportes24;
+nodeDeportes24->node24;
+nodeDeportes24[shape=circle; label="8"];
+{rank="same"; nodeDeportes24} 
+{rank="same"; nodeMatriz; node13; node26; node29; node14; node24} 
+}
+}

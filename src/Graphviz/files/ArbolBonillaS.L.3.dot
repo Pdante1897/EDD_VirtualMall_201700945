@@ -1,0 +1,34 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo260[label="{ Codigo: 260 | Nombre: Gorgeous Granito Ensalada | Precio: 526 | Cantidad: 288 | Almacen: Containment}"];
+nodo256[label="{ Codigo: 256 | Nombre: Increíble Madera Pantalones | Precio: 375 | Cantidad: 417 | Almacen: Broken relay}"];
+nodo254[label="{ Codigo: 254 | Nombre: Increíble Cotton Presidente | Precio: 37 | Cantidad: 466 | Almacen: The train yard}"];
+nodo253[label="{ Codigo: 253 | Nombre: Increíble Soft Bike | Precio: 253 | Cantidad: 148 | Almacen: Plaza de los bonsais}"];
+nodo254->nodo253;
+nodo255[label="{ Codigo: 255 | Nombre: Gorgeous Acero Tuna | Precio: 612 | Cantidad: 56 | Almacen: The epicenter}"];
+nodo254->nodo255;
+nodo256->nodo254;
+nodo258[label="{ Codigo: 258 | Nombre: Inteligente Frozen Toallas | Precio: 798 | Cantidad: 403 | Almacen: Laboratorios Hammond}"];
+nodo257[label="{ Codigo: 257 | Nombre: Sabrosa Granito Pelota | Precio: 227 | Cantidad: 136 | Almacen: Bunker}"];
+nodo258->nodo257;
+nodo259[label="{ Codigo: 259 | Nombre: Refinado Hormigón Pantalones | Precio: 131 | Cantidad: 302 | Almacen: Lava fissure}"];
+nodo258->nodo259;
+nodo256->nodo258;
+nodo260->nodo256;
+nodo264[label="{ Codigo: 264 | Nombre: Hecho a mano Metal Pantalones | Precio: 58 | Cantidad: 106 | Almacen: Lava fissure}"];
+nodo262[label="{ Codigo: 262 | Nombre: Sabrosa Frozen Pelota | Precio: 619 | Cantidad: 245 | Almacen: Fragment east}"];
+nodo261[label="{ Codigo: 261 | Nombre: Artesanal Hormigón Teclado | Precio: 135 | Cantidad: 443 | Almacen: Capacitor}"];
+nodo262->nodo261;
+nodo263[label="{ Codigo: 263 | Nombre: Sabrosa Acero Pollo | Precio: 415 | Cantidad: 241 | Almacen: Swamps}"];
+nodo262->nodo263;
+nodo264->nodo262;
+nodo267[label="{ Codigo: 267 | Nombre: Gorgeous Caucho Jabón | Precio: 90 | Cantidad: 456 | Almacen: Swamps}"];
+nodo266[label="{ Codigo: 266 | Nombre: Fantástico Hormigón Guantes | Precio: 26 | Cantidad: 159 | Almacen: Oasis}"];
+nodo265[label="{ Codigo: 265 | Nombre: Artesanal Frozen Tocino | Precio: 123 | Cantidad: 141 | Almacen: Gauntlet}"];
+nodo266->nodo265;
+nodo267->nodo266;
+nodo268[label="{ Codigo: 268 | Nombre: Práctica Cotton Sombrero | Precio: 948 | Cantidad: 118 | Almacen: Hidroponia}"];
+nodo267->nodo268;
+nodo264->nodo267;
+nodo260->nodo264;
+}

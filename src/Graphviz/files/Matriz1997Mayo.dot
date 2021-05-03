@@ -1,0 +1,17 @@
+digraph G{
+node[shape="box" shape="record"]
+graph[splines="ortho"]
+nodeMatriz[label="Matriz"];
+nodeMatriz->nodeTela;
+nodeTela[label="Tela"];
+nodeTela->nodeTela23;
+nodeTela23->nodeTela;
+nodeMatriz->node23;
+node23[label="23"];
+node23->nodeTela23;
+nodeTela23->node23;
+nodeTela23[shape=circle; label="1"];
+{rank="same"; nodeTela; nodeTela23} 
+{rank="same"; nodeMatriz; node23} 
+}
+}

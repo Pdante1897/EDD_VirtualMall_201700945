@@ -1,0 +1,36 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo466[label="{ Codigo: 466 | Nombre: Hecho a mano Cotton Queso | Precio: 458 | Cantidad: 421 | Almacen: The rig}"];
+nodo461[label="{ Codigo: 461 | Nombre: Sin marca Hormigón Guantes | Precio: 470 | Cantidad: 24 | Almacen: Hydro dam}"];
+nodo459[label="{ Codigo: 459 | Nombre: Genérica Cotton Pelota | Precio: 198 | Cantidad: 323 | Almacen: Runoff}"];
+nodo458[label="{ Codigo: 458 | Nombre: Artesanal Granito Toallas | Precio: 451 | Cantidad: 415 | Almacen: Red electrica}"];
+nodo459->nodo458;
+nodo460[label="{ Codigo: 460 | Nombre: Inteligente Cotton Mesa | Precio: 341 | Cantidad: 418 | Almacen: Muelles}"];
+nodo459->nodo460;
+nodo461->nodo459;
+nodo464[label="{ Codigo: 464 | Nombre: Artesanal Hormigón Pizza | Precio: 246 | Cantidad: 346 | Almacen: Airbase}"];
+nodo463[label="{ Codigo: 463 | Nombre: Elegante Madera Pollo | Precio: 466 | Cantidad: 428 | Almacen: Overlook}"];
+nodo462[label="{ Codigo: 462 | Nombre: Elegante Acero Ensalada | Precio: 67 | Cantidad: 33 | Almacen: Brecha}"];
+nodo463->nodo462;
+nodo464->nodo463;
+nodo465[label="{ Codigo: 465 | Nombre: Rústico Cotton Queso | Precio: 925 | Cantidad: 340 | Almacen: Thermal station}"];
+nodo464->nodo465;
+nodo461->nodo464;
+nodo466->nodo461;
+nodo468[label="{ Codigo: 468 | Nombre: Pequeño Metal Tocino | Precio: 784 | Cantidad: 370 | Almacen: Fragment west}"];
+nodo467[label="{ Codigo: 467 | Nombre: Gorgeous Plástico Tuna | Precio: 619 | Cantidad: 497 | Almacen: Mirage voyage2}"];
+nodo468->nodo467;
+nodo469[label="{ Codigo: 469 | Nombre: Pequeño Acero Queso | Precio: 622 | Cantidad: 486 | Almacen: Skyhook}"];
+nodo471[label="{ Codigo: 471 | Nombre: Elegante Madera Guantes | Precio: 193 | Cantidad: 395 | Almacen: Mirage voyage}"];
+nodo470[label="{ Codigo: 470 | Nombre: Increíble Frozen Toallas | Precio: 70 | Cantidad: 223 | Almacen: Muelles}"];
+nodo471->nodo470;
+nodo472[label="{ Codigo: 472 | Nombre: Rústico Hormigón Teclado | Precio: 307 | Cantidad: 211 | Almacen: Torres de cultivo}"];
+nodo473[label="{ Codigo: 473 | Nombre: Increíble Acero Teclado | Precio: 596 | Cantidad: 371 | Almacen: Airbase}"];
+nodo474[label="{ Codigo: 474 | Nombre: Práctica Plástico Pelota | Precio: 900 | Cantidad: 364 | Almacen: Sorting factory}"];
+nodo473->nodo474;
+nodo472->nodo473;
+nodo471->nodo472;
+nodo469->nodo471;
+nodo468->nodo469;
+nodo466->nodo468;
+}

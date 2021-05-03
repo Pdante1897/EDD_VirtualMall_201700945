@@ -1,0 +1,32 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo436[label="{ Codigo: 436 | Nombre: Inteligente Fresco Pantalones | Precio: 933 | Cantidad: 131 | Almacen: Skyhook}"];
+nodo433[label="{ Codigo: 433 | Nombre: Gorgeous Cotton Queso | Precio: 421 | Cantidad: 39 | Almacen: Turbina}"];
+nodo430[label="{ Codigo: 430 | Nombre: Práctica Caucho Embutidos | Precio: 812 | Cantidad: 7 | Almacen: Overlook}"];
+nodo429[label="{ Codigo: 429 | Nombre: Increíble Cotton Embutidos | Precio: 717 | Cantidad: 421 | Almacen: Lava fissure}"];
+nodo430->nodo429;
+nodo432[label="{ Codigo: 432 | Nombre: Pequeño Hormigón Jabón | Precio: 680 | Cantidad: 485 | Almacen: The pit}"];
+nodo431[label="{ Codigo: 431 | Nombre: Fantástico Madera Zapatos | Precio: 835 | Cantidad: 397 | Almacen: Jardines}"];
+nodo432->nodo431;
+nodo430->nodo432;
+nodo433->nodo430;
+nodo435[label="{ Codigo: 435 | Nombre: Pequeño Fresco Pollo | Precio: 193 | Cantidad: 94 | Almacen: Overlook}"];
+nodo434[label="{ Codigo: 434 | Nombre: Artesanal Caucho Sombrero | Precio: 815 | Cantidad: 114 | Almacen: Repulsor}"];
+nodo435->nodo434;
+nodo433->nodo435;
+nodo436->nodo433;
+nodo439[label="{ Codigo: 439 | Nombre: Genérica Acero Ensalada | Precio: 817 | Cantidad: 259 | Almacen: The cage}"];
+nodo438[label="{ Codigo: 438 | Nombre: Increíble Cotton Bike | Precio: 987 | Cantidad: 489 | Almacen: Refinery}"];
+nodo437[label="{ Codigo: 437 | Nombre: Pequeño Cotton Embutidos | Precio: 909 | Cantidad: 465 | Almacen: Sorting factory}"];
+nodo438->nodo437;
+nodo439->nodo438;
+nodo442[label="{ Codigo: 442 | Nombre: Ergonómico Caucho Bike | Precio: 394 | Cantidad: 34 | Almacen: The pit}"];
+nodo441[label="{ Codigo: 441 | Nombre: Ergonómico Metal Zapatos | Precio: 653 | Cantidad: 207 | Almacen: Swamps}"];
+nodo440[label="{ Codigo: 440 | Nombre: Refinado Granito Presidente | Precio: 463 | Cantidad: 127 | Almacen: Eliseo}"];
+nodo441->nodo440;
+nodo442->nodo441;
+nodo443[label="{ Codigo: 443 | Nombre: Refinado Frozen Camisa | Precio: 181 | Cantidad: 329 | Almacen: Spotted lake}"];
+nodo442->nodo443;
+nodo439->nodo442;
+nodo436->nodo439;
+}

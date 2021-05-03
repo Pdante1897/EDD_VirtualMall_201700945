@@ -1,0 +1,32 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo534[label="{ Codigo: 534 | Nombre: Sin marca Soft Zapatos | Precio: 876 | Cantidad: 374 | Almacen: Crash site}"];
+nodo530[label="{ Codigo: 530 | Nombre: Ergonómico Metal Tocino | Precio: 375 | Cantidad: 468 | Almacen: Muelles}"];
+nodo528[label="{ Codigo: 528 | Nombre: Refinado Frozen Zapatos | Precio: 377 | Cantidad: 118 | Almacen: Broken relay}"];
+nodo529[label="{ Codigo: 529 | Nombre: Artesanal Cotton Pescado | Precio: 839 | Cantidad: 227 | Almacen: Red electrica}"];
+nodo528->nodo529;
+nodo530->nodo528;
+nodo532[label="{ Codigo: 532 | Nombre: Ergonómico Soft Pescado | Precio: 179 | Cantidad: 427 | Almacen: Overlook}"];
+nodo531[label="{ Codigo: 531 | Nombre: Inteligente Madera Tuna | Precio: 659 | Cantidad: 288 | Almacen: Overlook}"];
+nodo532->nodo531;
+nodo533[label="{ Codigo: 533 | Nombre: Ergonómico Granito Toallas | Precio: 998 | Cantidad: 309 | Almacen: Containment}"];
+nodo532->nodo533;
+nodo530->nodo532;
+nodo534->nodo530;
+nodo540[label="{ Codigo: 540 | Nombre: Práctica Plástico Ensalada | Precio: 188 | Cantidad: 369 | Almacen: The geyser}"];
+nodo538[label="{ Codigo: 538 | Nombre: Licencia Hormigón Teclado | Precio: 994 | Cantidad: 60 | Almacen: Survey camp}"];
+nodo536[label="{ Codigo: 536 | Nombre: Práctica Granito Jabón | Precio: 899 | Cantidad: 78 | Almacen: Repulsor}"];
+nodo535[label="{ Codigo: 535 | Nombre: Genérica Plástico Pantalones | Precio: 563 | Cantidad: 490 | Almacen: Harvester}"];
+nodo536->nodo535;
+nodo537[label="{ Codigo: 537 | Nombre: Fantástico Metal Pollo | Precio: 98 | Cantidad: 244 | Almacen: Airbase}"];
+nodo536->nodo537;
+nodo538->nodo536;
+nodo539[label="{ Codigo: 539 | Nombre: Genérica Fresco Teclado | Precio: 936 | Cantidad: 58 | Almacen: Almacen de energia}"];
+nodo538->nodo539;
+nodo540->nodo538;
+nodo541[label="{ Codigo: 541 | Nombre: Práctica Granito Zapatos | Precio: 892 | Cantidad: 469 | Almacen: Fragment east}"];
+nodo542[label="{ Codigo: 542 | Nombre: Práctica Soft Pescado | Precio: 73 | Cantidad: 478 | Almacen: Plaza de los bonsais}"];
+nodo541->nodo542;
+nodo540->nodo541;
+nodo534->nodo540;
+}

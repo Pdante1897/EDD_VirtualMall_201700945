@@ -275,7 +275,7 @@ func GraficarArbol(s string, num string) {
 	fmt.Fprintf(&cadena, s)
 	fmt.Fprintf(&cadena, "}\n")
 	nombre := strings.Replace(num, " ", "", -1)
-	guardarArchivo(cadena.String(), strings.Replace(nombre, ",", "", -1), "Arbol")
+	GuardarArchivo(cadena.String(), strings.Replace(nombre, ",", "", -1), "Arbol")
 }
 
 func (this *ListaDoble) GetTiendas() []TiendaF {

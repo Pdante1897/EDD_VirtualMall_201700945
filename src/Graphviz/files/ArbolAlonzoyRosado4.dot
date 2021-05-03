@@ -1,0 +1,36 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo221[label="{ Codigo: 221 | Nombre: Increíble Fresco Camisa | Precio: 462 | Cantidad: 223 | Almacen: Transportador}"];
+nodo216[label="{ Codigo: 216 | Nombre: Refinado Madera Sombrero | Precio: 390 | Cantidad: 61 | Almacen: The pit}"];
+nodo214[label="{ Codigo: 214 | Nombre: Pequeño Frozen Sombrero | Precio: 822 | Cantidad: 79 | Almacen: Thermal station}"];
+nodo212[label="{ Codigo: 212 | Nombre: Sabrosa Soft Embutidos | Precio: 250 | Cantidad: 357 | Almacen: Torres de cultivo}"];
+nodo213[label="{ Codigo: 213 | Nombre: Rústico Madera Teclado | Precio: 287 | Cantidad: 475 | Almacen: Swamps}"];
+nodo212->nodo213;
+nodo214->nodo212;
+nodo215[label="{ Codigo: 215 | Nombre: Licencia Metal Ratón | Precio: 889 | Cantidad: 272 | Almacen: Survey camp}"];
+nodo214->nodo215;
+nodo216->nodo214;
+nodo218[label="{ Codigo: 218 | Nombre: Licencia Granito Sombrero | Precio: 213 | Cantidad: 227 | Almacen: Containment}"];
+nodo217[label="{ Codigo: 217 | Nombre: Licencia Fresco Ensalada | Precio: 972 | Cantidad: 406 | Almacen: Swamps}"];
+nodo218->nodo217;
+nodo220[label="{ Codigo: 220 | Nombre: Práctica Plástico Presidente | Precio: 360 | Cantidad: 155 | Almacen: Lava fissure}"];
+nodo219[label="{ Codigo: 219 | Nombre: Gorgeous Plástico Toallas | Precio: 350 | Cantidad: 338 | Almacen: Runoff}"];
+nodo220->nodo219;
+nodo218->nodo220;
+nodo216->nodo218;
+nodo221->nodo216;
+nodo226[label="{ Codigo: 226 | Nombre: Rústico Plástico Presidente | Precio: 254 | Cantidad: 387 | Almacen: Hidroponia}"];
+nodo223[label="{ Codigo: 223 | Nombre: Hecho a mano Granito Toallas | Precio: 689 | Cantidad: 486 | Almacen: Artillery}"];
+nodo222[label="{ Codigo: 222 | Nombre: Refinado Cotton Teclado | Precio: 776 | Cantidad: 487 | Almacen: Survey camp}"];
+nodo223->nodo222;
+nodo224[label="{ Codigo: 224 | Nombre: Increíble Hormigón Pizza | Precio: 495 | Cantidad: 491 | Almacen: Eliseo}"];
+nodo225[label="{ Codigo: 225 | Nombre: Genérica Hormigón Pescado | Precio: 777 | Cantidad: 425 | Almacen: Fragment west}"];
+nodo224->nodo225;
+nodo223->nodo224;
+nodo226->nodo223;
+nodo228[label="{ Codigo: 228 | Nombre: Ergonómico Granito Tuna | Precio: 354 | Cantidad: 480 | Almacen: Mirage voyage2}"];
+nodo227[label="{ Codigo: 227 | Nombre: Gorgeous Fresco Pelota | Precio: 932 | Cantidad: 423 | Almacen: Muelles}"];
+nodo228->nodo227;
+nodo226->nodo228;
+nodo221->nodo226;
+}

@@ -1,0 +1,40 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo246[label="{ Codigo: 246 | Nombre: Práctica Metal Zapatos | Precio: 339 | Cantidad: 152 | Almacen: Oasis}"];
+nodo240[label="{ Codigo: 240 | Nombre: Genérica Soft Zapatos | Precio: 13 | Cantidad: 204 | Almacen: Brecha}"];
+nodo238[label="{ Codigo: 238 | Nombre: Práctica Frozen Presidente | Precio: 814 | Cantidad: 120 | Almacen: Bunker}"];
+nodo237[label="{ Codigo: 237 | Nombre: Increíble Acero Mesa | Precio: 82 | Cantidad: 342 | Almacen: Hydro dam}"];
+nodo238->nodo237;
+nodo239[label="{ Codigo: 239 | Nombre: Genérica Hormigón Pantalones | Precio: 520 | Cantidad: 406 | Almacen: Canon orbital}"];
+nodo238->nodo239;
+nodo240->nodo238;
+nodo244[label="{ Codigo: 244 | Nombre: Genérica Acero Ratón | Precio: 751 | Cantidad: 224 | Almacen: Torres de cultivo}"];
+nodo242[label="{ Codigo: 242 | Nombre: Elegante Caucho Tocino | Precio: 322 | Cantidad: 443 | Almacen: Drill site}"];
+nodo241[label="{ Codigo: 241 | Nombre: Refinado Granito Tuna | Precio: 159 | Cantidad: 110 | Almacen: The epicenter}"];
+nodo242->nodo241;
+nodo243[label="{ Codigo: 243 | Nombre: Sin marca Metal Sombrero | Precio: 935 | Cantidad: 302 | Almacen: Mirage voyage}"];
+nodo242->nodo243;
+nodo244->nodo242;
+nodo245[label="{ Codigo: 245 | Nombre: Ergonómico Caucho Toallas | Precio: 917 | Cantidad: 162 | Almacen: The cage}"];
+nodo244->nodo245;
+nodo240->nodo244;
+nodo246->nodo240;
+nodo250[label="{ Codigo: 250 | Nombre: Fantástico Madera Toallas | Precio: 597 | Cantidad: 396 | Almacen: Matriz solar}"];
+nodo248[label="{ Codigo: 248 | Nombre: Pequeño Cotton Teclado | Precio: 719 | Cantidad: 154 | Almacen: Red electrica}"];
+nodo247[label="{ Codigo: 247 | Nombre: Artesanal Metal Embutidos | Precio: 185 | Cantidad: 310 | Almacen: Skyhook}"];
+nodo248->nodo247;
+nodo249[label="{ Codigo: 249 | Nombre: Licencia Frozen Auto | Precio: 823 | Cantidad: 352 | Almacen: Fincas}"];
+nodo248->nodo249;
+nodo250->nodo248;
+nodo253[label="{ Codigo: 253 | Nombre: Refinado Hormigón Mesa | Precio: 424 | Cantidad: 153 | Almacen: Broken relay}"];
+nodo251[label="{ Codigo: 251 | Nombre: Sabrosa Metal Presidente | Precio: 598 | Cantidad: 193 | Almacen: Sorting factory}"];
+nodo252[label="{ Codigo: 252 | Nombre: Pequeño Madera Camisa | Precio: 981 | Cantidad: 21 | Almacen: Broken relay}"];
+nodo251->nodo252;
+nodo253->nodo251;
+nodo255[label="{ Codigo: 255 | Nombre: Inteligente Caucho Embutidos | Precio: 259 | Cantidad: 351 | Almacen: Matriz solar}"];
+nodo254[label="{ Codigo: 254 | Nombre: Hecho a mano Hormigón Embutidos | Precio: 950 | Cantidad: 62 | Almacen: Hydro dam}"];
+nodo255->nodo254;
+nodo253->nodo255;
+nodo250->nodo253;
+nodo246->nodo250;
+}

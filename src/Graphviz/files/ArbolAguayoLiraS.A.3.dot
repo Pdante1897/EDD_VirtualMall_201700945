@@ -1,0 +1,30 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo258[label="{ Codigo: 258 | Nombre: Sin marca Hormigón Ratón | Precio: 731 | Cantidad: 123 | Almacen: Containment}"];
+nodo254[label="{ Codigo: 254 | Nombre: Sabrosa Metal Pantalones | Precio: 859 | Cantidad: 473 | Almacen: Turbina}"];
+nodo253[label="{ Codigo: 253 | Nombre: Pequeño Cotton Ensalada | Precio: 159 | Cantidad: 442 | Almacen: Drill site}"];
+nodo252[label="{ Codigo: 252 | Nombre: Hecho a mano Soft Toallas | Precio: 870 | Cantidad: 10 | Almacen: Capacitor}"];
+nodo253->nodo252;
+nodo254->nodo253;
+nodo256[label="{ Codigo: 256 | Nombre: Genérica Hormigón Tocino | Precio: 976 | Cantidad: 182 | Almacen: The cage}"];
+nodo255[label="{ Codigo: 255 | Nombre: Gorgeous Plástico Presidente | Precio: 357 | Cantidad: 355 | Almacen: Runoff}"];
+nodo256->nodo255;
+nodo257[label="{ Codigo: 257 | Nombre: Elegante Metal Pollo | Precio: 970 | Cantidad: 335 | Almacen: Brecha}"];
+nodo256->nodo257;
+nodo254->nodo256;
+nodo258->nodo254;
+nodo263[label="{ Codigo: 263 | Nombre: Refinado Fresco Teclado | Precio: 536 | Cantidad: 185 | Almacen: Survey camp}"];
+nodo261[label="{ Codigo: 261 | Nombre: Elegante Cotton Zapatos | Precio: 220 | Cantidad: 178 | Almacen: Refinery}"];
+nodo260[label="{ Codigo: 260 | Nombre: Refinado Metal Mesa | Precio: 293 | Cantidad: 105 | Almacen: Labs}"];
+nodo259[label="{ Codigo: 259 | Nombre: Elegante Granito Bike | Precio: 466 | Cantidad: 212 | Almacen: Matriz solar}"];
+nodo260->nodo259;
+nodo261->nodo260;
+nodo262[label="{ Codigo: 262 | Nombre: Rústico Fresco Embutidos | Precio: 474 | Cantidad: 105 | Almacen: Jardines}"];
+nodo261->nodo262;
+nodo263->nodo261;
+nodo264[label="{ Codigo: 264 | Nombre: Licencia Metal Toallas | Precio: 533 | Cantidad: 467 | Almacen: Survey camp}"];
+nodo265[label="{ Codigo: 265 | Nombre: Hecho a mano Cotton Pantalones | Precio: 720 | Cantidad: 403 | Almacen: Laboratorios Hammond}"];
+nodo264->nodo265;
+nodo263->nodo264;
+nodo258->nodo263;
+}

@@ -1,0 +1,38 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo618[label="{ Codigo: 618 | Nombre: Artesanal Soft Bike | Precio: 857 | Cantidad: 481 | Almacen: Runoff}"];
+nodo615[label="{ Codigo: 615 | Nombre: Sin marca Frozen Ratón | Precio: 754 | Cantidad: 205 | Almacen: Torres de cultivo}"];
+nodo613[label="{ Codigo: 613 | Nombre: Licencia Soft Camisa | Precio: 1 | Cantidad: 172 | Almacen: Fragment west}"];
+nodo611[label="{ Codigo: 611 | Nombre: Licencia Soft Zapatos | Precio: 86 | Cantidad: 494 | Almacen: The pit}"];
+nodo610[label="{ Codigo: 610 | Nombre: Elegante Soft Bike | Precio: 431 | Cantidad: 422 | Almacen: Fragment east}"];
+nodo611->nodo610;
+nodo612[label="{ Codigo: 612 | Nombre: Sin marca Soft Pelota | Precio: 915 | Cantidad: 287 | Almacen: Artillery}"];
+nodo611->nodo612;
+nodo613->nodo611;
+nodo614[label="{ Codigo: 614 | Nombre: Increíble Soft Tocino | Precio: 427 | Cantidad: 9 | Almacen: Spotted lake}"];
+nodo613->nodo614;
+nodo615->nodo613;
+nodo616[label="{ Codigo: 616 | Nombre: Rústico Plástico Camisa | Precio: 835 | Cantidad: 276 | Almacen: Repulsor}"];
+nodo617[label="{ Codigo: 617 | Nombre: Refinado Plástico Pollo | Precio: 37 | Cantidad: 237 | Almacen: Containment}"];
+nodo616->nodo617;
+nodo615->nodo616;
+nodo618->nodo615;
+nodo625[label="{ Codigo: 625 | Nombre: Artesanal Granito Toallas | Precio: 694 | Cantidad: 57 | Almacen: Eliseo}"];
+nodo622[label="{ Codigo: 622 | Nombre: Genérica Acero Guantes | Precio: 349 | Cantidad: 72 | Almacen: Skyhook}"];
+nodo620[label="{ Codigo: 620 | Nombre: Práctica Cotton Computadora | Precio: 625 | Cantidad: 69 | Almacen: Lava city}"];
+nodo619[label="{ Codigo: 619 | Nombre: Licencia Granito Bike | Precio: 291 | Cantidad: 284 | Almacen: Airbase}"];
+nodo620->nodo619;
+nodo621[label="{ Codigo: 621 | Nombre: Increíble Cotton Zapatos | Precio: 763 | Cantidad: 352 | Almacen: The tree}"];
+nodo620->nodo621;
+nodo622->nodo620;
+nodo623[label="{ Codigo: 623 | Nombre: Práctica Hormigón Tuna | Precio: 407 | Cantidad: 293 | Almacen: Mirage voyage}"];
+nodo624[label="{ Codigo: 624 | Nombre: Ergonómico Cotton Tuna | Precio: 525 | Cantidad: 91 | Almacen: Almacen de energia}"];
+nodo623->nodo624;
+nodo622->nodo623;
+nodo625->nodo622;
+nodo626[label="{ Codigo: 626 | Nombre: Pequeño Hormigón Teclado | Precio: 113 | Cantidad: 394 | Almacen: Harvester}"];
+nodo627[label="{ Codigo: 627 | Nombre: Sabrosa Fresco Computadora | Precio: 637 | Cantidad: 69 | Almacen: Lava fissure}"];
+nodo626->nodo627;
+nodo625->nodo626;
+nodo618->nodo625;
+}

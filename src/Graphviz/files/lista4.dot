@@ -1,0 +1,20 @@
+digraph G{
+node[shape="box" shape="record"]
+graph[splines="ortho"]
+node15[label="B|Tela|1|pos: 16"];
+node15->node16;
+node16[label="B|Tela|2|pos: 17"];
+node0xc000046660[label="Bétancourt e Hijos|954.056.619"];
+node16->node0xc000046660;
+node16->node17;
+node17[label="B|Tela|3|pos: 18"];
+node0xc0000466c0[label="Bustos S.A.|953 571 628"];
+node17->node0xc0000466c0;
+node17->node18;
+node18[label="B|Tela|4|pos: 19"];
+node18->node19;
+node19[label="B|Tela|5|pos: 20"];
+node0xc000046720[label="Berríos Botello Hermanos|920-646-602"];
+node19->node0xc000046720;
+{rank="same"; node15; node16; node17; node18; node19}
+}

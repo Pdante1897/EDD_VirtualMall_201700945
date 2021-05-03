@@ -1,0 +1,26 @@
+digraph G{
+node[shape="box" shape="record"]
+nodo352[label="{ Codigo: 352 | Nombre: Hecho a mano Soft Teclado | Precio: 384 | Cantidad: 430 | Almacen: Canon orbital}"];
+nodo349[label="{ Codigo: 349 | Nombre: Licencia Plástico Teclado | Precio: 646 | Cantidad: 146 | Almacen: Matriz solar}"];
+nodo348[label="{ Codigo: 348 | Nombre: Increíble Acero Pollo | Precio: 290 | Cantidad: 377 | Almacen: Bunker}"];
+nodo349->nodo348;
+nodo351[label="{ Codigo: 351 | Nombre: Fantástico Plástico Zapatos | Precio: 477 | Cantidad: 264 | Almacen: Turbina}"];
+nodo350[label="{ Codigo: 350 | Nombre: Pequeño Hormigón Guantes | Precio: 953 | Cantidad: 197 | Almacen: Capacitor}"];
+nodo351->nodo350;
+nodo349->nodo351;
+nodo352->nodo349;
+nodo355[label="{ Codigo: 355 | Nombre: Pequeño Plástico Pollo | Precio: 802 | Cantidad: 24 | Almacen: The tree}"];
+nodo353[label="{ Codigo: 353 | Nombre: Licencia Plástico Auto | Precio: 807 | Cantidad: 128 | Almacen: The tree}"];
+nodo354[label="{ Codigo: 354 | Nombre: Sin marca Frozen Camisa | Precio: 399 | Cantidad: 146 | Almacen: Hidroponia}"];
+nodo353->nodo354;
+nodo355->nodo353;
+nodo358[label="{ Codigo: 358 | Nombre: Refinado Fresco Auto | Precio: 623 | Cantidad: 450 | Almacen: Harvester}"];
+nodo357[label="{ Codigo: 357 | Nombre: Ergonómico Soft Pantalones | Precio: 581 | Cantidad: 20 | Almacen: Artillery}"];
+nodo356[label="{ Codigo: 356 | Nombre: Artesanal Plástico Camisa | Precio: 239 | Cantidad: 29 | Almacen: Jardines}"];
+nodo357->nodo356;
+nodo358->nodo357;
+nodo359[label="{ Codigo: 359 | Nombre: Sabrosa Acero Bike | Precio: 729 | Cantidad: 192 | Almacen: Overlook}"];
+nodo358->nodo359;
+nodo355->nodo358;
+nodo352->nodo355;
+}
