@@ -28,6 +28,10 @@ var Listad []Dato.ListaDoble
 var ListaS Dato.ListaE
 var Arbol = Dato.NewArbol(5)
 var Grafo Dato.ListaAdy
+var MerkleTiendas Dato.Merkle
+var MerkleProductos Dato.Merkle
+var MerkleUsuarios Dato.Merkle
+var MerklePedidos Dato.Merkle
 
 var Ind int = 0
 var Dep int = 0
@@ -295,12 +299,21 @@ func generarImgInv(w http.ResponseWriter, r *http.Request) {
 }
 func main() {
 	var arbol = Dato.NewMerkel()
-	for i := 1; i < 4; i++ {
+	for i := 1; i < 10; i++ {
 
 		arbol.Insertar(i, strconv.Itoa(i))
 	}
 	Dato.GenerarHashArbol(arbol.Raiz)
 	Dato.GuardarArchivo(arbol.Raiz.GenerarGraphvizMerk(), "prueba", "")
+
+	tabla := Dato.NewTablaHash(7, 50, 25)
+	tabla.Insertar(100, 24)
+	tabla.Insertar(100, 242)
+
+	tabla.Insertar(101, 25)
+	tabla.Insertar(1, 25)
+	tabla.Insertar(35, 25)
+	tabla.Imprimir()
 
 	fmt.Println("un server papu")
 

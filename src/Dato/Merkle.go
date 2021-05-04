@@ -123,7 +123,6 @@ func GenerarHashArbol(nodo *NodoMerkle) *NodoMerkle {
 
 		nodo.Cadena = nodo.Cadena + nodo.Right.Hash
 	}
-	//value := sha256.Sum256([]byte(nodo.Cadena))
 	var cad strings.Builder
 	arreglo := sha256.Sum256([]byte(nodo.Cadena))
 	fmt.Fprintf(&cad, "%x", arreglo[:])
@@ -136,26 +135,40 @@ func GenerarHashArbol(nodo *NodoMerkle) *NodoMerkle {
 
 func (this *NodoMerkle) GenerarGraphvizMerk() string {
 	var cadena = ""
-	var dir strings.Builder
-	fmt.Fprintf(&dir, "%x", &this)
-	var dirl strings.Builder
-	fmt.Fprintf(&dirl, "%x", &this.Left)
-	var dirr strings.Builder
-	fmt.Fprintf(&dirr, "%x", &this.Right)
+	var mem strings.Builder
+	var memH strings.Builder
+
 	if this.Right == nil && this.Left == nil {
-		cadena = "node" + dir.String() + "[label=\"{" + strconv.Itoa(this.Valor) + " | " + this.Cadena + " | " + this.Hash + "}\"];\n"
+		fmt.Fprintf(&mem, "%v", &this.Hash)
+		cad1 := mem.String()
+		mem.Reset()
+		cadena = "node" + cad1 + "[label=\"{" + strconv.Itoa(this.Valor) + " | " + this.Hash + " | " + this.Cadena + "}\"];\n"
 	} else {
-		cadena = "node" + dir.String() + "[label=\"{" + strconv.Itoa(this.Valor) + " | " + this.Cadena + " | " + this.Hash + "}\"];\n"
+		fmt.Fprintf(&mem, "%v", &this.Hash)
+		cad1 := mem.String()
+		mem.Reset()
+		cadena = "node" + cad1 + "[label=\"{" + strconv.Itoa(this.Valor) + " | " + this.Hash + " | " + this.Cadena + "}\"];\n"
 	}
 	if this.Left != nil {
-		cadena += this.Left.GenerarGraphvizMerk() + "node" + dir.String() + "->node" + dirl.String() + ";\n"
+		fmt.Fprintf(&memH, "%v", &this.Left.Hash)
+		fmt.Fprintf(&mem, "%v", &this.Hash)
+		cad1 := mem.String()
+		cad2 := memH.String()
+		mem.Reset()
+		memH.Reset()
+		cadena += this.Left.GenerarGraphvizMerk() + "node" + cad1 + "->node" + cad2 + ";\n"
 	}
 	if this.Right != nil {
-		cadena += this.Right.GenerarGraphvizMerk() + "node" + dir.String() + "->node" + dirr.String() + ";\n"
+		fmt.Fprintf(&memH, "%v", &this.Right.Hash)
+		fmt.Fprintf(&mem, "%v", &this.Hash)
+		cad1 := mem.String()
+		cad2 := memH.String()
+		mem.Reset()
+		memH.Reset()
+		cadena += this.Right.GenerarGraphvizMerk() + "node" + cad1 + "->node" + cad2 + ";\n"
 	}
-	dir.Reset()
-	dirl.Reset()
-	dirr.Reset()
+	mem.Reset()
+	memH.Reset()
 
 	return cadena
 }
