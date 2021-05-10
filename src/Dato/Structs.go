@@ -22,6 +22,7 @@ type Tienda struct {
 	Calificacion int    `json:"Calificacion"`
 	Logo         string `json:"Logo"`
 	Inventario   ArbolIn
+	Comentarios  *TablaHash
 }
 
 type TiendaF struct {
@@ -34,6 +35,15 @@ type TiendaF struct {
 }
 type ArrTienda struct {
 	Tiendas []TiendaF `json:"Tiendas"`
+}
+
+type ArrComent struct {
+	Comentarios []Comentario `json: "Comentarios"`
+}
+
+type Comentario struct {
+	Id     int    `json: "Id"`
+	Cadena string `json: "Cadena"`
 }
 
 func (this Tienda) ToString() string {
@@ -72,7 +82,7 @@ func (this *ListaDoble) Insertar(dato Tienda) {
 		Siguiente: nil,
 		Anterior:  nil,
 	}
-
+	aux.Tienda.Comentarios = NewTablaHash(7, 50, 25)
 	if this.Vacio() {
 		this.Inicio = &aux
 		this.Fin = this.Inicio
@@ -299,5 +309,11 @@ func (this *ListaDoble) GetTiendas() []TiendaF {
 func (this *Nodo) GetProductos() ArrProducto {
 	var arreglo ArrProducto
 	arreglo.Productos = this.Tienda.Inventario.Raiz.ObtenerProductos(nil)
+	return arreglo
+}
+
+func (this *Nodo) GetComentarios() ArrComent {
+	var arreglo ArrComent
+	arreglo.Comentarios = this.Tienda.Comentarios.ListaComent()
 	return arreglo
 }

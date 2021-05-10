@@ -1,0 +1,28 @@
+<h2>Comentarios {{nombre}}</h2>
+<table class="table table-striped">
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Comentario
+        </th>
+        <th>
+
+        </th>
+    </tr>
+    
+    <tr *ngFor="let com of listaCom; let i = index">
+        <td>
+            {{com.Id}}
+        </td>
+        <td>
+            {{com.Cadena}}
+        </td>
+        <td>
+            <a class="btn btn-primary py-0" href="comentarios/id"> Responder </a>
+        </td>
+        </tr>
+</table>
+<textarea  [(ngModel)]="cadena" rows="10" cols="100">Escribe aquí tus comentarios</textarea>
+<button type="submit" (click)="comentar(cadena)">Comentar</button>

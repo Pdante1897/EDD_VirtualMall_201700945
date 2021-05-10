@@ -9,8 +9,9 @@ import (
 )
 
 type NodoHash struct {
-	Hash  int
-	Valor int
+	Hash           int
+	Valor          string
+	SubComentarios *TablaHash
 }
 
 type TablaHash struct {
@@ -21,27 +22,28 @@ type TablaHash struct {
 	arreglo         []*NodoHash
 }
 
-func (this *TablaHash) Posicion(clave int, valor int) int {
+func (this *TablaHash) Posicion(clave int, valor string) int {
 
 	i, p := 0, 0
 	d := 0.2520*float64(clave) - float64(int(0.2520*float64(clave)))
-	p = int(float64(this.Size) * d)
+	p = int(float64(len(this.arreglo)) * d)
+	fmt.Println(this.Size)
 	fmt.Println(this.Size)
 	fmt.Println(p)
 	//p = int(clave % this.Size)
 	for this.arreglo[p] != nil && this.arreglo[p].Valor != valor {
 		i++
-		i = i * i
-		p = p + i
-		if p >= this.Size {
-			p = p - this.Size
+		j := i * i
+		p = p + j
+		if p >= len(this.arreglo) {
+			p = p - len(this.arreglo)
 		}
 	}
 	return p
 }
 
-func (this *TablaHash) Insertar(nuevo int, valor int) {
-	nuevoNodo := NodoHash{nuevo, valor}
+func (this *TablaHash) Insertar(nuevo int, valor string) {
+	nuevoNodo := NodoHash{nuevo, valor, nil}
 	pos := this.Posicion(nuevo, valor)
 	this.arreglo[pos] = &nuevoNodo
 	this.Carga++
@@ -74,7 +76,7 @@ func (this *TablaHash) Imprimir() {
 		aux := this.arreglo[i]
 		if aux != nil {
 			temp[0] = strconv.Itoa(aux.Hash)
-			temp[1] = strconv.Itoa(aux.Valor)
+			temp[1] = aux.Valor
 		} else {
 			temp[0] = "-"
 			temp[1] = "-"
@@ -92,4 +94,18 @@ func (this *TablaHash) Imprimir() {
 func NewTablaHash(size int, porcentaje int, porcentaje_crec int) *TablaHash {
 	arreglo := make([]*NodoHash, size)
 	return &TablaHash{size, 0, porcentaje, porcentaje_crec, arreglo}
+}
+
+func (this *TablaHash) ListaComent() []Comentario {
+	var comentarios []Comentario
+	for i := 0; i < len(this.arreglo); i++ {
+		if this.arreglo[i] != nil {
+			var aux Comentario
+			aux.Id = this.arreglo[i].Hash
+			aux.Cadena = this.arreglo[i].Valor
+			comentarios = append(comentarios, aux)
+		}
+
+	}
+	return comentarios
 }

@@ -3,6 +3,8 @@ import { PdfsService } from 'src/app/services/pdfs/pdfs.service';
 import { ArrPdf, Pdf } from 'src/app/models/pdfs/pdf';
 import { DomSanitizer } from '@angular/platform-browser';
 import jsPDF from 'jspdf';
+import { Router } from '@angular/router';
+
 declare var require: any
 const FileSaver = require('file-saver');
 
@@ -21,11 +23,14 @@ export class AdminComponent implements OnInit {
   name = 'Angular 5';
  
 
-  constructor(private pdfservice:PdfsService, private sanitizer: DomSanitizer) { 
+  constructor(private pdfservice:PdfsService, private sanitizer: DomSanitizer,private router:Router) { 
     
   }
 
   ngOnInit(): void {
+    if (localStorage.getItem("user")!="Admin") {
+      this.router.navigate(['/login']);    
+    }
     this.cargar()
   }
 

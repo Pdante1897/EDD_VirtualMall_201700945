@@ -307,12 +307,13 @@ func main() {
 	Dato.GuardarArchivo(arbol.Raiz.GenerarGraphvizMerk(), "prueba", "")
 
 	tabla := Dato.NewTablaHash(7, 50, 25)
-	tabla.Insertar(100, 24)
-	tabla.Insertar(100, 242)
+	tabla.Insertar(100, "Hola mundo")
+	tabla.Insertar(100, "Que wen servicio")
+	tabla.Insertar(101, "Que wen servicio")
 
-	tabla.Insertar(101, 25)
-	tabla.Insertar(1, 25)
-	tabla.Insertar(35, 25)
+	tabla.Insertar(101, "a cuanto el arroz?")
+	tabla.Insertar(1, "me gustan las papas fritas")
+	tabla.Insertar(35, "por la orda!")
 	tabla.Imprimir()
 
 	fmt.Println("un server papu")
@@ -336,6 +337,11 @@ func main() {
 	router.HandleFunc("/cargarGrafos", cargarGrafos).Methods("POST")
 	router.HandleFunc("/getProductos/{nombre}+{departamento}+{calificacion}", getInventarios).Methods("GET")
 	router.HandleFunc("/getPDFs", getPDFs).Methods("GET")
+	router.HandleFunc("/buscarUser", BuscarUser).Methods("POST")
+	router.HandleFunc("/getComentarios/{nombre}+{departamento}+{calificacion}", GetComentarios).Methods("GET")
+	router.HandleFunc("/postComentario/{nombre}+{departamento}+{calificacion}", PostComentario).Methods("POST")
+	router.HandleFunc("/getComentariosProd/{nombre}+{departamento}+{calificacion}+{producto}", GetComentariosProd).Methods("GET")
+	router.HandleFunc("/postComentarioProd/{nombre}+{departamento}+{calificacion}+{producto}", PostComentarioProd).Methods("POST")
 
 	log.Fatal(http.ListenAndServe(":3000", handlers.CORS(handlers.AllowedHeaders([]string{"X-Requested-With", "Content-Type", "Authorization"}), handlers.AllowedMethods([]string{"GET", "POST", "PUT", "HEAD", "OPTIONS"}), handlers.AllowedOrigins([]string{"*"}))(router)))
 }

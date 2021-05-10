@@ -11,7 +11,9 @@ import { ProductosService } from 'src/app/services/productos/productos.service';
 export class ProductosComponent implements OnInit {
   lista_productos: ArrProducto = new ArrProducto()
   listaAux: Producto[]=[]
-
+  nombre: string =""
+  departamento:string=""
+  calificacion: string =""
   constructor(private router: Router, private route: ActivatedRoute, private productoService: ProductosService) {
 
    }
@@ -20,6 +22,9 @@ export class ProductosComponent implements OnInit {
     var nombre = (this.route.snapshot.paramMap.get('nombre') || '')
     var departamento = (this.route.snapshot.paramMap.get('departamento')|| '')
     var calificacion = (this.route.snapshot.paramMap.get('calificacion')|| '')
+    this.nombre=nombre
+    this.departamento=departamento
+    this.calificacion=calificacion
     this.productoService.getProductos(nombre, departamento, calificacion).subscribe((dataList: any)=>{
       this.lista_productos = dataList 
       console.log(this.lista_productos)

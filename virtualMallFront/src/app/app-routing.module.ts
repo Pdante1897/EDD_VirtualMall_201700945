@@ -9,6 +9,8 @@ import { AdminComponent } from './componentes/admin/admin.component';
 import { CargarComponent } from './componentes/cargar/cargar.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { EncriptarComponent } from './componentes/encriptar/encriptar.component';
+import { ComentariosComponent } from './componentes/comentarios/comentarios/comentarios.component';
+import { ComentariosProdComponent } from './componentes/comentariosProd/comentarios-prod/comentarios-prod.component';
 
 
 const routes: Routes = [{
@@ -56,6 +58,16 @@ const routes: Routes = [{
 {
   path: 'encriptar',
   component: EncriptarComponent,
+}
+,
+{
+  path: 'comentarios/:nombre/:departamento/:calificacion',
+  component: ComentariosComponent,
+}
+,
+{
+  path: 'comentariosProd/:nombre/:departamento/:calificacion/:producto/:nombreP',
+  component: ComentariosProdComponent,
 }
 ];
 

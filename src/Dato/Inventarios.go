@@ -19,6 +19,7 @@ type Producto struct {
 	Cantidad       int     `json:"Cantidad"`
 	Imagen         string  `json:"Imagen"`
 	Almacenamiento string  `json: "Almacenamiento"`
+	Comentarios    *TablaHash
 }
 
 type ArrProducto struct {
@@ -111,6 +112,8 @@ func rotRLIn(nodo *NodoAI, nodo1 *NodoAI) *NodoAI {
 
 func insertProd(raiz *NodoAI, valor Producto, bol *bool) *NodoAI {
 	var nodo1 *NodoAI
+	valor.Comentarios = NewTablaHash(7, 50, 30)
+
 	if raiz == nil {
 		raiz = NewNodoIn(valor)
 		*bol = true
@@ -222,4 +225,9 @@ func (this *NodoAI) ObtenerProductos(prod []Producto) []Producto {
 	}
 
 	return productos
+}
+func (this *NodoAI) GetComentarios() ArrComent {
+	var arreglo ArrComent
+	arreglo.Comentarios = this.Valor.Comentarios.ListaComent()
+	return arreglo
 }

@@ -20,6 +20,9 @@
             <th>
                 Logo
             </th>
+            <th>
+                
+            </th>
         </tr>
         <tr *ngFor="let tienda of listaAux">
             <td>
@@ -41,6 +44,7 @@
             <td>
                 <img src="{{tienda.Logo}}" style="width: 200px; height: 200px;" alt="">
             </td>
+            <a class="btn btn-primary py-0" href="comentarios/{{tienda.Nombre}}/{{tienda.Departamento}}/{{tienda.Calificacion}}"> Comentar </a>
         </tr>
     </table>
 </ng-container>

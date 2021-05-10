@@ -11,3 +11,7 @@ type Usuario struct {
 	Password string `json:"Password"`
 	Cuenta   string `json:"Cuenta"`
 }
+
+type BusquedaUsuario struct {
+	Dpi int64 `json:"Dpi"`
+}
