@@ -303,7 +303,7 @@ func main() {
 
 		arbol.Insertar(i, strconv.Itoa(i))
 	}
-	Dato.GenerarHashArbol(arbol.Raiz)
+	/*Dato.GenerarHashArbol(arbol.Raiz)
 	Dato.GuardarArchivo(arbol.Raiz.GenerarGraphvizMerk(), "prueba", "")
 
 	tabla := Dato.NewTablaHash(7, 50, 25)
@@ -315,7 +315,7 @@ func main() {
 	tabla.Insertar(1, "me gustan las papas fritas")
 	tabla.Insertar(35, "por la orda!")
 	tabla.Imprimir()
-
+	*/
 	fmt.Println("un server papu")
 
 	router := mux.NewRouter()
@@ -342,6 +342,8 @@ func main() {
 	router.HandleFunc("/postComentario/{nombre}+{departamento}+{calificacion}", PostComentario).Methods("POST")
 	router.HandleFunc("/getComentariosProd/{nombre}+{departamento}+{calificacion}+{producto}", GetComentariosProd).Methods("GET")
 	router.HandleFunc("/postComentarioProd/{nombre}+{departamento}+{calificacion}+{producto}", PostComentarioProd).Methods("POST")
+	router.HandleFunc("/postSubComentarioProd/{nombre}+{departamento}+{calificacion}+{producto}", PostSubComentarioProd).Methods("POST")
+	router.HandleFunc("/postSubComentario/{nombre}+{departamento}+{calificacion}", PostSubComentario).Methods("POST")
 
 	log.Fatal(http.ListenAndServe(":3000", handlers.CORS(handlers.AllowedHeaders([]string{"X-Requested-With", "Content-Type", "Authorization"}), handlers.AllowedMethods([]string{"GET", "POST", "PUT", "HEAD", "OPTIONS"}), handlers.AllowedOrigins([]string{"*"}))(router)))
 }

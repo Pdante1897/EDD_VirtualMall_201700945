@@ -229,5 +229,6 @@ func (this *NodoAI) ObtenerProductos(prod []Producto) []Producto {
 func (this *NodoAI) GetComentarios() ArrComent {
 	var arreglo ArrComent
 	arreglo.Comentarios = this.Valor.Comentarios.ListaComent()
+
 	return arreglo
 }

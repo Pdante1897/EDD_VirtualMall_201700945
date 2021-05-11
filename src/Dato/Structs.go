@@ -42,8 +42,10 @@ type ArrComent struct {
 }
 
 type Comentario struct {
-	Id     int    `json: "Id"`
-	Cadena string `json: "Cadena"`
+	Id             int          `json: "Id"`
+	Dpi            int          `json: "Dpi"`
+	Cadena         string       `json: "Cadena"`
+	SubComentarios []Comentario `json: "Subcomentarios"`
 }
 
 func (this Tienda) ToString() string {

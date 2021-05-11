@@ -1,28 +1,118 @@
 <h2>Comentarios {{nombre}}</h2>
-<table class="table table-striped">
-    <tr>
-        <th>
-            ID
-        </th>
-        <th>
-            Comentario
-        </th>
-        <th>
 
-        </th>
-    </tr>
-    
-    <tr *ngFor="let com of listaCom; let i = index">
-        <td>
-            {{com.Id}}
-        </td>
-        <td>
-            {{com.Cadena}}
-        </td>
-        <td>
-            <a class="btn btn-primary py-0" href="comentarios/id"> Responder </a>
-        </td>
-        </tr>
-</table>
 <textarea  [(ngModel)]="cadena" rows="10" cols="100">Escribe aquí tus comentarios</textarea>
 <button type="submit" (click)="comentar(cadena)">Comentar</button>
+
+
+<div class="mdl-card__actions mdl-card--border" >
+    <ul class="img-comment-list" id="commentload">
+
+      <li *ngFor="let com of listaCom">
+          <div class="comment-img">
+            {{com.Id}}
+
+          </div>
+          <div class="comment-text">
+              <strong><a ></a></strong>
+              <p>{{com.Dpi}}</p> <span class="date sub-text">                {{com.Cadena}}        </span>
+              <button class="btn btn-primary py-0" (click)="comentarSub(com, comNull, comNull, comNull, comNull, comNull, cadena)"> Responder </button>
+
+          </div>
+
+          <ul class="img-comment-list" id="commentload">
+
+            <li *ngFor="let com2 of com.SubComentarios"><!--Lista de comentarios-->
+                <div class="comment-img">
+                  {{com2.Id}}
+      
+                </div>
+                <div class="comment-text">
+                    <strong><a ></a></strong>
+                    <p>{{com2.Dpi}}</p> <span class="date sub-text">                {{com2.Cadena}}        </span>
+                    <button class="btn btn-primary py-0" (click)="comentarSub(com, com2, comNull, comNull, comNull, comNull, cadena)"> Responder </button>
+                    <ul class="img-comment-list" id="commentload">
+
+                        <li *ngFor="let com3 of com2.SubComentarios"><!--Lista de comentarios-->
+                            <div class="comment-img">
+                              {{com3.Id}}
+                  
+                            </div>
+                            <div class="comment-text">
+                                <strong><a ></a></strong>
+                                <p>{{com3.Dpi}}</p> <span class="date sub-text">                {{com3.Cadena}}        </span>
+                                <button class="btn btn-primary py-0" (click)="comentarSub(com, com2, com3, comNull, comNull, comNull, cadena)"> Responder </button>
+                                
+                                <ul class="img-comment-list" id="commentload">
+                
+                                    <li *ngFor="let com4 of com3.SubComentarios"><!--Lista de comentarios-->
+                                        <div class="comment-img">
+                                          {{com4.Id}}
+                              
+                                        </div>
+                                        <div class="comment-text">
+                                            <strong><a ></a></strong>
+                                            <p>{{com4.Dpi}}</p> <span class="date sub-text">                {{com4.Cadena}}        </span>
+                                            <button class="btn btn-primary py-0" (click)="comentarSub(com, com2, com3, com4, comNull, comNull, cadena)"> Responder </button>
+                                            
+                                            <ul class="img-comment-list" id="commentload">
+                
+                                                <li *ngFor="let com5 of com4.SubComentarios"><!--Lista de comentarios-->
+                                                    <div class="comment-img">
+                                                      {{com5.Id}}
+                                          
+                                                    </div>
+                                                    <div class="comment-text">
+                                                        <strong><a ></a></strong>
+                                                        <p>{{com5.Dpi}}</p> <span class="date sub-text">                {{com5.Cadena}}        </span>
+                                                        <button class="btn btn-primary py-0" (click)="comentarSub(com, com2, com3, com4, com5, comNull, cadena)"> Responder </button>
+                                                        
+                                                        <ul class="img-comment-list" id="commentload">
+                
+                                                            <li *ngFor="let com6 of com5.SubComentarios"><!--Lista de comentarios-->
+                                                                <div class="comment-img">
+                                                                  {{com6.Id}}
+                                                      
+                                                                </div>
+                                                                <div class="comment-text">
+                                                                    <strong><a ></a></strong>
+                                                                    <p>{{com6.Dpi}}</p> <span class="date sub-text">                {{com6.Cadena}}        </span>
+                                                                    <button class="btn btn-primary py-0" (click)="comentarSub(com, com2, com3, com4, com5, com6, cadena)"> Responder </button>
+                                                                    
+                                                                    
+                                                                    
+                                                                    
+                        
+                                                                </div>
+                                                            </li>
+                                                            <div></div>
+                                                          </ul>
+                                                        
+                                                        
+            
+                                                    </div>
+                                                </li>
+                                                <div></div>
+                                              </ul>
+            
+
+
+                                        </div>
+                                    </li>
+                                    <div></div>
+                                  </ul>
+
+
+                            </div>
+                        </li>
+                        <div></div>
+                      </ul>
+                </div>
+            </li>
+            <div></div>
+          </ul>
+
+      </li>
+      <div></div>
+    </ul>
+   
+</div>

@@ -45,4 +45,24 @@ export class ComentariosService {
     };
     return this.http.post<any>(baseURL + 'postComentarioProd/'+nombre.replace('%20','-')+'+'+departamento.replace('%20','-')+'+'+calificacion+"+"+producto, comentario );
   }
+
+  postSubComentarioProd(nombre: string, departamento: string, calificacion: string, producto: string ,comentario: any):Observable<any>{
+    var file = JSON.stringify(comentario)
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json', 
+      }),
+    };
+    return this.http.post<any>(baseURL + 'postSubComentarioProd/'+nombre.replace('%20','-')+'+'+departamento.replace('%20','-')+'+'+calificacion+"+"+producto, comentario );
+  }
+
+  postSubComentario(nombre: string, departamento: string, calificacion: string,comentario: any):Observable<any>{
+    var file = JSON.stringify(comentario)
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json', 
+      }),
+    };
+    return this.http.post<any>(baseURL + 'postSubComentario/'+nombre.replace('%20','-')+'+'+departamento.replace('%20','-')+'+'+calificacion, comentario );
+  }
 }

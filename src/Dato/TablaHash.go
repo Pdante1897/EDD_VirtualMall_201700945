@@ -9,6 +9,7 @@ import (
 )
 
 type NodoHash struct {
+	Id             int
 	Hash           int
 	Valor          string
 	SubComentarios *TablaHash
@@ -19,33 +20,34 @@ type TablaHash struct {
 	Carga           int
 	Porcentaje      int
 	Porcentaje_crec int
-	arreglo         []*NodoHash
+	Arreglo         []*NodoHash
 }
 
 func (this *TablaHash) Posicion(clave int, valor string) int {
 
 	i, p := 0, 0
 	d := 0.2520*float64(clave) - float64(int(0.2520*float64(clave)))
-	p = int(float64(len(this.arreglo)) * d)
+	p = int(float64(len(this.Arreglo)) * d)
 	fmt.Println(this.Size)
 	fmt.Println(this.Size)
 	fmt.Println(p)
 	//p = int(clave % this.Size)
-	for this.arreglo[p] != nil && this.arreglo[p].Valor != valor {
+	for this.Arreglo[p] != nil && this.Arreglo[p].Valor != valor {
 		i++
 		j := i * i
 		p = p + j
-		if p >= len(this.arreglo) {
-			p = p - len(this.arreglo)
+		for p >= len(this.Arreglo) {
+			p = p - len(this.Arreglo)
 		}
+
 	}
 	return p
 }
 
-func (this *TablaHash) Insertar(nuevo int, valor string) {
-	nuevoNodo := NodoHash{nuevo, valor, nil}
+func (this *TablaHash) Insertar(id int, nuevo int, valor string) {
+	nuevoNodo := NodoHash{0, nuevo, valor, nil}
 	pos := this.Posicion(nuevo, valor)
-	this.arreglo[pos] = &nuevoNodo
+	this.Arreglo[pos] = &nuevoNodo
 	this.Carga++
 	if ((this.Carga * 100) / this.Size) > this.Porcentaje {
 		sizenuevo := this.Size
@@ -56,8 +58,8 @@ func (this *TablaHash) Insertar(nuevo int, valor string) {
 			}
 		}
 		nuevoArray := make([]*NodoHash, sizenuevo)
-		viejo := this.arreglo
-		this.arreglo = nuevoArray
+		viejo := this.Arreglo
+		this.Arreglo = nuevoArray
 		this.Size = sizenuevo
 		aux := 0
 		for i := 0; i < len(viejo); i++ {
@@ -71,9 +73,9 @@ func (this *TablaHash) Insertar(nuevo int, valor string) {
 
 func (this *TablaHash) Imprimir() {
 	data := make([][]string, this.Size)
-	for i := 0; i < len(this.arreglo); i++ {
+	for i := 0; i < len(this.Arreglo); i++ {
 		temp := make([]string, 2)
-		aux := this.arreglo[i]
+		aux := this.Arreglo[i]
 		if aux != nil {
 			temp[0] = strconv.Itoa(aux.Hash)
 			temp[1] = aux.Valor
@@ -98,12 +100,22 @@ func NewTablaHash(size int, porcentaje int, porcentaje_crec int) *TablaHash {
 
 func (this *TablaHash) ListaComent() []Comentario {
 	var comentarios []Comentario
-	for i := 0; i < len(this.arreglo); i++ {
-		if this.arreglo[i] != nil {
+	j := 0
+	for i := 0; i < len(this.Arreglo); i++ {
+		if this.Arreglo[i] != nil {
 			var aux Comentario
-			aux.Id = this.arreglo[i].Hash
-			aux.Cadena = this.arreglo[i].Valor
+			this.Arreglo[i].Id = j
+			aux.Id = this.Arreglo[i].Id
+			aux.Dpi = this.Arreglo[i].Hash
+			aux.Cadena = this.Arreglo[i].Valor
+			if this.Arreglo[i].SubComentarios != nil {
+				aux.SubComentarios = this.Arreglo[i].SubComentarios.ListaComent()
+
+			}
 			comentarios = append(comentarios, aux)
+
+			j++
+
 		}
 
 	}
