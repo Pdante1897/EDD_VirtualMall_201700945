@@ -4,7 +4,11 @@ import (
 	"container/list"
 	"crypto/sha256"
 	"fmt"
+	"log"
 	"math"
+	"os"
+	"os/exec"
+	"path/filepath"
 	"strconv"
 	"strings"
 )
@@ -126,11 +130,30 @@ func GenerarHashArbol(nodo *NodoMerkle) *NodoMerkle {
 	var cad strings.Builder
 	arreglo := sha256.Sum256([]byte(nodo.Cadena))
 	fmt.Fprintf(&cad, "%x", arreglo[:])
-	fmt.Println(cad.String())
 	nodo.Hash = cad.String()
 	cad.Reset()
 
 	return aux
+}
+
+func GetCadenas(this *NodoMerkle) string {
+	if this == nil {
+		return ""
+	}
+	var aux strings.Builder
+
+	if this.Left == nil && this.Right == nil && this.Valor != -1 {
+		fmt.Fprintf(&aux, "%s", this.Cadena)
+	}
+	if this.Left != nil {
+		fmt.Fprintf(&aux, "%s", GetCadenas(this.Left))
+	}
+	if this.Right != nil {
+		fmt.Fprintf(&aux, "%s", GetCadenas(this.Right))
+
+	}
+
+	return aux.String()
 }
 
 func (this *NodoMerkle) GenerarGraphvizMerk() string {
@@ -142,12 +165,12 @@ func (this *NodoMerkle) GenerarGraphvizMerk() string {
 		fmt.Fprintf(&mem, "%v", &this.Hash)
 		cad1 := mem.String()
 		mem.Reset()
-		cadena = "node" + cad1 + "[label=\"{" + strconv.Itoa(this.Valor) + " | " + this.Hash + " | " + this.Cadena + "}\"];\n"
+		cadena = "node" + cad1 + "[style=\"filled\"; fillcolor=\"green\" color=\"black\"; label=\"{" + strconv.Itoa(this.Valor) + " | " + this.Hash + " | " + this.Cadena + "}\"];\n"
 	} else {
 		fmt.Fprintf(&mem, "%v", &this.Hash)
 		cad1 := mem.String()
 		mem.Reset()
-		cadena = "node" + cad1 + "[label=\"{" + strconv.Itoa(this.Valor) + " | " + this.Hash + " | " + this.Cadena + "}\"];\n"
+		cadena = "node" + cad1 + "[style=\"filled\"; fillcolor=\"green\" color=\"black\"; label=\"{" + strconv.Itoa(this.Valor) + " | " + this.Hash + " | " + this.Cadena + "}\"];\n"
 	}
 	if this.Left != nil {
 		fmt.Fprintf(&memH, "%v", &this.Left.Hash)
@@ -171,4 +194,46 @@ func (this *NodoMerkle) GenerarGraphvizMerk() string {
 	memH.Reset()
 
 	return cadena
+}
+
+func (this *NodoMerkle) Graph() string {
+	var cad strings.Builder
+	fmt.Fprintf(&cad, "digraph G{ \n")
+	fmt.Fprintf(&cad, "node[shape=\"record\"] \n")
+	fmt.Fprintf(&cad, this.GenerarGraphvizMerk())
+	fmt.Fprintf(&cad, "}")
+	return cad.String()
+}
+
+func DirSvc(num string) {
+	dir, err := filepath.Abs(filepath.Dir("./graphviz/graphviz.go"))
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(dir)
+	var cadena strings.Builder
+	fmt.Fprintf(&cadena, "cd c:\\program files\\graphviz\\bin\n  ")
+	fmt.Fprintf(&cadena, "dot -Tsvg \""+dir+"\\files\\"+num+".dot\" -o \""+dir+"\\files\\grafica"+num+".svg\"\n  ")
+	fil, err := os.Create(dir + "\\files\\archivo.bat")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	bytes, err := fil.WriteString(cadena.String())
+	if err != nil {
+		fmt.Println(err)
+		fil.Close()
+		return
+	}
+	fmt.Println(bytes, "bytes escritos satisfactoriamente! :D")
+	err = fil.Close()
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	cmd := exec.Command(dir + "\\files\\archivo.bat")
+	err = cmd.Run()
+	if err != nil {
+		fmt.Println(err)
+	}
 }

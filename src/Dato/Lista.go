@@ -95,3 +95,15 @@ func (this ListaE) Recorrer() {
 		aux = aux.Siguiente
 	}
 }
+func (this ListaE) RecorrerL() []*NodoL {
+	var vector []*NodoL
+	this.Mostrar()
+	aux := this.Inicio
+	for aux != nil {
+		fmt.Println(aux.Dato.Indice)
+		vector = append(vector, aux)
+		aux = aux.Siguiente
+
+	}
+	return vector
+}

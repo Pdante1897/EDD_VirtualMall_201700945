@@ -11,6 +11,7 @@ import (
 	"path/filepath"
 	"strconv"
 	"strings"
+	"time"
 
 	"github.com/gorilla/handlers"
 	"github.com/manucorporat/try"
@@ -32,9 +33,11 @@ var MerkleTiendas Dato.Merkle
 var MerkleProductos Dato.Merkle
 var MerkleUsuarios Dato.Merkle
 var MerklePedidos Dato.Merkle
-
+var Blockchain Dato.BlockChain
 var Ind int = 0
 var Dep int = 0
+var T = 5 * 60 * time.Second
+var Ticker = time.NewTicker(T)
 
 func agregarPedidos(w http.ResponseWriter, r *http.Request) {
 	archivo := new(Dato.JsonPedidos)
@@ -44,6 +47,7 @@ func agregarPedidos(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	json.Unmarshal(reqBody, &archivo)
+	cont := 1
 	for i := 0; i < len(archivo.Pedidos); i++ {
 		var buscar Dato.Busqueda
 		var listaDP *Dato.ListaDPe
@@ -102,6 +106,13 @@ func agregarPedidos(w http.ResponseWriter, r *http.Request) {
 						nuevo.Cliente = archivo.Pedidos[i].Cliente
 						matriz.Add(nuevo)
 
+						var cadena string
+						cadena = "|" + archivo.Pedidos[i].Fecha + "-" + buscar.Departamento + "-" + buscar.Nombre + "-" + strconv.Itoa(buscar.Calificacion) + "-" + strconv.Itoa(int(nuevo.Cliente)) + "|"
+
+						MerklePedidos.Insertar(cont, cadena)
+						fmt.Println(cadena)
+
+						cont++
 					}
 
 				}
@@ -156,6 +167,7 @@ func agregarInv(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	json.Unmarshal(reqBody, &archivo)
+	cont := 1
 	for i := 0; i < len(archivo.Inventarios); i++ {
 		var buscar Dato.Busqueda
 		buscar.Departamento = archivo.Inventarios[i].Departamento
@@ -171,6 +183,12 @@ func agregarInv(w http.ResponseWriter, r *http.Request) {
 					proBus.Valor.Cantidad += producto.Cantidad
 				} else {
 					Listad[Dato.RowMajor(Ind, Dep, buscar.NumDep(Listad), buscar.Calificacion-1)].Buscar(buscar.Nombre).Tienda.Inventario.Insert(producto)
+
+					var cadena string
+					cadena = "|" + buscar.Departamento + "-" + buscar.Nombre + "-" + strconv.Itoa(buscar.Calificacion) + "-" + producto.Nombre + "-" + strconv.Itoa(producto.Codigo) + "-" + producto.Descripcion + "-" + strconv.FormatFloat(producto.Precio, 'f', -1, 64) + "-" + strconv.Itoa(producto.Cantidad) + "-" + producto.Imagen + "-" + producto.Almacenamiento + "|"
+					MerkleProductos.Insertar(cont, cadena)
+
+					cont++
 				}
 				fmt.Println(Listad[Dato.RowMajor(Ind, Dep, buscar.NumDep(Listad), buscar.Calificacion-1)].Buscar(buscar.Nombre).Tienda.Inventario.Raiz.GenerarGraphviz())
 			}).Catch(func(e try.E) {
@@ -199,6 +217,7 @@ func agregar(w http.ResponseWriter, r *http.Request) {
 	var indice int = 0
 	Ind = len(archivo.Datos)
 	Dep = len(archivo.Datos[0].Departamentos)
+	cont := 1
 	for q := 0; q < tamanio; q++ {
 		Listad[q].Calificacion = calificacion
 		calificacion++
@@ -226,11 +245,19 @@ func agregar(w http.ResponseWriter, r *http.Request) {
 					if Listad[q].Indice == archivo.Datos[i].Indice && Listad[q].Nombre == archivo.Datos[i].Departamentos[j].Nombre && Listad[q].Calificacion == archivo.Datos[i].Departamentos[j].Tiendas[k].Calificacion {
 						//fmt.Fprintln(w, archivo.Datos[i].Departamentos[j].Tiendas[k].ToString())
 						Listad[q].Insertar(archivo.Datos[i].Departamentos[j].Tiendas[k])
+						auxi := archivo.Datos[i].Departamentos[j].Tiendas[k]
+						var cadena string
+						cadena = "|" + archivo.Datos[i].Departamentos[j].Nombre + "-" + auxi.Nombre + "-" + auxi.Descripcion + "-" + auxi.Contacto + "-" + strconv.Itoa(auxi.Calificacion) + "-" + auxi.Logo + "|"
+						MerkleTiendas.Insertar(cont, cadena)
+						fmt.Println(cadena)
+
+						cont++
 					}
 				}
 			}
 		}
 	}
+
 }
 
 func BuscarEsp(w http.ResponseWriter, r *http.Request) {
@@ -298,7 +325,29 @@ func generarImgInv(w http.ResponseWriter, r *http.Request) {
 	}
 }
 func main() {
+	var today time.Time
+	today = time.Now()
+	var fecha strings.Builder
+	fmt.Fprintf(&fecha, "%v-%v-%v::%v:%v:%v", today.Day(), today.Month(), today.Year(), today.Hour(), today.Minute(), today.Second())
+	fmt.Println(fecha.String())
 	var arbol = Dato.NewMerkel()
+
+	/*
+		blockchain := Dato.NewBlockChain()
+		for i := 0; i < 3; i++ {
+			blockchain.AgregarBlock("Esto es esparta" + strconv.Itoa(i))
+
+		}
+		for _, block := range blockchain.Blocks {
+			fmt.Printf("Indice: %v \n", block.Indice)
+			fmt.Printf("Fecha: %s \n", block.Fecha)
+			fmt.Printf("Data: %s \n", block.Data)
+			fmt.Printf("PrevHash: %x \n", block.PrevHash)
+			fmt.Printf("Hash: %x \n", block.Hash)
+			fmt.Printf("Nonce: %v \n", block.Nonce)
+
+		}
+	*/
 	for i := 1; i < 10; i++ {
 
 		arbol.Insertar(i, strconv.Itoa(i))
@@ -319,6 +368,7 @@ func main() {
 	fmt.Println("un server papu")
 
 	router := mux.NewRouter()
+	go Hilo()
 	router.HandleFunc("/", index).Methods("GET")
 	router.HandleFunc("/cargartienda", agregar).Methods("POST")
 	router.HandleFunc("/getArreglo", generarImg).Methods("GET")
@@ -344,8 +394,11 @@ func main() {
 	router.HandleFunc("/postComentarioProd/{nombre}+{departamento}+{calificacion}+{producto}", PostComentarioProd).Methods("POST")
 	router.HandleFunc("/postSubComentarioProd/{nombre}+{departamento}+{calificacion}+{producto}", PostSubComentarioProd).Methods("POST")
 	router.HandleFunc("/postSubComentario/{nombre}+{departamento}+{calificacion}", PostSubComentario).Methods("POST")
+	router.HandleFunc("/postTiempo/{minutos}", PostTiempo).Methods("POST")
+	router.HandleFunc("/postPedido", addPedido).Methods("POST")
 
 	log.Fatal(http.ListenAndServe(":3000", handlers.CORS(handlers.AllowedHeaders([]string{"X-Requested-With", "Content-Type", "Authorization"}), handlers.AllowedMethods([]string{"GET", "POST", "PUT", "HEAD", "OPTIONS"}), handlers.AllowedOrigins([]string{"*"}))(router)))
+
 }
 
 func cargarGrafos(w http.ResponseWriter, r *http.Request) {
@@ -382,13 +435,23 @@ func cargarUsuarios(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	json.Unmarshal(reqBody, &archivo)
+	cont := 1
 	for i := 0; i < len(archivo.Usuarios); i++ {
 		nuevakey := Dato.NewKey(archivo.Usuarios[i].Dpi, archivo.Usuarios[i])
 
 		Arbol.Insert(nuevakey)
+
+		var cadena string
+		cadena = "|" + strconv.Itoa(int(archivo.Usuarios[i].Dpi)) + "+" + archivo.Usuarios[i].Nombre + "+" + archivo.Usuarios[i].Correo + "+" + archivo.Usuarios[i].Password + "+" + archivo.Usuarios[i].Cuenta + "|"
+		MerkleUsuarios.Insertar(cont, cadena)
+		fmt.Println(cadena)
+
+		cont++
+
 		fmt.Println(archivo.Usuarios[i].Nombre)
 	}
 	fmt.Println(Arbol.Raiz.Keys[0].Value)
+
 }
 
 func getUsuarios(w http.ResponseWriter, r *http.Request) {
@@ -453,7 +516,7 @@ func getPDFs(w http.ResponseWriter, r *http.Request) {
 	listapdfs := Graphviz.NewListaPDF()
 	var pdfs []Graphviz.Archivopdf
 	for _, archivo := range archivos {
-		if strings.Contains(archivo.Name(), ".pdf") {
+		if strings.Contains(archivo.Name(), ".pdf") || strings.Contains(archivo.Name(), ".svg") {
 			fmt.Println("Nombre:", dir+"\\"+archivo.Name())
 			var pdf Graphviz.Archivopdf
 			pdf.Nombre = archivo.Name()

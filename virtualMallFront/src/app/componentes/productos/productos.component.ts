@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Pedido, ProductoPed } from 'src/app/models/pedidos/pedido';
 import { ArrProducto, Producto } from 'src/app/models/productos/producto';
 import { ProductosService } from 'src/app/services/productos/productos.service';
 
@@ -50,13 +51,18 @@ export class ProductosComponent implements OnInit {
   }
 
   agregarCarrito(prod: Producto){
-    var productos : Producto[]=[]
+    var nombre = (this.route.snapshot.paramMap.get('nombre') || '')
+    var departamento = (this.route.snapshot.paramMap.get('departamento')|| '')
+    var calificacion = (this.route.snapshot.paramMap.get('calificacion')|| '')
+    var productos : ProductoPed[]=[]
+    var ped =new ProductoPed(nombre,departamento,calificacion,prod.Codigo,prod.Precio,prod.Nombre,prod.Descripcion,prod.Imagen)
     if (localStorage.getItem('carrito')!=null){
       productos = JSON.parse(localStorage.getItem('carrito')||"")
-      productos.push(prod)
+
+      productos.push(ped)
       localStorage.setItem('carrito', JSON.stringify(productos))
     }else{
-      productos.push(prod)
+      productos.push(ped)
       localStorage.setItem('carrito', JSON.stringify(productos))
 
     }

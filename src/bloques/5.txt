@@ -1,0 +1,6 @@
+Indice: 5 
+Fecha: 12-May-2021::22:57:23 
+Data: ???|03-05-1997-Reproductores web-Atencio y Delafuente-1-2437499939748||22-02-1997-Reproductores web-Atencio y Delafuente-1-2437499939748||19-08-1997-Cocina-Alcaraz y Chapa-2-1175759321752||27-12-1997-Reproductores web-Bernal e Hijos-5-6115255867537||15-10-1997-Cocina-Alcala, Castañeda y Castañeda Asociados-4-4278637254298||16-06-1997-Cocina-Bernal e Hijos-2-5244465791499||28-06-1997-Cocina-Barraza Roldán e Hijos-5-5641418269227||11-01-1997-Cocina-Alcala, Castañeda y Castañeda Asociados-4-4298651779288||09-06-1997-Cocina-Bernal e Hijos-2-7654288817219||23-08-1997-Reproductores web-Alcaraz y Chapa-3-7369949182582||03-07-1997-Reproductores web-Alcaraz y Chapa-3-3258135532212||17-06-1997-Cocina-Alcaraz y Chapa-2-6115255867537||05-11-1997-Cocina-Alcala, Castañeda y Castañeda Asociados-4-3258135532212||02-07-1997-Reproductores web-Barraza Roldán e Hijos-5-8358576539473||25-12-1997-Reproductores web-Báez Mota e Hijos-4-9429179777262||05-02-1997-Reproductores web-Agosto e Hijos-4-2123735653995||26-10-1997-Cocina-Benavídez y Salcido-4-2437499939748||17-12-1997-Cocina-Báez Mota e Hijos-5-4113885755137| 
+PrevHash: 00000b95e7ab7262f693649edbb4d9b22259c006e3187f7213afe9e95c608650 
+Hash: 000008efffc8132dedf9296a109f69e1521dd83dca4c010e126524729a058ab0 
+Nonce: 11543 

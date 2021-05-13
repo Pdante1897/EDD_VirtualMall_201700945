@@ -219,3 +219,14 @@ func GuardarArchivo(cadena string, num string, nom string) {
 		return
 	}
 }
+
+func (this ListaDPe) RecorrerL() []*NodoP {
+	var vector []*NodoP
+	aux := this.Inicio
+	for aux != nil {
+		vector = append(vector, aux)
+		aux = aux.Siguiente
+
+	}
+	return vector
+}

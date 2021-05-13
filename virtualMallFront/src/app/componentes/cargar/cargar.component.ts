@@ -15,6 +15,8 @@ export class CargarComponent implements OnInit {
   cargarInventarios = "cargarinventario"
   cargarGrafos = "cargarGrafos"
   key: string = ""
+  tiempo: string = ""
+
   constructor(private service: UploadService) { }
   
   ngOnInit(): void {
@@ -64,6 +66,10 @@ export class CargarComponent implements OnInit {
     localStorage.setItem("key",this.key)
     console.log(localStorage.getItem("key"))
 
+  }
+  setTiempo(a:any){
+    console.log(this.tiempo)
+    this.service.postTiempo(this.tiempo).subscribe(Response => {null});
   }
   
 //ng serve --live-reload false

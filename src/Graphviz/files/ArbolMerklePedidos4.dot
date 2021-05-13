@@ -1,0 +1,8 @@
+digraph G{ 
+node[shape="record"] 
+node0xc0000e6608[style="filled"; fillcolor="green" color="black"; label="{0 | dde4955fd4812636f2d7b68d7ee3d794360ff3e01e83f2a30e1bea92176fb5c2 | 9bfdf89045999b2ade27cc37dff5b55cb96b40cd42145432eca711127e7f8dd71bad6b8cf97131fceab8543e81f7757195fbb1d36b376ee994ad1cf17699c464}"];
+node0xc0000e6588[style="filled"; fillcolor="green" color="black"; label="{1 | 9bfdf89045999b2ade27cc37dff5b55cb96b40cd42145432eca711127e7f8dd7 | |2021?Mayo?-12}"];
+node0xc0000e6608->node0xc0000e6588;
+node0xc0000e65c8[style="filled"; fillcolor="green" color="black"; label="{-1 | 1bad6b8cf97131fceab8543e81f7757195fbb1d36b376ee994ad1cf17699c464 | -1}"];
+node0xc0000e6608->node0xc0000e65c8;
+}

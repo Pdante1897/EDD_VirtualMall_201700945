@@ -424,3 +424,21 @@ func (this *Matriz) Buscar(nombre string) *Cola {
 	}
 	return nil
 }
+
+func (this *Matriz) RecorrerM() string {
+	var aux interface{} = this.CabHor
+	var cadena string = ""
+	for aux != nil {
+		cadena = cadena + "-" + strconv.Itoa(aux.(*NodoCabHor).Dia)
+		fmt.Print(aux.(*NodoCabHor).Dia, "*****************")
+		tmp := aux.(*NodoCabHor).Sur
+		for tmp != nil {
+			fmt.Printf("%v,%v-------", tmp.(*NodoPedido).Cola.Nombre, tmp.(*NodoPedido).Departamento)
+			tmp = tmp.(*NodoPedido).Sur
+		}
+		fmt.Println("")
+		aux = aux.(*NodoCabHor).Este
+
+	}
+	return cadena
+}

@@ -1,0 +1,6 @@
+Indice: 6 
+Fecha: 12-May-2021::22:58:0 
+Data: ???|2021?Mayo?-12|1997?Mayo?-3|1997?Febrero?-5-22|1997?Agosto?-19-23|1997?Diciembre?-17-25-27|1997?Octubre?-15-26|1997?Junio?-9-16-17-28-17|1997?Enero?-11|1997?Julio?-2-3|1997?Noviembre?-5 
+PrevHash: 000008efffc8132dedf9296a109f69e1521dd83dca4c010e126524729a058ab0 
+Hash: 00003d30868ac66df0245d98995cada6caf06f350d9dc00296bd526649719e3e 
+Nonce: 328990 

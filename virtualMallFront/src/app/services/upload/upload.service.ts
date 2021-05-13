@@ -78,4 +78,13 @@ export class UploadService {
     return this.http.get<any>(baseURL + 'getMatriz', httpOptions);
   }
 
+  postTiempo(tiempo : string):Observable<any>{
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+    };
+    return this.http.post<any>(baseURL + 'postTiempo/'+tiempo, httpOptions);
+  }
+
 }
